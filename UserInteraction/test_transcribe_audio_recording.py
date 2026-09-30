@@ -23,7 +23,7 @@ except IndexError:
 
 model = WhisperModel(MODEL_SIZE,device=DEVICE,compute_type=COMPUTE_TYPE)
 
-segments, info = model.transcribe("./tmp/random_audio_25s.m4a",beam_size=BEAM_SIZE)
+segments, info = model.transcribe(file,beam_size=BEAM_SIZE)
 
 print(f"Language: {info.language} ({info.language_probability*100}%)")
 
