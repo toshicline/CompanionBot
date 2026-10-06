@@ -1,0 +1,49 @@
+[0.030s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_input_manager': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/roverrobotics_ros2/roverrobotics_input_manager -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager
+[0.156s] -- The C compiler identification is GNU 11.4.0
+[0.522s] -- The CXX compiler identification is GNU 11.4.0
+[0.687s] -- Detecting C compiler ABI info
+[0.804s] -- Detecting C compiler ABI info - done
+[0.810s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.810s] -- Detecting C compile features
+[0.811s] -- Detecting C compile features - done
+[0.814s] -- Detecting CXX compiler ABI info
+[0.944s] -- Detecting CXX compiler ABI info - done
+[0.952s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.952s] -- Detecting CXX compile features
+[0.952s] -- Detecting CXX compile features - done
+[0.955s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.099s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.169s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.254s] -- Configuring done
+[1.261s] -- Generating done
+[1.264s] -- Build files have been written to: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_input_manager
+[1.268s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_input_manager' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/roverrobotics_ros2/roverrobotics_input_manager -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager
+[1.271s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_input_manager': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_input_manager -- -j16 -l16
+[1.316s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_input_manager' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_input_manager -- -j16 -l16
+[1.317s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_input_manager': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_input_manager
+[1.325s] -- Install configuration: ""
+[1.325s] -- Execute custom install script
+[1.327s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/lib/roverrobotics_input_manager/modules/Controller.py
+[1.336s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/lib/roverrobotics_input_manager/modules/PadHeartbeat.py
+[1.345s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/lib/roverrobotics_input_manager/modules/Topics.py
+[1.355s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/lib/roverrobotics_input_manager/modules/__pycache__/Controller.cpython-310.pyc
+[1.365s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/lib/roverrobotics_input_manager/modules/__pycache__/Controller.cpython-38.pyc
+[1.374s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/lib/roverrobotics_input_manager/modules/__pycache__/Topics.cpython-310.pyc
+[1.384s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/lib/roverrobotics_input_manager/modules/__pycache__/Topics.cpython-38.pyc
+[1.393s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/lib/roverrobotics_input_manager/joys_manager.py
+[1.404s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/ament_index/resource_index/package_run_dependencies/roverrobotics_input_manager
+[1.414s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/ament_index/resource_index/parent_prefix_path/roverrobotics_input_manager
+[1.423s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/environment/ament_prefix_path.sh
+[1.431s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/environment/ament_prefix_path.dsv
+[1.441s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/environment/path.sh
+[1.450s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/environment/path.dsv
+[1.459s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/local_setup.bash
+[1.468s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/local_setup.sh
+[1.477s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/local_setup.zsh
+[1.487s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/local_setup.dsv
+[1.496s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/package.dsv
+[1.506s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/ament_index/resource_index/packages/roverrobotics_input_manager
+[1.516s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/cmake/roverrobotics_input_managerConfig.cmake
+[1.525s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/cmake/roverrobotics_input_managerConfig-version.cmake
+[1.534s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_input_manager/share/roverrobotics_input_manager/package.xml
+[1.545s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_input_manager' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_input_manager

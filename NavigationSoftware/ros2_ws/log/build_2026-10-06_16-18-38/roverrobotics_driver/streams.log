@@ -1,0 +1,134 @@
+[0.028s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/roverrobotics_ros2/roverrobotics_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver
+[0.154s] -- The C compiler identification is GNU 11.4.0
+[0.447s] -- The CXX compiler identification is GNU 11.4.0
+[0.642s] -- Detecting C compiler ABI info
+[0.780s] -- Detecting C compiler ABI info - done
+[0.786s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.787s] -- Detecting C compile features
+[0.787s] -- Detecting C compile features - done
+[0.790s] -- Detecting CXX compiler ABI info
+[0.936s] -- Detecting CXX compiler ABI info - done
+[0.944s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.945s] -- Detecting CXX compile features
+[0.945s] -- Detecting CXX compile features - done
+[0.948s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.101s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.168s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.212s] -- Found rclcpp: 16.0.21 (/opt/ros/humble/share/rclcpp/cmake)
+[1.409s] -- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.417s] -- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.433s] -- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.457s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.483s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.553s] -- Found rmw_implementation_cmake: 6.1.4 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.559s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.618s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[3.631s] -- Found FastRTPS: /opt/ros/humble/include  
+[5.356s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[5.379s] -- Looking for pthread.h
+[5.499s] -- Looking for pthread.h - found
+[5.499s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[5.608s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[5.609s] -- Found Threads: TRUE  
+[5.683s] -- Found geometry_msgs: 4.9.2 (/opt/ros/humble/share/geometry_msgs/cmake)
+[5.703s] -- Found nav_msgs: 4.9.2 (/opt/ros/humble/share/nav_msgs/cmake)
+[5.726s] -- Found tf2_geometry_msgs: 0.25.23 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[5.761s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[5.763s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[5.763s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[5.910s] -- Found sensor_msgs: 4.9.2 (/opt/ros/humble/share/sensor_msgs/cmake)
+[5.983s] -- Configuring done
+[6.005s] -- Generating done
+[6.010s] -- Build files have been written to: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver
+[6.021s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/roverrobotics_ros2/roverrobotics_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver
+[6.023s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver -- -j16 -l16
+[6.079s] [ 16%] [32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/comm_serial.cpp.o[0m
+[6.079s] [ 16%] [32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/comm_can.cpp.o[0m
+[6.080s] [ 33%] [32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/src/roverrobotics_ros2_driver.cpp.o[0m
+[6.080s] [ 33%] [32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/protocol_pro.cpp.o[0m
+[6.080s] [ 41%] [32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/control.cpp.o[0m
+[6.080s] [ 50%] [32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/utils.cpp.o[0m
+[6.081s] [ 58%] [32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/vesc.cpp.o[0m
+[6.082s] [ 66%] [32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/utilities.cpp.o[0m
+[6.082s] [ 75%] [32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/protocol_zero_2.cpp.o[0m
+[6.082s] [ 83%] [32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/protocol_mini_2wd_serial.cpp.o[0m
+[6.082s] [ 91%] [32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/differential_robot.cpp.o[0m
+[29.122s] [100%] [32m[1mLinking CXX executable roverrobotics_driver[0m
+[30.500s] [100%] Built target roverrobotics_driver
+[30.513s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver -- -j16 -l16
+[30.515s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver
+[30.521s] -- Install configuration: ""
+[30.522s] -- Execute custom install script
+[30.524s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/accessories.launch.py
+[30.533s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/max.launch.py
+[30.542s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/max_teleop.launch.py
+[30.551s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/mega.launch.py
+[30.560s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/mega_teleop.launch.py
+[30.569s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/mini.launch.py
+[30.578s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/mini_2wd.launch.py
+[30.587s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/mini_2wd_teleop.launch.py
+[30.596s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/mini_teleop.launch.py
+[30.606s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/miti.launch.py
+[30.616s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/miti_65.launch.py
+[30.624s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/miti_65_teleop.launch.py
+[30.633s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/miti_teleop.launch.py
+[30.642s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/nav2_backend.py
+[30.652s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/navigation_launch.py
+[30.660s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/outdoor_navigation_launch.py
+[30.669s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/pro.launch.py
+[30.680s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/pro_teleop.launch.py
+[30.690s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/ps4_controller.launch.py
+[30.698s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/ps5_controller.launch.py
+[30.708s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/robot_localizer.launch.py
+[30.717s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/robot_localizer_outdoor.launch.py
+[30.726s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/slam_launch.py
+[30.735s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/zero.launch.py
+[30.744s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/launch/zero_teleop.launch.py
+[30.754s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/accessories.yaml
+[30.763s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/localization_ekf.yaml
+[30.772s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/localization_outdoor_ekf.yaml
+[30.781s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/max_130_config.yaml
+[30.790s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/max_150_config.yaml
+[30.799s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/mega_config.yaml
+[30.809s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/mini_2wd_config.yaml
+[30.818s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/mini_config.yaml
+[30.827s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/miti_65_config.yaml
+[30.836s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/miti_config.yaml
+[30.845s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/nav2_params.yaml
+[30.855s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/pro_config.yaml
+[30.864s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/ps4_controller_config.yaml
+[30.874s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/ps4_controller_config_jp6.yaml
+[30.883s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/ps5_controller_config.yaml
+[30.892s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/ps5_controller_config_jp6.yaml
+[30.903s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/realsense_config.yaml
+[30.911s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/rviz_configs/nav2_default_view.rviz
+[30.920s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/rviz_configs/realsense_rviz_layout.rviz
+[30.930s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/rviz_configs/slam_rviz_layout.rviz
+[30.941s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/slam_configs/mapper_params_lifelong.yaml
+[30.951s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/slam_configs/mapper_params_localization.yaml
+[30.960s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/slam_configs/mapper_params_offline.yaml
+[30.969s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/slam_configs/mapper_params_online_async.yaml
+[30.979s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/slam_configs/mapper_params_online_sync.yaml
+[30.988s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/topics.yaml
+[30.997s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/config/zero_config.yaml
+[31.007s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze_map.data
+[31.016s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze_map.pgm
+[31.025s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze_map.posegraph
+[31.034s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze_map.yaml
+[31.043s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/lib/roverrobotics_driver/roverrobotics_driver
+[31.054s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/ament_index/resource_index/package_run_dependencies/roverrobotics_driver
+[31.063s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/ament_index/resource_index/parent_prefix_path/roverrobotics_driver
+[31.073s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/environment/ament_prefix_path.sh
+[31.082s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/environment/ament_prefix_path.dsv
+[31.091s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/environment/path.sh
+[31.100s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/environment/path.dsv
+[31.109s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/local_setup.bash
+[31.119s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/local_setup.sh
+[31.129s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/local_setup.zsh
+[31.137s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/local_setup.dsv
+[31.146s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/package.dsv
+[31.156s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/ament_index/resource_index/packages/roverrobotics_driver
+[31.165s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/cmake/roverrobotics_driverConfig.cmake
+[31.175s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/cmake/roverrobotics_driverConfig-version.cmake
+[31.184s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_driver/share/roverrobotics_driver/package.xml
+[31.197s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver

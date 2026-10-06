@@ -1,8 +1,8 @@
-# Install script for directory: /home/andrew/ros2_ws/src/my_bot
+# Install script for directory: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/my_bot
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/andrew/ros2_ws/install/my_bot")
+  set(CMAKE_INSTALL_PREFIX "/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/my_bot")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/andrew/ros2_ws/build/my_bot/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/my_bot/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/andrew/ros2_ws/build/my_bot/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/my_bot/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,0 +1,6 @@
+[0.025s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/build/my_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/build/my_bot -- -j16 -l16
+[0.032s] [0mCMake Error: The current CMakeCache.txt directory /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/build/my_bot/CMakeCache.txt is different than the directory /home/andrew/ros2_ws/src/build/my_bot where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt[0m
+[0.042s] [0mCMake Error: The source directory "/home/andrew/ros2_ws/src/my_bot" does not exist.
+[0.042s] Specify --help for usage, or press the help button on the CMake GUI.[0m
+[0.043s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[0.046s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/build/my_bot' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/build/my_bot -- -j16 -l16
