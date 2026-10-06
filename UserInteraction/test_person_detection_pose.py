@@ -48,8 +48,12 @@ while True:
     for result in results:
         if result.keypoints != None:
             keypoints = result.keypoints.xy.cpu().numpy()
+            keypoints_conf = result.keypoints.conf.cpu().numpy()
 
-            for person_kpts in keypoints:
+            for person_id in range(len(keypoints)):
+
+                person_kpts = keypoints[person_id]
+                conf_kpts = keypoints_conf[person_id]
 
                 # Index	Keypoint Name	Anatomical Region
                 # 0	    Nose	        Facial
@@ -71,25 +75,37 @@ while True:
                 # 16	Right Ankle	    Lower Body
 
                 keypoints = {
-                    "nose":person_kpts[0],
-                    "left_eye":person_kpts[1],
-                    "right_eye":person_kpts[2],
-                    "left_shoulder":person_kpts[5],
-                    "right_shoulder":person_kpts[6],
-                    "left_hip":person_kpts[11],
-                    "right_hip":person_kpts[12],
-                    "left_knee":person_kpts[13],
-                    "right_knee":person_kpts[14],
-                    "left_ankle":person_kpts[15],
-                    "right_ankle":person_kpts[16]
+                    "left_shoulder":(person_kpts[5],conf_kpts[5]),
+                    "right_shoulder":(person_kpts[6],conf_kpts[6]),
+                    "left_hip":(person_kpts[11],conf_kpts[11]),
+                    "right_hip":(person_kpts[12],conf_kpts[12]),
+                    "left_knee":(person_kpts[13],conf_kpts[13]),
+                    "right_knee":(person_kpts[14],conf_kpts[14]),
+                    "left_ankle":(person_kpts[15],conf_kpts[15]),
+                    "right_ankle":(person_kpts[16],conf_kpts[16]),
                 }
 
-                print(keypoints)
+                for name, (pt, conf) in keypoints.items():
+                    x, y = int(pt[0]), int(pt[1])
+                    conf_val = float(conf)
 
-                # torso_height = distance_between_midpoints([keypoints["left_shoulder"],keypoints["right_shoulder"]],[keypoints["left_hip"],keypoints["right_hip"]])
+                    # Only display keypoints that pass a visibility/confidence threshold
+                    if x > 0 and y > 0 and conf > 0.5:
+                        # Draw keypoint circle marker
+                        cv2.circle(frame, (x, y), 4, (0, 0, 255), -1)
+
+                        # Format label text (e.g., "nose 0.89")
+                        label = f"{name} {conf_val:.2f}"
+
+                        # Draw text offset slightly from the point
+                        cv2.putText(frame,label,(x + 5, y - 5),cv2.FONT_HERSHEY_SIMPLEX,1,(255, 255, 255),1)
+
+
+
+                break # only show the first person
 
     # Show the video output
-    #cv2.imshow("Person Detection Test Stream",frame)
+    cv2.imshow("Person Detection Test Stream",frame)
 
     # Allow OpenCV to process window events and listen for exit key ('q')
     if cv2.waitKey(1) & 0xFF == ord('q'):
