@@ -1,0 +1,59 @@
+[0.039s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_gazebo': AMENT_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/my_bot:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/roverrobotics_ros2/roverrobotics_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo
+[0.148s] -- The C compiler identification is GNU 11.4.0
+[0.453s] -- The CXX compiler identification is GNU 11.4.0
+[0.678s] -- Detecting C compiler ABI info
+[0.796s] -- Detecting C compiler ABI info - done
+[0.801s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.802s] -- Detecting C compile features
+[0.802s] -- Detecting C compile features - done
+[0.804s] -- Detecting CXX compiler ABI info
+[0.927s] -- Detecting CXX compiler ABI info - done
+[0.932s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.932s] -- Detecting CXX compile features
+[0.932s] -- Detecting CXX compile features - done
+[0.934s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.054s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.108s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.127s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.190s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.193s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.194s] -- Added test 'lint_cmake' to check CMake code style
+[1.194s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.196s] -- Added test 'xmllint' to check XML markup files
+[1.198s] -- Configuring done
+[1.204s] -- Generating done
+[1.206s] -- Build files have been written to: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_gazebo
+[1.211s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_gazebo' returned '0': AMENT_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/my_bot:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/roverrobotics_ros2/roverrobotics_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo
+[1.213s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_gazebo': AMENT_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/my_bot:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_gazebo -- -j16 -l16
+[1.244s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_gazebo' returned '0': AMENT_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/my_bot:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_gazebo -- -j16 -l16
+[1.246s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_gazebo': AMENT_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/my_bot:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_gazebo
+[1.251s] -- Install configuration: ""
+[1.251s] -- Execute custom install script
+[1.253s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/2wd_rover_gazebo.launch.py
+[1.262s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/4wd_rover_gazebo.launch.py
+[1.270s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/flipper_gazebo.launch.py
+[1.277s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/max_gazebo.launch.py
+[1.285s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/mega_gazebo.launch.py
+[1.292s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/mini_2wd_gazebo.launch.py
+[1.300s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/mini_gazebo.launch.py
+[1.308s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/miti_65_gazebo.launch.py
+[1.316s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/miti_gazebo.launch.py
+[1.325s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/depot.sdf
+[1.333s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/maze.sdf
+[1.341s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/warehouse.sdf
+[1.349s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/ament_index/resource_index/package_run_dependencies/roverrobotics_gazebo
+[1.358s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/ament_index/resource_index/parent_prefix_path/roverrobotics_gazebo
+[1.367s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/ament_prefix_path.sh
+[1.375s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/ament_prefix_path.dsv
+[1.383s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/path.sh
+[1.391s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/path.dsv
+[1.399s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.bash
+[1.408s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.sh
+[1.416s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.zsh
+[1.425s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.dsv
+[1.433s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.dsv
+[1.442s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/ament_index/resource_index/packages/roverrobotics_gazebo
+[1.450s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/cmake/roverrobotics_gazeboConfig.cmake
+[1.457s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/cmake/roverrobotics_gazeboConfig-version.cmake
+[1.466s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.xml
+[1.475s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_gazebo' returned '0': AMENT_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/install/my_bot:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_gazebo

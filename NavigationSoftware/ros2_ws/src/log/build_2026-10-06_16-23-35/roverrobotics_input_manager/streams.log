@@ -1,0 +1,19 @@
+[0.029s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/build/roverrobotics_input_manager': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/roverrobotics_ros2/roverrobotics_input_manager -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/install/roverrobotics_input_manager
+[0.128s] -- The C compiler identification is GNU 11.4.0
+[0.450s] -- The CXX compiler identification is GNU 11.4.0
+[0.570s] -- Detecting C compiler ABI info
+[0.677s] -- Detecting C compiler ABI info - done
+[0.682s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.682s] -- Detecting C compile features
+[0.682s] -- Detecting C compile features - done
+[0.685s] -- Detecting CXX compiler ABI info
+[0.804s] -- Detecting CXX compiler ABI info - done
+[0.810s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.810s] -- Detecting CXX compile features
+[0.810s] -- Detecting CXX compile features - done
+[0.812s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.936s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.992s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.066s] -- Configuring done
+[1.072s] -- Generating done
+[1.074s] -- Build files have been written to: /home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/build/roverrobotics_input_manager
