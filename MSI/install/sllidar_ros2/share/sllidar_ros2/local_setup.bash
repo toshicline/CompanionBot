@@ -1,0 +1,1 @@
+/home/rukig008/satop_ws/build/sllidar_ros2/ament_cmake_environment_hooks/local_setup.bash
