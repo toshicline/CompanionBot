@@ -21,9 +21,22 @@ print("\nCamera stream started. Press 'Q' to quit.\n")
 
 # Common average human proportions (in meters)
 AVG_HUMAN_PROPS = {
-    "SHOULDER_TO_HIP":0.475,
-    "HIP_TO_ANKLE":0.85
+    "SHOULDER_TO_HIP": 0.475,
+    "HIP_TO_KNEE": 0.44,
+    "KNEE_TO_ANKLE": 0.41,
+    "HIP_TO_ANKLE": 0.85,
 }
+
+def print_flush(text):
+    """Print on the same line as before (useful for many repetitive prints of location/range)
+    
+    Args:
+        text: the text to print
+
+    Returns:
+        None
+    """
+    print(f"\r\033[K{text}", end="", flush=True)
 
 def draw_bbox(frame,box_dict,label,color=(0,0,255)):
     """Draw a bounding box around a target using box_dict
@@ -51,8 +64,13 @@ def draw_bbox(frame,box_dict,label,color=(0,0,255)):
     # Draw bounding box
     cv2.rectangle(frame,(x1,y1),(x2,y2),color,2)
 
-    # Draw label
-    cv2.putText(frame,label,(x1,y1-10),cv2.FONT_HERSHEY_SIMPLEX,1,color,2)
+    # Convert label to list of labels
+    if isinstance(label,str):
+        label = [label]
+
+    # Draw labels
+    for i in range(len(label)):
+        cv2.putText(frame,label[i],(x2+5,y1+20+i*30),cv2.FONT_HERSHEY_SIMPLEX,1,color,2)
 
 
 def center_of_box(coords):
@@ -61,7 +79,7 @@ def center_of_box(coords):
     return (int(x1 + (x2-x1)/2), int(y1 + (y2-y1)/2))
 
 
-def extract_usable_distances(keypoints):
+def extract_usable_distances(keypoints,draw_frame=None):
     """Extract the usable distances (ie right shoulder to right hip) in pixels from a list of keypoints
 
     Args:
@@ -70,6 +88,7 @@ def extract_usable_distances(keypoints):
                 "left_shoulder": ((x,y), 0.95),
                 ...
             }
+        draw_frame: OpenCV frame to draw line connecting joints (optional)
 
     Returns:
         list: list of tuples with the format: (from_point,to_point,distance_pixels)
@@ -102,9 +121,9 @@ def extract_usable_distances(keypoints):
         # Define key anatomical pairs to measure
         pairs = [
             ("shoulder", "hip"),
-            ("hip", "ankle"),
             ("hip", "knee"),
             ("knee", "ankle"),
+            ("hip", "ankle"),
         ]
 
         for p1_name, p2_name in pairs:
@@ -112,8 +131,15 @@ def extract_usable_distances(keypoints):
                 pos1 = kpt_dict[p1_name]
                 pos2 = kpt_dict[p2_name]
 
+                pos1_x,pos1_y = pos1
+                pos2_x,pos2_y = pos2
+
+                # Draw line
+                if draw_frame is not None:
+                    cv2.line(draw_frame,pos1,pos2,(255,255,255),2)
+
                 # Euclidean distance in pixels
-                dist = math.sqrt((pos2[0] - pos1[0]) ** 2 + (pos2[1] - pos1[1]) ** 2)
+                dist = math.sqrt((pos2_x - pos1_x) ** 2 + (pos2_y - pos1_y) ** 2)
 
                 from_name = f"{side_prefix}_{p1_name}"
                 to_name = f"{side_prefix}_{p2_name}"
@@ -169,6 +195,10 @@ def estimate_range_average(usable_distances):
         # Map keypoint relationship to the correct constant from AVG_HUMAN_PROPS
         if "shoulder" in from_pt and "hip" in to_pt:
             ref_distance = AVG_HUMAN_PROPS["SHOULDER_TO_HIP"]
+        elif "hip" in from_pt and "knee" in to_pt:
+            ref_distance = AVG_HUMAN_PROPS["HIP_TO_KNEE"]
+        elif "knee" in from_pt and "ankle" in to_pt:
+            ref_distance = AVG_HUMAN_PROPS["KNEE_TO_ANKLE"]
         elif "hip" in from_pt and "ankle" in to_pt:
             ref_distance = AVG_HUMAN_PROPS["HIP_TO_ANKLE"]
         else:
@@ -269,20 +299,10 @@ while True:
 
         # Check if the largest and most confident are the same (this is the goal)
         if largest_bbox["id"] == confident_bbox["id"] and largest_bbox["id"] != -1:
-            draw_bbox(frame,largest_bbox,f"Ideal target",color=(0,255,0))
             ideal_target = True
 
             ideal_target_position = center_of_box(largest_bbox["coords"])
             cv2.circle(frame,ideal_target_position,5,(255,0,0),-1)
-
-        else: # otherwise, draw 2 boxes
-            # Draw bounding box around largest box (if it exists)
-            if largest_bbox["id"] != -1:
-                draw_bbox(frame,largest_bbox,f"Largest area: {largest_bbox["area"]} (id={largest_bbox["id"]})")
-
-            # Draw bounding box around most confident box (if it exists)
-            if confident_bbox["id"] != -1:
-                draw_bbox(frame,confident_bbox,f"Most conf: {confident_bbox["conf"]:.2f} (id={confident_bbox["id"]})")
 
 
 
@@ -321,14 +341,18 @@ while True:
 
                 cv2.circle(frame,point_location,5,(0,0,255),5,-1)
 
-            usable_distances = extract_usable_distances(usable_kpts_dict)
+            usable_distances = extract_usable_distances(usable_kpts_dict,draw_frame=frame)
 
             range_estimate,range_points_used = estimate_range_average(usable_distances).values()
 
             if range_estimate > 0:
-                print(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})   Approx Range: {range_estimate:.2f}m ({range_points_used} points)")
+                print_flush(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})   Approx Range: {range_estimate:.2f}m ({range_points_used} points)")
+                draw_bbox(frame,largest_bbox,["Ideal target",f"{range_points_used}-point Range:",f"{range_estimate:.2f}m"],color=(0,255,0))
             else:
-                print(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})")
+                print_flush(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})")
+                draw_bbox(frame,largest_bbox,"Ideal target",color=(0,255,0))
+
+
 
     # Show the video output
     cv2.imshow("Person Detection Test Stream",frame)
