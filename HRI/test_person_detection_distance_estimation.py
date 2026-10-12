@@ -12,25 +12,6 @@ if not cap.isOpened():
 
 print("Camera stream started. Press 'Q' to quit.")
 
-# Calculate midpoint between two points
-def midpoint(p1,p2):
-    x1,y1 = p1
-    x2,y2 = p2
-
-    return ((x2-x1)/2,(y2-y1)/2)
-
-
-# Calculate the distance between the midpoints of two sets of 2 points
-def distance_between_midpoints(point_set_1,point_set_2):
-    # Calculate midpoint of each set
-    mp1 = midpoint(point_set_1[0],point_set_1[1])
-    mp2 = midpoint(point_set_2[0],point_set_2[1])
-
-    x1,y1 = mp1
-    x2,y2 = mp2
-
-    return math.abs( math.sqrt( (x2-x1)**2 + (y2-y1)**2 ) )
-
 
 def extract_usable_distances(data):
     """Calculates pairwise Euclidean distances for keypoints within the same body side.

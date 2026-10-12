@@ -1,10 +1,12 @@
 import cv2
 from ultralytics import YOLO
+import logging
+from ultralytics.utils import LOGGER
 
-# Load model
+# Don't show verbose output
+LOGGER.setLevel(logging.WARNING)
+
 model = YOLO("models/yolov8n.pt")
-
-# Set up OpenCV camera
 cap = cv2.VideoCapture(0)
 
 if not cap.isOpened():
@@ -14,27 +16,7 @@ if not cap.isOpened():
 print("Camera stream started. Press 'Q' to quit.")
 
 
-
 def draw_bbox(frame,box_dict,label,color=(0,0,255)):
-    """Draw a bounding box around a target using box_dict
-
-    Args:
-        frame: OpenCV frame
-        box_dict: Information about the bounding box
-          Dictionary: {
-                "id":box_count,
-                "coords":(x1,y1,x2,y2),
-                "area":area,
-                "conf":conf,
-                "object":box
-            }
-        label: Text above the bounding box
-        color: Color for bbox and text (default is red)
-
-    Returns: 
-        None
-    """
-
     # Get coords and confidence
     x1,y1,x2,y2 = box_dict["coords"]
 
@@ -44,9 +26,11 @@ def draw_bbox(frame,box_dict,label,color=(0,0,255)):
     # Draw label
     cv2.putText(frame,label,(x1,y1-10),cv2.FONT_HERSHEY_SIMPLEX,1,color,2)
 
+def center_of_box(coords):
 
+    x1,y1,x2,y2 = coords
+    return (int(x1 + (x2-x1)/2), int(y1 + (y2-y1)/2))
 
-# Main Loop
 while True:
 
     # Capture video frame
@@ -57,6 +41,8 @@ while True:
 
     # Feed frame into model
     results = model(frame,classes=[0],stream=True)
+
+    ideal_target_position = (-1,-1)
 
     # Iterate through model output
     for result in results:
@@ -105,7 +91,6 @@ while True:
                     "object":box
                 }
 
-            # If this is the most confident box so far, update the most confident box
             if conf > confident_bbox["conf"]:
                 confident_bbox = {
                     "id":box_count,
@@ -115,15 +100,18 @@ while True:
                     "object":box
                 }
 
-            # update ID
             box_count += 1
-
-        ideal_target = False # Whether or not the most confident box and the largest box are the same
 
         # Check if the largest and most confident are the same (this is the goal)
         if largest_bbox["id"] == confident_bbox["id"] and largest_bbox["id"] != -1:
+            
+            # Draw box around ideal target
             draw_bbox(frame,largest_bbox,f"Ideal target",color=(0,255,0))
-            ideal_target = True
+
+            # Draw point at center of target
+            ideal_target_position = center_of_box(largest_bbox["coords"])
+            cv2.circle(frame,ideal_target_position,5,(0,0,255),-1)
+
         else: # otherwise, draw 2 boxes
             # Draw bounding box around largest box (if it exists)
             if largest_bbox["id"] != -1:
@@ -133,14 +121,12 @@ while True:
             if confident_bbox["id"] != -1:
                 draw_bbox(frame,confident_bbox,f"Most conf: {confident_bbox["conf"]:.2f} (id={confident_bbox["id"]})")
 
-        if ideal_target:
-
-            # estimate distance here
-            
-            pass
-
     # Show the video output
     cv2.imshow("Person Detection Test Stream",frame)
+
+    # Print the position of the ideal target
+    if (not -1 in ideal_target_position):
+        print(f"Ideal target positon: ({ideal_target_position[0]},{ideal_target_position[1]})")
 
     # Allow OpenCV to process window events and listen for exit key ('q')
     if cv2.waitKey(1) & 0xFF == ord('q'):
