@@ -6,6 +6,9 @@ from ultralytics.utils import LOGGER
 
 # Constants
 JOINT_CONFIDENCE_THRESHOLD = 0.75 # The confidence value required to consider a joint keypoint present
+CAMERA_VIDEO_HEIGHT = 1080
+CAMERA_VERTICAL_FOV = 48.8
+
 
 # Set Ultralytics internal logger level to WARNING or ERROR
 LOGGER.setLevel(logging.WARNING)
@@ -39,7 +42,23 @@ def print_flush(text):
     Returns:
         None
     """
+
     print(f"\r\033[K{text}", end="", flush=True)
+
+
+def get_focal_length(image_height, vfov_deg):
+    """Return the vertical focal length (in pixels)
+    
+    Args:
+        image_height: height of video frame
+        vfov_deg: vertical field of view of camera (degree)
+
+    Returns:
+        float: focal length
+    """
+
+    vfov_rad = math.radians(vfov_deg)
+    return image_height / (2 * math.tan(vfov_rad / 2))
 
 
 def draw_bbox(frame,box_dict,label,color=(0,0,255)):
@@ -181,7 +200,7 @@ def estimate_range(distance_pixels,reference_distance_meters):
         int: range estimate (in meters)
     """
 
-    f = 1300 # Vertical focal length of camera (pixels)
+    f = get_focal_length(CAMERA_VIDEO_HEIGHT,CAMERA_VERTICAL_FOV) # Vertical focal length of camera (pixels)
     H = reference_distance_meters # Real-world average distance from shoulder to hip (meters)
     P = distance_pixels # Shoulder to hip distance (pixels)
 
