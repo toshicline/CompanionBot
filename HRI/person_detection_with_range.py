@@ -4,6 +4,9 @@ import math
 from ultralytics import YOLO
 from ultralytics.utils import LOGGER
 
+# Constants
+JOINT_CONFIDENCE_THRESHOLD = 0.75 # The confidence value required to consider a joint keypoint present
+
 # Set Ultralytics internal logger level to WARNING or ERROR
 LOGGER.setLevel(logging.WARNING)
 
@@ -37,6 +40,7 @@ def print_flush(text):
         None
     """
     print(f"\r\033[K{text}", end="", flush=True)
+
 
 def draw_bbox(frame,box_dict,label,color=(0,0,255)):
     """Draw a bounding box around a target using box_dict
@@ -74,6 +78,14 @@ def draw_bbox(frame,box_dict,label,color=(0,0,255)):
 
 
 def center_of_box(coords):
+    """Get the center point of a rectangle given its 4 corner coordinates
+    
+    Args:
+        coords: list/tuple of coordinates as (x1,y1,x2,y2)
+
+    Returns:
+        (int,int): (x,y)
+    """
 
     x1,y1,x2,y2 = coords
     return (int(x1 + (x2-x1)/2), int(y1 + (y2-y1)/2))
@@ -97,6 +109,7 @@ def extract_usable_distances(keypoints,draw_frame=None):
     left_kpts = []
     right_kpts = []
 
+    # Split into left and right side keypoints
     for point_name,point_info in keypoints.items():
         if "right" in point_name:
             right_kpts.append({
@@ -113,6 +126,7 @@ def extract_usable_distances(keypoints,draw_frame=None):
 
     distances = []
 
+    # Helper function to get distances per side
     def get_side_distances(kpts_list, side_prefix):
         side_distances = []
         # Map name to position for quick lookup
@@ -126,6 +140,7 @@ def extract_usable_distances(keypoints,draw_frame=None):
             ("hip", "ankle"),
         ]
 
+        # loop through each of the pairs defined above and see if a distance for that pair exists
         for p1_name, p2_name in pairs:
             if p1_name in kpt_dict and p2_name in kpt_dict:
                 pos1 = kpt_dict[p1_name]
@@ -176,7 +191,7 @@ def estimate_range(distance_pixels,reference_distance_meters):
 
 
 def estimate_range_average(usable_distances):
-    """Estimate target range using a list of distances
+    """Estimate target range using a list of distances (averages all the distances together)
     
     Args:
         usable_distances: list of distances between keypoints (in pixels)
@@ -213,7 +228,7 @@ def estimate_range_average(usable_distances):
                 "estimate":-1,
                 "points_used":0
             }
-
+    
     return {
         "estimate":sum(range_estimates) / len(range_estimates),
         "points_used":len(range_estimates) * 2
@@ -233,6 +248,7 @@ while True:
     # Feed frame into model
     results = model(frame,classes=[0],stream=True)
 
+    # Setup position of ideal target
     ideal_target_position = (-1,-1)
 
     # Iterate through model output
@@ -327,31 +343,35 @@ while True:
                 "right_ankle": (target_kpts[16], target_confs[16]),
             }
 
+            # From the dictionary above, create an identical one but only with points that are visible and above JOINT_CONFIDENCE_THRESHOLD
             usable_kpts_dict = {}
 
+            # Iterate through each keypoint and add to usable_kpts_dict if it is present in the frame (and draw a circle on it)
             for point_name,point in kpt_dict.items():
 
                 point_confidence = float(point[1])
                 point_location = (int(point[0][0]),int(point[0][1]))
 
-                if (point_confidence < 0.75):
+                if (point_confidence < JOINT_CONFIDENCE_THRESHOLD):
                     continue
                 else:
                     usable_kpts_dict[point_name] = point
 
                 cv2.circle(frame,point_location,5,(0,0,255),5,-1)
 
+            # From usable_kpts_dict, get the distances that can be used to estimate range (and draw them on the frame)
             usable_distances = extract_usable_distances(usable_kpts_dict,draw_frame=frame)
 
+            # Estimate the range using the distances from above (and get how many points the estimate is based off of)
             range_estimate,range_points_used = estimate_range_average(usable_distances).values()
 
+            # Print out the location and range, and draw the bounding box / label
             if range_estimate > 0:
                 print_flush(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})   Approx Range: {range_estimate:.2f}m ({range_points_used} points)")
                 draw_bbox(frame,largest_bbox,["Ideal target",f"{range_points_used}-point Range:",f"{range_estimate:.2f}m"],color=(0,255,0))
             else:
                 print_flush(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})")
                 draw_bbox(frame,largest_bbox,"Ideal target",color=(0,255,0))
-
 
 
     # Show the video output
