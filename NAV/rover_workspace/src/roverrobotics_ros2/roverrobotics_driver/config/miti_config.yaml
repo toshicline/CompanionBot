@@ -1,0 +1,65 @@
+roverrobotics_driver:
+  ros__parameters:
+    # Robot Parameters
+    drivetrain: "differential"   # differential, mecanum
+    robot_type: "miti"
+    serial_number: ""            # unit serial; any text. Published latched on rover_<type>/serial_number
+    comm_type: "can"
+    device_port: "rovercan" # "rovercan" for differential/mecanum | "internal" for differential/mecanum with blue-ox board
+
+    # Robot Kinematics
+    wheel_radius: 0.127  # Wheel radius (meters)
+    wheel_base: 0.60     # effective skid-steer track (geometric 0.387), measured 2026-09-25
+    robot_length: 0.286   # Distance between wheels front-to-back from center of the wheel (meters)
+    gear_ratio: 1.0   # direct drive, no gearbox: leave at 1.0
+    motor_pole_pairs: 15.0     # 30-pole motor; VESC reports eRPM, mech RPM = eRPM / pole pairs
+
+    # Battery (voltage-derived SOC + charging status)
+    battery_cells: 10
+    battery_voltage_multiplier: 1.025  # Correction factor for VESC voltage reading
+    battery_max_cell_voltage: 4.2      # Fully charged cell voltage
+    battery_min_cell_voltage: 3.4      # Empty cell voltage
+    max_velocity_step: 0.75       # max reduction in linear velocity per 50 ms cycle
+    cmd_vel_timeout_sec: 0.3      # stop if no new twist for >300 ms
+    wheel_trim_fl: 1.0
+    wheel_trim_fr: 1.0
+    wheel_trim_rl: 1.0
+    wheel_trim_rr: 1.0
+    # PID for wheel controllers and limits
+    motor_control_p_gain: 0.0002
+    motor_control_i_gain: 0.00002
+    motor_control_d_gain: 0.00002
+    ff_rpm_per_duty: 877.0
+    ff_static_duty: 0.0072
+    ff_turn_duty: 0.06
+    ff_calibration_voltage: 39.4
+    wheel_speed_filter: 0.5
+    use_tachometer_speed: false
+    low_speed_trust_rpm: 7.0
+    #linear_top_speed: 3.0 # Meters-per-second
+    #angular_top_speed: 3.0 # Radians-per-second
+    #angular_a_coef: 0.8
+    #angular_b_coef: 1.0
+    #angular_c_coef: 1.0
+    #angular_min_scale: 1.0
+    #angular_max_scale: 1.5
+    
+    # Diagnostics and Status
+    odometry_frequency: 15.0
+    pose_linear_covariance: 0.1   # x/y uncertainty of the dead-reckoned pose
+    pose_yaw_covariance: 0.5      # yaw uncertainty of the dead-reckoned pose
+    # robot_status_topic: "/"
+    # robot_status_frequency: 60.0
+    # robot_info_request_topic:
+    # robot_info_topic:
+    
+    # Topics and Frames
+    speed_topic: "/cmd_vel"
+    odom_topic: "/odometry/wheels"
+    odom_frame_id: "odom"
+    odom_child_frame_id: "base_link" # Set this to the base frame of the robot
+    publish_tf: false # publish transform from odom frame to odom child frame
+    estop_trigger_topic: "/soft_estop/trigger"   # Bool true = stop (PS4/PS5 Circle)
+    estop_reset_topic: "/soft_estop/reset"       # Bool true = release (PS4/PS5 Triangle)
+    estop_status_topic: "/soft_estop/status"     # latched Bool, true while stopped
+    estop_state: false                           # true = start up already stopped
