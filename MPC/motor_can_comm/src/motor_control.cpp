@@ -12,6 +12,7 @@ constexpr uint8_t CAN_PACKET_STATUS = 9;
 constexpr uint32_t CAN_BAUD_RATE = 500000;
 constexpr uint32_t MOTION_TIMEOUT_MARGIN_MS = 5000;
 constexpr float MOTION_TIMEOUT_FACTOR = 3.0f;
+constexpr float STOP_SPEED_TOLERANCE_MPS = 0.02f;
 
 static_assert(LEFT_VESC_CAN_ID != RIGHT_VESC_CAN_ID,
               "The left and right VESC CAN IDs must be different.");
@@ -24,7 +25,7 @@ struct WheelState {
     float targetDistanceM = 0.0f;
     float measuredDistanceM = 0.0f;
     float measuredErpm = 0.0f;
-    float integralError = 0.0f;
+    float commandedSpeedMps = 0.0f;
     uint32_t lastStatusMs = 0;
     bool hasStatus = false;
     bool complete = false;
@@ -34,12 +35,14 @@ WheelState leftWheel{LEFT_VESC_CAN_ID, LEFT_MOTOR_DIRECTION};
 WheelState rightWheel{RIGHT_VESC_CAN_ID, RIGHT_MOTOR_DIRECTION};
 bool motionActive = false;
 uint32_t lastCommandMs = 0;
-uint32_t lastPidUpdateMs = 0;
+uint32_t lastControlUpdateMs = 0;
 uint32_t motionStartMs = 0;
 uint32_t motionTimeoutMs = 0;
 bool manualControlActive = false;
 float manualLeftSpeedMps = 0.0f;
 float manualRightSpeedMps = 0.0f;
+float movePathDistanceM = 0.0f;
+float movePathCommandedSpeedMps = 0.0f;
 
 float motorErpmFromWheelSpeed(float wheelSpeedMps) {
     const float wheelRpm = wheelSpeedMps / WHEEL_CIRCUMFERENCE_M * 60.0f;
@@ -69,39 +72,51 @@ float remainingDistance(const WheelState &wheel) {
     return wheel.targetDistanceM - wheel.measuredDistanceM;
 }
 
-bool targetReached(const WheelState &wheel) {
-    return fabsf(remainingDistance(wheel)) <= POSITION_TOLERANCE_M;
+float slewSpeed(float &currentSpeed, float targetSpeed, float elapsedSeconds) {
+    const bool reversing = currentSpeed * targetSpeed < 0.0f;
+    const float effectiveTarget = reversing ? 0.0f : targetSpeed;
+    const bool accelerating = fabsf(effectiveTarget) > fabsf(currentSpeed);
+    const float rate = accelerating ? MAX_WHEEL_ACCEL_MPS2 : MAX_WHEEL_DECEL_MPS2;
+    const float maxChange = rate * elapsedSeconds;
+    const float difference = effectiveTarget - currentSpeed;
+    currentSpeed += fmaxf(-maxChange, fminf(maxChange, difference));
+    return currentSpeed;
 }
 
-float measuredWheelSpeedMps(const WheelState &wheel) {
-    const float wheelRpm =
-        wheel.measuredErpm / (MOTOR_POLE_PAIRS * GEAR_RATIO);
-    return wheelRpm * (WHEEL_CIRCUMFERENCE_M / 60.0f);
-}
-
-float positionPidSpeed(WheelState &wheel, float elapsedSeconds) {
-    const float error = remainingDistance(wheel);
-    const float proposedIntegral = fmaxf(
-        -POSITION_PID_MAX_INTEGRAL,
-        fminf(POSITION_PID_MAX_INTEGRAL,
-              wheel.integralError + error * elapsedSeconds));
-    const float measuredSpeed = measuredWheelSpeedMps(wheel);
-    float output = POSITION_PID_KP * error +
-                   POSITION_PID_KI * proposedIntegral -
-                   POSITION_PID_KD * measuredSpeed;
-
-    const bool saturatesHigh = output > MAX_WHEEL_SPEED_MPS && error > 0.0f;
-    const bool saturatesLow = output < -MAX_WHEEL_SPEED_MPS && error < 0.0f;
-    if (!saturatesHigh && !saturatesLow) {
-        wheel.integralError = proposedIntegral;
-    } else {
-        output = POSITION_PID_KP * error +
-                 POSITION_PID_KI * wheel.integralError -
-                 POSITION_PID_KD * measuredSpeed;
+float remainingMovePathM() {
+    float remaining = 0.0f;
+    const WheelState *wheels[] = {&leftWheel, &rightWheel};
+    for (const WheelState *wheel : wheels) {
+        if (movePathDistanceM > 0.0f) {
+            const float ratio = wheel->targetDistanceM / movePathDistanceM;
+            if (fabsf(ratio) > 0.0001f) {
+                const float wheelPathRemaining =
+                    remainingDistance(*wheel) / ratio;
+                if (wheelPathRemaining > remaining) {
+                    remaining = wheelPathRemaining;
+                }
+            }
+        }
     }
+    return remaining;
+}
 
-    return fmaxf(-MAX_WHEEL_SPEED_MPS,
-                 fminf(MAX_WHEEL_SPEED_MPS, output));
+float moveWheelSpeedTarget(const WheelState &wheel) {
+    const float ratio = wheel.targetDistanceM / movePathDistanceM;
+    if (fabsf(ratio) <= 0.0001f) {
+        return 0.0f;
+    }
+    const float error = remainingDistance(wheel);
+    if (error * wheel.targetDistanceM < 0.0f) {
+        const float correction =
+            fminf(MAX_WHEEL_SPEED_MPS, sqrtf(2.0f * MAX_WHEEL_DECEL_MPS2 * fabsf(error)));
+        return error < 0.0f ? -correction : correction;
+    }
+    return ratio * movePathCommandedSpeedMps;
+}
+
+bool wheelReachedTarget(const WheelState &wheel) {
+    return fabsf(remainingDistance(wheel)) <= POSITION_TOLERANCE_M && fabsf(wheel.commandedSpeedMps) <= STOP_SPEED_TOLERANCE_MPS;
 }
 
 void processStatusFrame(const CAN_message_t &message) {
@@ -137,14 +152,11 @@ void processStatusFrame(const CAN_message_t &message) {
         if (elapsedMs <= TELEMETRY_TIMEOUT_MS) {
             const float wheelRpm =
                 wheel->measuredErpm / (MOTOR_POLE_PAIRS * GEAR_RATIO);
-            wheel->measuredDistanceM +=
-                wheelRpm * (WHEEL_CIRCUMFERENCE_M / 60.0f) *
-                (static_cast<float>(elapsedMs) / 1000.0f);
+            wheel->measuredDistanceM += wheelRpm * (WHEEL_CIRCUMFERENCE_M / 60.0f) * (static_cast<float>(elapsedMs) / 1000.0f);
         }
     }
 
-    wheel->measuredErpm =
-        static_cast<float>(motorErpm) * static_cast<float>(wheel->direction);
+    wheel->measuredErpm = static_cast<float>(motorErpm) * static_cast<float>(wheel->direction);
     wheel->lastStatusMs = now;
     wheel->hasStatus = true;
 }
@@ -154,33 +166,42 @@ void processStatusFrame(const CAN_message_t &message) {
 void mcBeginMove(float distanceM, float angleDeg) {
     const uint32_t now = millis();
     const float angleRad = angleDeg * PI / 180.0f;
-    leftWheel.targetDistanceM =
-        distanceM - angleRad * TRACK_WIDTH_M * 0.5f;
-    rightWheel.targetDistanceM =
-        distanceM + angleRad * TRACK_WIDTH_M * 0.5f;
+    leftWheel.targetDistanceM = distanceM - angleRad * TRACK_WIDTH_M * 0.5f;
+    rightWheel.targetDistanceM = distanceM + angleRad * TRACK_WIDTH_M * 0.5f;
+    
+    movePathDistanceM = fmaxf(fabsf(leftWheel.targetDistanceM), fabsf(rightWheel.targetDistanceM));
+    movePathCommandedSpeedMps = 0.0f;
+    
     leftWheel.measuredDistanceM = 0.0f;
     rightWheel.measuredDistanceM = 0.0f;
-    leftWheel.integralError = 0.0f;
-    rightWheel.integralError = 0.0f;
-    leftWheel.complete = fabsf(leftWheel.targetDistanceM) <= POSITION_TOLERANCE_M;
+    leftWheel.complete = 
+        fabsf(leftWheel.targetDistanceM) <= POSITION_TOLERANCE_M &&
+        fabsf(leftWheel.commandedSpeedMps) <= STOP_SPEED_TOLERANCE_MPS;
     rightWheel.complete =
-        fabsf(rightWheel.targetDistanceM) <= POSITION_TOLERANCE_M;
+        fabsf(rightWheel.targetDistanceM) <= POSITION_TOLERANCE_M &&
+        fabsf(rightWheel.commandedSpeedMps) <= STOP_SPEED_TOLERANCE_MPS;
+    
     motionActive = !leftWheel.complete || !rightWheel.complete;
     manualControlActive = false;
     manualLeftSpeedMps = 0.0f;
     manualRightSpeedMps = 0.0f;
     lastCommandMs = 0;
-    lastPidUpdateMs = now;
+    lastControlUpdateMs = now;
     motionStartMs = now;
-    leftWheel.lastStatusMs = now;
-    rightWheel.lastStatusMs = now;
-    leftWheel.measuredErpm = 0.0f;
-    rightWheel.measuredErpm = 0.0f;
+
+    if (movePathDistanceM <= POSITION_TOLERANCE_M) {
+        motionActive = false;
+        manualControlActive = true;
+        manualLeftSpeedMps = 0.0f;
+        manualRightSpeedMps = 0.0f;
+        lastCommandMs = now;
+        lastControlUpdateMs = now;
+        Serial.println("Zero-distance move; ramping wheel speeds down.");
+        return;
+    }
 
     if (!motionActive) {
-        sendRpmCommand(leftWheel, 0.0f);
-        sendRpmCommand(rightWheel, 0.0f);
-        Serial.println("Move complete: requested motion is zero.");
+        mcStop("requested motion is zero");
         return;
     }
 
@@ -189,13 +210,17 @@ void mcBeginMove(float distanceM, float angleDeg) {
     Serial.print(" m; right target: ");
     Serial.print(rightWheel.targetDistanceM, 3);
     Serial.println(" m.");
-    const float longestWheelTravel =
-        fmaxf(fabsf(leftWheel.targetDistanceM),
-              fabsf(rightWheel.targetDistanceM));
-    const float nominalDurationMs =
-        longestWheelTravel / MAX_WHEEL_SPEED_MPS * 1000.0f;
+    const float longestWheelTravel = movePathDistanceM;
+    const float rampDistance =
+        MAX_WHEEL_SPEED_MPS * MAX_WHEEL_SPEED_MPS /
+        MAX_WHEEL_ACCEL_MPS2;
+    const float nominalDurationSeconds =
+        longestWheelTravel <= rampDistance
+            ? 2.0f * sqrtf(longestWheelTravel / MAX_WHEEL_ACCEL_MPS2)
+            : 2.0f * MAX_WHEEL_SPEED_MPS / MAX_WHEEL_ACCEL_MPS2 +
+                  (longestWheelTravel - rampDistance) / MAX_WHEEL_SPEED_MPS;
     motionTimeoutMs = static_cast<uint32_t>(
-        nominalDurationMs * MOTION_TIMEOUT_FACTOR +
+        nominalDurationSeconds * 1000.0f * MOTION_TIMEOUT_FACTOR +
         static_cast<float>(MOTION_TIMEOUT_MARGIN_MS));
 }
 
@@ -228,9 +253,9 @@ bool mcSetWheelSpeeds(float leftSpeedMps, float rightSpeedMps) {
     manualControlActive = true;
     manualLeftSpeedMps = leftSpeedMps;
     manualRightSpeedMps = rightSpeedMps;
-    lastCommandMs = millis() - CAN_COMMAND_PERIOD_MS;
-    sendRpmCommand(leftWheel, motorErpmFromWheelSpeed(manualLeftSpeedMps));
-    sendRpmCommand(rightWheel, motorErpmFromWheelSpeed(manualRightSpeedMps));
+    lastCommandMs = millis();
+    lastControlUpdateMs = lastCommandMs;
+    Serial.println("Test speed targets set; ramping wheel speeds.");
     return true;
 }
 
@@ -241,19 +266,35 @@ void mcStop(const char *reason) {
     manualControlActive = false;
     manualLeftSpeedMps = 0.0f;
     manualRightSpeedMps = 0.0f;
+    leftWheel.commandedSpeedMps = 0.0f;
+    rightWheel.commandedSpeedMps = 0.0f;
+    movePathCommandedSpeedMps = 0.0f;
     Serial.print("Stopped: ");
     Serial.println(reason);
 }
 
 void mcUpdate() {
+    const uint32_t now = millis();
     if (manualControlActive) {
-        const uint32_t now = millis();
         if (now - lastCommandMs >= CAN_COMMAND_PERIOD_MS) {
-            sendRpmCommand(leftWheel,
-                           motorErpmFromWheelSpeed(manualLeftSpeedMps));
-            sendRpmCommand(rightWheel,
-                           motorErpmFromWheelSpeed(manualRightSpeedMps));
+            const float elapsedSeconds =
+                static_cast<float>(now - lastControlUpdateMs) / 1000.0f;
+            lastControlUpdateMs = now;
+            const float leftSpeed = slewSpeed(
+                leftWheel.commandedSpeedMps, manualLeftSpeedMps,
+                elapsedSeconds);
+            const float rightSpeed = slewSpeed(
+                rightWheel.commandedSpeedMps, manualRightSpeedMps,
+                elapsedSeconds);
+            sendRpmCommand(leftWheel, motorErpmFromWheelSpeed(leftSpeed));
+            sendRpmCommand(rightWheel, motorErpmFromWheelSpeed(rightSpeed));
             lastCommandMs = now;
+            if (manualLeftSpeedMps == 0.0f &&
+                manualRightSpeedMps == 0.0f &&
+                fabsf(leftSpeed) <= STOP_SPEED_TOLERANCE_MPS &&
+                fabsf(rightSpeed) <= STOP_SPEED_TOLERANCE_MPS) {
+                mcStop("test ramp-down complete");
+            }
         }
         return;
     }
@@ -261,9 +302,8 @@ void mcUpdate() {
         return;
     }
 
-    const uint32_t now = millis();
-    leftWheel.complete = leftWheel.complete || targetReached(leftWheel);
-    rightWheel.complete = rightWheel.complete || targetReached(rightWheel);
+    leftWheel.complete = leftWheel.complete || wheelReachedTarget(leftWheel);
+    rightWheel.complete = rightWheel.complete || wheelReachedTarget(rightWheel);
     if (leftWheel.complete && rightWheel.complete) {
         mcStop("distance and angle reached");
         return;
@@ -272,18 +312,21 @@ void mcUpdate() {
         return;
     }
 
-    const float elapsedSeconds =
-        static_cast<float>(now - lastPidUpdateMs) / 1000.0f;
-    lastPidUpdateMs = now;
-    const float leftSpeed = leftWheel.complete
-                                ? 0.0f
-                                : positionPidSpeed(leftWheel, elapsedSeconds);
-    const float rightSpeed =
-        rightWheel.complete
-            ? 0.0f
-            : positionPidSpeed(rightWheel, elapsedSeconds);
-    sendRpmCommand(leftWheel, motorErpmFromWheelSpeed(leftSpeed));
-    sendRpmCommand(rightWheel, motorErpmFromWheelSpeed(rightSpeed));
+    const float elapsedSeconds = static_cast<float>(now - lastControlUpdateMs) / 1000.0f;
+    lastControlUpdateMs = now;
+    
+    const float remainingPath = remainingMovePathM();
+    const float pathStoppingSpeed = sqrtf(2.0f * MAX_WHEEL_DECEL_MPS2 * remainingPath);
+    const float pathTargetSpeed = fminf(MAX_WHEEL_SPEED_MPS, pathStoppingSpeed);
+    
+    movePathCommandedSpeedMps = slewSpeed(movePathCommandedSpeedMps, pathTargetSpeed, elapsedSeconds);
+    const float leftSpeed = leftWheel.complete ? 0.0f : moveWheelSpeedTarget(leftWheel);
+    const float rightSpeed = rightWheel.complete ? 0.0f : moveWheelSpeedTarget(rightWheel);
+    const float leftCommand = slewSpeed(leftWheel.commandedSpeedMps, leftSpeed, elapsedSeconds);
+    const float rightCommand = slewSpeed(rightWheel.commandedSpeedMps, rightSpeed, elapsedSeconds);
+    
+    sendRpmCommand(leftWheel, motorErpmFromWheelSpeed(leftCommand));
+    sendRpmCommand(rightWheel, motorErpmFromWheelSpeed(rightCommand));
     lastCommandMs = now;
 }
 
