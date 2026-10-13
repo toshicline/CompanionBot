@@ -18,7 +18,7 @@ COMPUTE_TYPE = "int8"
 BEAM_SIZE = 5
 
 SAMPLE_RATE = 16000 # faster-whisper requires 16kHz audio
-BUFFER_SIZE_SECONDS = 5 # number of seconds of audio to parse at a time
+BUFFER_SIZE_SECONDS = 3 # number of seconds of audio to parse at a time
 TARGET_SAMPLES = SAMPLE_RATE * BUFFER_SIZE_SECONDS
 
 # Thread-safe queue for incoming mic chunks
