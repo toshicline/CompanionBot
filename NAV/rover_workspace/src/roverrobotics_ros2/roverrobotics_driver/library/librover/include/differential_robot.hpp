@@ -1,0 +1,277 @@
+#pragma once
+#include "protocol_base.hpp" 
+#include "vesc.hpp"
+#include "utilities.hpp"
+#include <atomic>
+#include <deque>
+
+// Zero ID's
+#define LEFT_MOTOR 1
+#define RIGHT_MOTOR 8
+
+#define VESC_RPM_SCALING_FACTOR 1.0 / 15.0
+
+namespace RoverRobotics {
+class DifferentialRobot;
+
+enum VESC_IDS{
+  FRONT_LEFT = 1,
+  FRONT_RIGHT = 2,
+  BACK_LEFT = 3,
+  BACK_RIGHT = 4
+};
+
+enum uart_param
+{
+  COMM_GET_VALUES = 4,
+  COMM_SET_DUTY = 5,
+  COMM_CAN_FORWARD = 34
+};
+
+}
+
+class RoverRobotics::DifferentialRobot
+    : public RoverRobotics::BaseProtocolObject {
+ public:
+  DifferentialRobot(const char *device,
+                     std::string new_comm, 
+                     float wheel_radius,
+                     float wheel_base,
+                     float robot_length,
+                     Control::pid_gains pid,
+                     Control::angular_scaling_params angular_scale,
+                     float gear_ratio,
+                     float motor_pole_pairs,
+                     Control::robot_motion_mode_t control_mode =
+                         Control::INDEPENDENT_WHEEL,
+                     float rest_wheel_rpm = 8.0f,
+                     float brake_band_duty = 0.0f,
+                     float brake_band_rpm = 0.0f,
+                     float rpm_per_duty = 330.0f,
+                     float release_hold_s = 0.0f);
+
+  /* stops and joins the worker threads */
+  ~DifferentialRobot();
+
+  void set_wheel_trims(double fl, double fr, double rl, double rr);
+  /*
+   * @brief Trim Robot Velocity
+   * Modify robot velocity differential (between the left side/right side) with
+   * the input parameter. Useful to compensate if the robot tends to drift
+   * either left or right while commanded to drive straight.
+   * @param double of velocity offset
+   */
+  void update_drivetrim(double) override;
+  /*
+   * @brief Handle Estop Event
+   * Send an estop event to the robot
+   * @param bool accept a estop state
+   */
+  void send_estop(bool) override;
+  /* feedforward + PID feedback smoothing; see SkidRobotMotionController */
+  void setDriveTuning(float ff_rpm_per_duty, float ff_static_duty,
+                      float ff_turn_duty, float wheel_speed_filter);
+  /* wheel speed from the status-5 tachometer instead of the status-1 eRPM estimate */
+  void setUseTachometer(bool use);
+  void setLowSpeedTrust(float rpm);
+  void setFeedforwardVoltage(float calibration_voltage);
+  void setFeedforwardCorrectionDecay(float decay);
+  void setFeedforwardCorrectionRelease(bool enable);
+  void setLinearAccelerationUp(float accel);
+  void setAngularAccelerationUp(float accel);
+  void setBrakeMomentumCarry(bool enable);
+  /*
+   * @brief Request Robot Status
+   * @return structure of statusData
+   */
+  robotData status_request() override;
+  /*
+   * @brief Request Robot Unique Infomation
+   * @return structure of statusData
+   */
+  robotData info_request() override;
+  /*
+   * @brief Cycle through robot supported modes
+   * @return int of the current mode enum
+   */
+  int cycle_robot_mode() override;
+  /*
+   * @brief Set Robot velocity
+   * Set Robot velocity: IF robot_mode_ TRUE, this function will attempt a
+   * speed PID loop which uses all the available sensor data (wheels, IMUs, etc)
+   * from the robot to produce the commanded velocity as best as possible. IF
+   * robot_mode_ FALSE, this function simply translates the commanded
+   * velocities into motor duty cycles and there is no expectation that the
+   * commanded velocities will be realized by the robot. In robot_mode_ FALSE
+   * mode, motor power is roughly proportional to commanded velocity.
+   * @param controllarray an double array of control in m/s
+   */
+  void set_robot_velocity(double *controllarray) override;
+  /*
+   * @brief Unpack bytes from the robot
+   * This is meant to use as a callback function when there are bytes available
+   * to process
+   * @param std::vector<uin32_t> Bytes stream from the robot
+   * @return structure of statusData
+   */
+  void unpack_comm_response(std::vector<uint8_t>) override;
+  /*
+   * @brief Check if Communication still exist
+   * @return bool
+   */
+  bool is_connected() override;
+  /*
+   * @brief Attempt to make connection to robot via device
+   * @param device is the address of the device (ttyUSB0 , can0, ttyACM0, etc)
+   */
+  void register_comm_base(const char *device) override;
+
+ private:
+  /*
+   * @brief Thread Driven function that will send commands to the robot at set
+   * interval
+   * @param sleeptime sleep time between each cycle
+   * @param datalist list of data to request
+   */
+  void send_command(int sleeptime);
+  void send_motors_commands();
+  /*
+   * @brief Thread Driven function update the robot motors using pid
+   * @param sleeptime sleep time between each cycle
+   */
+  void motors_control_loop(int sleeptime);
+
+  /* metric units (meters) */
+  Control::robot_geometry robot_geometry_;
+
+  const int MOTOR_NEUTRAL_ = 0;
+
+  /* max: 1.0, min: 0.0  */
+  const float MOTOR_MAX_ = .97;
+  const float MOTOR_MIN_ = .02;
+  float geometric_decay_ = .989;
+  float left_trim_ = 1;
+  float right_trim_ = 1;
+
+  /* derivative of acceleration */
+  const float LINEAR_JERK_LIMIT_ = 5;
+
+  /* empirically measured */
+  const float OPEN_LOOP_MAX_RPM_ = 600;
+
+  /* limit to the trim that can be applied; more than this means a robot issue*/
+
+  int robotmode_num_ = Control::INDEPENDENT_WHEEL;
+
+  const double CONTROL_LOOP_TIMEOUT_MS_ = 400;
+
+  std::unique_ptr<Control::SkidRobotMotionController> skid_control_;
+  std::unique_ptr<CommBase> comm_base_;
+  std::string comm_type_;
+
+  std::thread write_to_robot_thread_;
+  std::thread motor_speed_update_thread_;
+  std::mutex robotstatus_mutex_;
+
+  /* main data structure */
+  robotData robotstatus_;
+
+  double motors_speeds_[5];  /* indexed by VESC_IDS 1..4 */
+  bool trim_warned_ = false;
+  
+  bool estop_;
+
+  /* last status frame per VESC; a wheel whose feedback goes silent stops the robot */
+  std::chrono::steady_clock::time_point status_ts_[5];
+  const int STATUS_STALE_MS_ = 250;
+  /* tachometer speed: window grows until TACH_MIN_STEPS_ steps or TACH_MAX_WINDOW_S_ */
+  std::atomic<bool> use_tach_{false};
+  std::deque<std::pair<std::chrono::steady_clock::time_point, int32_t>> tach_hist_[5];
+  std::chrono::steady_clock::time_point tach_ts_[5];
+  const float TACH_STEPS_PER_EREV_ = 6.0f;
+  const int TACH_MIN_STEPS_ = 12;
+  const float TACH_MIN_WINDOW_S_ = 0.04f;
+  const float TACH_MAX_WINDOW_S_ = 0.3f;
+  const int TACH_STALE_MS_ = 200;
+  float tachRpm_(int vid, std::chrono::steady_clock::time_point now, int32_t tach);
+
+  /* keep SET_DUTY 0 this long after the wheels read still before SET_CURRENT 0; 0 = release at once */
+  float release_hold_s_ = 0.0f;
+  const float RELEASE_HOLD_MAX_RPM_ = 40.0f;
+  std::chrono::steady_clock::time_point moving_ts_;
+  float moving_rpm_ = 0.0f;
+
+  /* signals the worker loops to exit */
+  std::atomic<bool> stop_threads_{false};
+
+  Control::robot_motion_mode_t robot_mode_;
+  Control::pid_gains pid_;
+  Control::angular_scaling_params angular_scaling_params_;
+  vesc::BridgedVescArray vescArray_;
+
+  double vesc_fet_temp_;
+  double vesc_motor_temp_;
+  float vesc_all_motor_current_;
+  float vesc_all_input_current_;
+  double vesc_id_;
+  double vesc_iq_;
+  float vesc_duty_;
+  int vesc_rpm_;
+  double vesc_v_in_;
+  double vesc_amp_hours_;
+  double vesc_amp_hours_charged_;
+  double vesc_watt_hours_;
+  double vesc_watt_hours_charged_;
+  int vesc_tach_;
+  int vesc_tach_abs_;
+  int vesc_fault_;
+  double vesc_speed_;
+  uint vesc_dev_id_;
+  double vesc_pid_pos_;
+
+  // UART Settings
+  const uint8_t PAYLOAD_BYTE_SIZE_ = 2;
+  const uint8_t STOP_BYTE_ = 3;
+  const uint8_t MSG_SIZE_ = 5;
+  const uint8_t FORWARD_MSG_SIZE_ = 7;
+  const uint8_t START_BYTE_ = 2;
+  const int termios_baud_code_ = 4098; // THIS = baudrate of 115200
+  const int RECEIVE_MSG_LEN_ = 1;
+
+  const unsigned short crc16_tab[256] = {0x0000, 0x1021, 0x2042, 0x3063, 0x4084,
+                                         0x50a5, 0x60c6, 0x70e7, 0x8108, 0x9129, 0xa14a, 0xb16b, 0xc18c, 0xd1ad,
+                                         0xe1ce, 0xf1ef, 0x1231, 0x0210, 0x3273, 0x2252, 0x52b5, 0x4294, 0x72f7,
+                                         0x62d6, 0x9339, 0x8318, 0xb37b, 0xa35a, 0xd3bd, 0xc39c, 0xf3ff, 0xe3de,
+                                         0x2462, 0x3443, 0x0420, 0x1401, 0x64e6, 0x74c7, 0x44a4, 0x5485, 0xa56a,
+                                         0xb54b, 0x8528, 0x9509, 0xe5ee, 0xf5cf, 0xc5ac, 0xd58d, 0x3653, 0x2672,
+                                         0x1611, 0x0630, 0x76d7, 0x66f6, 0x5695, 0x46b4, 0xb75b, 0xa77a, 0x9719,
+                                         0x8738, 0xf7df, 0xe7fe, 0xd79d, 0xc7bc, 0x48c4, 0x58e5, 0x6886, 0x78a7,
+                                         0x0840, 0x1861, 0x2802, 0x3823, 0xc9cc, 0xd9ed, 0xe98e, 0xf9af, 0x8948,
+                                         0x9969, 0xa90a, 0xb92b, 0x5af5, 0x4ad4, 0x7ab7, 0x6a96, 0x1a71, 0x0a50,
+                                         0x3a33, 0x2a12, 0xdbfd, 0xcbdc, 0xfbbf, 0xeb9e, 0x9b79, 0x8b58, 0xbb3b,
+                                         0xab1a, 0x6ca6, 0x7c87, 0x4ce4, 0x5cc5, 0x2c22, 0x3c03, 0x0c60, 0x1c41,
+                                         0xedae, 0xfd8f, 0xcdec, 0xddcd, 0xad2a, 0xbd0b, 0x8d68, 0x9d49, 0x7e97,
+                                         0x6eb6, 0x5ed5, 0x4ef4, 0x3e13, 0x2e32, 0x1e51, 0x0e70, 0xff9f, 0xefbe,
+                                         0xdfdd, 0xcffc, 0xbf1b, 0xaf3a, 0x9f59, 0x8f78, 0x9188, 0x81a9, 0xb1ca,
+                                         0xa1eb, 0xd10c, 0xc12d, 0xf14e, 0xe16f, 0x1080, 0x00a1, 0x30c2, 0x20e3,
+                                         0x5004, 0x4025, 0x7046, 0x6067, 0x83b9, 0x9398, 0xa3fb, 0xb3da, 0xc33d,
+                                         0xd31c, 0xe37f, 0xf35e, 0x02b1, 0x1290, 0x22f3, 0x32d2, 0x4235, 0x5214,
+                                         0x6277, 0x7256, 0xb5ea, 0xa5cb, 0x95a8, 0x8589, 0xf56e, 0xe54f, 0xd52c,
+                                         0xc50d, 0x34e2, 0x24c3, 0x14a0, 0x0481, 0x7466, 0x6447, 0x5424, 0x4405,
+                                         0xa7db, 0xb7fa, 0x8799, 0x97b8, 0xe75f, 0xf77e, 0xc71d, 0xd73c, 0x26d3,
+                                         0x36f2, 0x0691, 0x16b0, 0x6657, 0x7676, 0x4615, 0x5634, 0xd94c, 0xc96d,
+                                         0xf90e, 0xe92f, 0x99c8, 0x89e9, 0xb98a, 0xa9ab, 0x5844, 0x4865, 0x7806,
+                                         0x6827, 0x18c0, 0x08e1, 0x3882, 0x28a3, 0xcb7d, 0xdb5c, 0xeb3f, 0xfb1e,
+                                         0x8bf9, 0x9bd8, 0xabbb, 0xbb9a, 0x4a75, 0x5a54, 0x6a37, 0x7a16, 0x0af1,
+                                         0x1ad0, 0x2ab3, 0x3a92, 0xfd2e, 0xed0f, 0xdd6c, 0xcd4d, 0xbdaa, 0xad8b,
+                                         0x9de8, 0x8dc9, 0x7c26, 0x6c07, 0x5c64, 0x4c45, 0x3ca2, 0x2c83, 0x1ce0,
+                                         0x0cc1, 0xef1f, 0xff3e, 0xcf5d, 0xdf7c, 0xaf9b, 0xbfba, 0x8fd9, 0x9ff8,
+                                         0x6e17, 0x7e36, 0x4e55, 0x5e74, 0x2e93, 0x3eb2, 0x0ed1, 0x1ef0};
+
+  unsigned short crc16(unsigned char *buf, unsigned int len);
+
+  float gear_ratio_;
+
+  /* VESCs report electrical RPM; mechanical RPM = eRPM / pole pairs */
+  float motor_pole_pairs_;
+};
