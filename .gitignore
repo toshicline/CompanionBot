@@ -1,5 +1,9 @@
 env/
 .DS_Store
 
-# User Interaction
+# HRI
 HRI/tmp/
+
+# MPC
+MPC/.pio
+MPC/.vscode
