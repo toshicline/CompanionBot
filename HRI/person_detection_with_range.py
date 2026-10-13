@@ -4,6 +4,12 @@ import math
 from ultralytics import YOLO
 from ultralytics.utils import LOGGER
 
+# Constants
+JOINT_CONFIDENCE_THRESHOLD = 0.75 # The confidence value required to consider a joint keypoint present
+CAMERA_VIDEO_HEIGHT = 1080
+CAMERA_VERTICAL_FOV = 48.8
+
+
 # Set Ultralytics internal logger level to WARNING or ERROR
 LOGGER.setLevel(logging.WARNING)
 
@@ -21,9 +27,39 @@ print("\nCamera stream started. Press 'Q' to quit.\n")
 
 # Common average human proportions (in meters)
 AVG_HUMAN_PROPS = {
-    "SHOULDER_TO_HIP":0.475,
-    "HIP_TO_ANKLE":0.85
+    "SHOULDER_TO_HIP": 0.475,
+    "HIP_TO_KNEE": 0.44,
+    "KNEE_TO_ANKLE": 0.41,
+    "HIP_TO_ANKLE": 0.85,
 }
+
+def print_flush(text):
+    """Print on the same line as before (useful for many repetitive prints of location/range)
+    
+    Args:
+        text: the text to print
+
+    Returns:
+        None
+    """
+
+    print(f"\r\033[K{text}", end="", flush=True)
+
+
+def get_focal_length(image_height, vfov_deg):
+    """Return the vertical focal length (in pixels)
+    
+    Args:
+        image_height: height of video frame
+        vfov_deg: vertical field of view of camera (degree)
+
+    Returns:
+        float: focal length
+    """
+
+    vfov_rad = math.radians(vfov_deg)
+    return image_height / (2 * math.tan(vfov_rad / 2))
+
 
 def draw_bbox(frame,box_dict,label,color=(0,0,255)):
     """Draw a bounding box around a target using box_dict
@@ -51,17 +87,30 @@ def draw_bbox(frame,box_dict,label,color=(0,0,255)):
     # Draw bounding box
     cv2.rectangle(frame,(x1,y1),(x2,y2),color,2)
 
-    # Draw label
-    cv2.putText(frame,label,(x1,y1-10),cv2.FONT_HERSHEY_SIMPLEX,1,color,2)
+    # Convert label to list of labels
+    if isinstance(label,str):
+        label = [label]
+
+    # Draw labels
+    for i in range(len(label)):
+        cv2.putText(frame,label[i],(x2+5,y1+20+i*30),cv2.FONT_HERSHEY_SIMPLEX,1,color,2)
 
 
 def center_of_box(coords):
+    """Get the center point of a rectangle given its 4 corner coordinates
+    
+    Args:
+        coords: list/tuple of coordinates as (x1,y1,x2,y2)
+
+    Returns:
+        (int,int): (x,y)
+    """
 
     x1,y1,x2,y2 = coords
     return (int(x1 + (x2-x1)/2), int(y1 + (y2-y1)/2))
 
 
-def extract_usable_distances(keypoints):
+def extract_usable_distances(keypoints,draw_frame=None):
     """Extract the usable distances (ie right shoulder to right hip) in pixels from a list of keypoints
 
     Args:
@@ -70,6 +119,7 @@ def extract_usable_distances(keypoints):
                 "left_shoulder": ((x,y), 0.95),
                 ...
             }
+        draw_frame: OpenCV frame to draw line connecting joints (optional)
 
     Returns:
         list: list of tuples with the format: (from_point,to_point,distance_pixels)
@@ -78,6 +128,7 @@ def extract_usable_distances(keypoints):
     left_kpts = []
     right_kpts = []
 
+    # Split into left and right side keypoints
     for point_name,point_info in keypoints.items():
         if "right" in point_name:
             right_kpts.append({
@@ -94,6 +145,7 @@ def extract_usable_distances(keypoints):
 
     distances = []
 
+    # Helper function to get distances per side
     def get_side_distances(kpts_list, side_prefix):
         side_distances = []
         # Map name to position for quick lookup
@@ -102,18 +154,26 @@ def extract_usable_distances(keypoints):
         # Define key anatomical pairs to measure
         pairs = [
             ("shoulder", "hip"),
-            ("hip", "ankle"),
             ("hip", "knee"),
             ("knee", "ankle"),
+            ("hip", "ankle"),
         ]
 
+        # loop through each of the pairs defined above and see if a distance for that pair exists
         for p1_name, p2_name in pairs:
             if p1_name in kpt_dict and p2_name in kpt_dict:
                 pos1 = kpt_dict[p1_name]
                 pos2 = kpt_dict[p2_name]
 
+                pos1_x,pos1_y = pos1
+                pos2_x,pos2_y = pos2
+
+                # Draw line
+                if draw_frame is not None:
+                    cv2.line(draw_frame,pos1,pos2,(255,255,255),2)
+
                 # Euclidean distance in pixels
-                dist = math.sqrt((pos2[0] - pos1[0]) ** 2 + (pos2[1] - pos1[1]) ** 2)
+                dist = math.sqrt((pos2_x - pos1_x) ** 2 + (pos2_y - pos1_y) ** 2)
 
                 from_name = f"{side_prefix}_{p1_name}"
                 to_name = f"{side_prefix}_{p2_name}"
@@ -140,7 +200,7 @@ def estimate_range(distance_pixels,reference_distance_meters):
         int: range estimate (in meters)
     """
 
-    f = 1300 # Vertical focal length of camera (pixels)
+    f = get_focal_length(CAMERA_VIDEO_HEIGHT,CAMERA_VERTICAL_FOV) # Vertical focal length of camera (pixels)
     H = reference_distance_meters # Real-world average distance from shoulder to hip (meters)
     P = distance_pixels # Shoulder to hip distance (pixels)
 
@@ -150,7 +210,7 @@ def estimate_range(distance_pixels,reference_distance_meters):
 
 
 def estimate_range_average(usable_distances):
-    """Estimate target range using a list of distances
+    """Estimate target range using a list of distances (averages all the distances together)
     
     Args:
         usable_distances: list of distances between keypoints (in pixels)
@@ -169,6 +229,10 @@ def estimate_range_average(usable_distances):
         # Map keypoint relationship to the correct constant from AVG_HUMAN_PROPS
         if "shoulder" in from_pt and "hip" in to_pt:
             ref_distance = AVG_HUMAN_PROPS["SHOULDER_TO_HIP"]
+        elif "hip" in from_pt and "knee" in to_pt:
+            ref_distance = AVG_HUMAN_PROPS["HIP_TO_KNEE"]
+        elif "knee" in from_pt and "ankle" in to_pt:
+            ref_distance = AVG_HUMAN_PROPS["KNEE_TO_ANKLE"]
         elif "hip" in from_pt and "ankle" in to_pt:
             ref_distance = AVG_HUMAN_PROPS["HIP_TO_ANKLE"]
         else:
@@ -183,7 +247,7 @@ def estimate_range_average(usable_distances):
                 "estimate":-1,
                 "points_used":0
             }
-
+    
     return {
         "estimate":sum(range_estimates) / len(range_estimates),
         "points_used":len(range_estimates) * 2
@@ -203,6 +267,7 @@ while True:
     # Feed frame into model
     results = model(frame,classes=[0],stream=True)
 
+    # Setup position of ideal target
     ideal_target_position = (-1,-1)
 
     # Iterate through model output
@@ -269,20 +334,10 @@ while True:
 
         # Check if the largest and most confident are the same (this is the goal)
         if largest_bbox["id"] == confident_bbox["id"] and largest_bbox["id"] != -1:
-            draw_bbox(frame,largest_bbox,f"Ideal target",color=(0,255,0))
             ideal_target = True
 
             ideal_target_position = center_of_box(largest_bbox["coords"])
             cv2.circle(frame,ideal_target_position,5,(255,0,0),-1)
-
-        else: # otherwise, draw 2 boxes
-            # Draw bounding box around largest box (if it exists)
-            if largest_bbox["id"] != -1:
-                draw_bbox(frame,largest_bbox,f"Largest area: {largest_bbox["area"]} (id={largest_bbox["id"]})")
-
-            # Draw bounding box around most confident box (if it exists)
-            if confident_bbox["id"] != -1:
-                draw_bbox(frame,confident_bbox,f"Most conf: {confident_bbox["conf"]:.2f} (id={confident_bbox["id"]})")
 
 
 
@@ -307,28 +362,36 @@ while True:
                 "right_ankle": (target_kpts[16], target_confs[16]),
             }
 
+            # From the dictionary above, create an identical one but only with points that are visible and above JOINT_CONFIDENCE_THRESHOLD
             usable_kpts_dict = {}
 
+            # Iterate through each keypoint and add to usable_kpts_dict if it is present in the frame (and draw a circle on it)
             for point_name,point in kpt_dict.items():
 
                 point_confidence = float(point[1])
                 point_location = (int(point[0][0]),int(point[0][1]))
 
-                if (point_confidence < 0.75):
+                if (point_confidence < JOINT_CONFIDENCE_THRESHOLD):
                     continue
                 else:
                     usable_kpts_dict[point_name] = point
 
                 cv2.circle(frame,point_location,5,(0,0,255),5,-1)
 
-            usable_distances = extract_usable_distances(usable_kpts_dict)
+            # From usable_kpts_dict, get the distances that can be used to estimate range (and draw them on the frame)
+            usable_distances = extract_usable_distances(usable_kpts_dict,draw_frame=frame)
 
+            # Estimate the range using the distances from above (and get how many points the estimate is based off of)
             range_estimate,range_points_used = estimate_range_average(usable_distances).values()
 
+            # Print out the location and range, and draw the bounding box / label
             if range_estimate > 0:
-                print(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})   Approx Range: {range_estimate:.2f}m ({range_points_used} points)")
+                print_flush(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})   Approx Range: {range_estimate:.2f}m ({range_points_used} points)")
+                draw_bbox(frame,largest_bbox,["Ideal target",f"{range_points_used}-point Range:",f"{range_estimate:.2f}m"],color=(0,255,0))
             else:
-                print(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})")
+                print_flush(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})")
+                draw_bbox(frame,largest_bbox,"Ideal target",color=(0,255,0))
+
 
     # Show the video output
     cv2.imshow("Person Detection Test Stream",frame)
