@@ -1,1 +1,0 @@
-/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_description/ament_cmake_core/roverrobotics_descriptionConfig.cmake

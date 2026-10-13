@@ -1,0 +1,1 @@
+/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_input_manager/ament_cmake_core/roverrobotics_input_managerConfig.cmake

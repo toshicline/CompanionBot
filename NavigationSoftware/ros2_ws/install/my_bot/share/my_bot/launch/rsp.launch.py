@@ -1,1 +1,0 @@
-/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/my_bot/launch/rsp.launch.py

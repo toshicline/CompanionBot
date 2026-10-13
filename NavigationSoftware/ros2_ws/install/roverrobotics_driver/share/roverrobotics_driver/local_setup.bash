@@ -1,1 +1,0 @@
-/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/build/roverrobotics_driver/ament_cmake_environment_hooks/local_setup.bash

@@ -1,0 +1,59 @@
+[0.038s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_gazebo': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_driver:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/src/roverrobotics_ros2/roverrobotics_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo
+[0.138s] -- The C compiler identification is GNU 11.4.0
+[0.467s] -- The CXX compiler identification is GNU 11.4.0
+[0.706s] -- Detecting C compiler ABI info
+[0.823s] -- Detecting C compiler ABI info - done
+[0.829s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.829s] -- Detecting C compile features
+[0.829s] -- Detecting C compile features - done
+[0.832s] -- Detecting CXX compiler ABI info
+[0.951s] -- Detecting CXX compiler ABI info - done
+[0.957s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.957s] -- Detecting CXX compile features
+[0.957s] -- Detecting CXX compile features - done
+[0.960s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.078s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.128s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.161s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.236s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.239s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.240s] -- Added test 'lint_cmake' to check CMake code style
+[1.241s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.244s] -- Added test 'xmllint' to check XML markup files
+[1.245s] -- Configuring done
+[1.251s] -- Generating done
+[1.252s] -- Build files have been written to: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_gazebo
+[1.257s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_driver:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/src/roverrobotics_ros2/roverrobotics_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo
+[1.259s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_gazebo': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_driver:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_gazebo -- -j16 -l16
+[1.293s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_driver:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_gazebo -- -j16 -l16
+[1.295s] Invoking command in '/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_gazebo': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_driver:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_gazebo
+[1.301s] -- Install configuration: ""
+[1.302s] -- Execute custom install script
+[1.303s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/2wd_rover_gazebo.launch.py
+[1.313s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/4wd_rover_gazebo.launch.py
+[1.321s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/flipper_gazebo.launch.py
+[1.329s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/max_gazebo.launch.py
+[1.338s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/mega_gazebo.launch.py
+[1.346s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/mini_2wd_gazebo.launch.py
+[1.354s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/mini_gazebo.launch.py
+[1.362s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/miti_65_gazebo.launch.py
+[1.371s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/miti_gazebo.launch.py
+[1.381s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/depot.sdf
+[1.389s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/maze.sdf
+[1.398s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/warehouse.sdf
+[1.407s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/ament_index/resource_index/package_run_dependencies/roverrobotics_gazebo
+[1.415s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/ament_index/resource_index/parent_prefix_path/roverrobotics_gazebo
+[1.424s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/ament_prefix_path.sh
+[1.433s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/ament_prefix_path.dsv
+[1.441s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/path.sh
+[1.449s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/path.dsv
+[1.457s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.bash
+[1.466s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.sh
+[1.475s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.zsh
+[1.484s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.dsv
+[1.492s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.dsv
+[1.501s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/ament_index/resource_index/packages/roverrobotics_gazebo
+[1.509s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/cmake/roverrobotics_gazeboConfig.cmake
+[1.518s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/cmake/roverrobotics_gazeboConfig-version.cmake
+[1.526s] -- Symlinking: /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.xml
+[1.536s] Invoked command in '/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_description:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/install/roverrobotics_driver:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_gazebo

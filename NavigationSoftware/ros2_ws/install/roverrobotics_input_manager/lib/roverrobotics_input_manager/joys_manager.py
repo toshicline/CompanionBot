@@ -1,1 +1,0 @@
-/home/andrew/CompanionBot2/NavigationSoftware/ros2_ws/src/roverrobotics_ros2/roverrobotics_input_manager/scripts/joys_manager.py
