@@ -13,6 +13,7 @@ constexpr size_t SERIAL_LINE_SIZE = 96;
 
 char serialLine[SERIAL_LINE_SIZE];
 size_t serialLineLength = 0;
+bool serialConnectionReported = false;
 
 bool parseFiniteFloat(char *text, float &value) {
     char *end = nullptr;
@@ -31,14 +32,7 @@ void printHelp() {
     Serial.println("  stop");
     Serial.println("  help");
     Serial.println("Positive angle turns left (counter-clockwise).");
-    Serial.println("Test wheel speeds remain active until 'stop' is entered.");
-}
-
-void stopActiveControl(const char *reason) {
-    const MotorControlStatus status = mcGetStatus();
-    if (status.motionActive || status.manualControlActive) {
-        mcStop(reason);
-    }
+    Serial.println("Use 'test 0 0' to ramp test speeds down; 'stop' stops immediately.");
 }
 
 void handleCommand(char *line) {
@@ -70,9 +64,7 @@ void handleCommand(char *line) {
             Serial.println("Error: test speed exceeds the configured limit.");
             return;
         }
-        stopActiveControl("new test command");
-        if (hfdCanStartMove(mcGetStatus(),
-                                               millis())) {
+        if (hfdCanStartMove(mcGetStatus(), millis())) {
             mcSetWheelSpeeds(leftSpeedMps, rightSpeedMps);
         }
     } else if (strcmp(command, "move") == 0) {
@@ -92,9 +84,7 @@ void handleCommand(char *line) {
             Serial.println("Error: request exceeds configured motion limits.");
             return;
         }
-        stopActiveControl("new move command");
-        if (hfdCanStartMove(mcGetStatus(),
-                                               millis())) {
+        if (hfdCanStartMove(mcGetStatus(), millis())) {
             mcBeginMove(distanceM, angleDeg);
         }
     } else {
@@ -121,17 +111,22 @@ void readSerialInput() {
     }
 }
 
-}  // namespace
+}
 
 void setup() {
     Serial.begin(115200);
     mcBegin();
-
-    Serial.println("Teensy 4.1 differential-drive VESC CAN controller ready.");
-    Serial.println("Waiting for VESC RPM status; type 'help' for commands.");
 }
 
 void loop() {
+    if (Serial && !serialConnectionReported) {
+        Serial.println("USB serial monitor connected at 115200 baud.");
+        Serial.println("Teensy 4.1 differential-drive VESC CAN controller ready.");
+        Serial.println("Waiting for VESC RPM status. Enter a command:");
+        printHelp();
+        serialConnectionReported = true;
+    }
+
     mcProcessCanMessages();
     readSerialInput();
 
