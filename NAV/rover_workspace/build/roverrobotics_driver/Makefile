@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/src/roverrobotics_ros2/roverrobotics_driver
+CMAKE_SOURCE_DIR = /home/andrew/CompanionBot2/NAV/rover_workspace/src/roverrobotics_ros2/roverrobotics_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_driver
+CMAKE_BINARY_DIR = /home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_driver
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_driver/CMakeFiles /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_driver//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_driver/CMakeFiles /home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_driver//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_driver/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_driver/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

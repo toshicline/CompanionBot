@@ -41,7 +41,7 @@ def generate_launch_description():
         launch_arguments={
             #hotfix
             "gz_args" : [Command(['echo -n "--render-engine ogre "']), gz_world_arg]
-            
+
             # original
             #"gz_args" : gz_world_arg 
         }.items()
