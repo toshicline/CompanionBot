@@ -1,1 +1,1 @@
-/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/build/roverrobotics_driver/ament_cmake_environment_hooks/local_setup.zsh
+/home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_driver/ament_cmake_environment_hooks/local_setup.zsh

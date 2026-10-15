@@ -1,0 +1,7 @@
+# bridge_qos.yaml
+- topic_name: "/tf_static"
+  ros_type: "tf2_msgs/msg/TFMessage"
+  gz_type: "ignition.msgs.Pose_V"
+  direction: GZ_TO_ROS
+  qos:
+    durability: "transient_local" # <-- This fixes the DURABILITY_QOS_POLICY warning

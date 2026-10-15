@@ -1,1 +1,1 @@
-/home/andrew/CompanionBot2/NavigationSoft2/rover_workspace/src/roverrobotics_ros2/roverrobotics_gazebo/launch/max_gazebo.launch.py
+/home/andrew/CompanionBot2/NAV/rover_workspace/src/roverrobotics_ros2/roverrobotics_gazebo/launch/max_gazebo.launch.py
