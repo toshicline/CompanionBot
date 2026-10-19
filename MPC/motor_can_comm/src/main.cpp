@@ -13,6 +13,8 @@ constexpr size_t SERIAL_LINE_SIZE = 96;
 
 char serialLine[SERIAL_LINE_SIZE];
 size_t serialLineLength = 0;
+char uartLine[SERIAL_LINE_SIZE];
+size_t uartLineLength = 0;
 bool serialConnectionReported = false;
 
 bool parseFiniteFloat(char *text, float &value) {
@@ -25,17 +27,34 @@ bool parseFiniteFloat(char *text, float &value) {
     return true;
 }
 
-void printHelp() {
-    Serial.println("Commands:");
-    Serial.println("  move <distance_m> <angle_deg>");
-    Serial.println("  test <left_speed_mps> <right_speed_mps>");
-    Serial.println("  stop");
-    Serial.println("  help");
-    Serial.println("Positive angle turns left (counter-clockwise).");
-    Serial.println("Use 'test 0 0' to ramp test speeds down; 'stop' stops immediately.");
+void printHelp(Stream &port) {
+    port.println("Commands:");
+    port.println("  move <distance_m> <angle_deg>");
+    port.println("  test <left_speed_mps> <right_speed_mps>");
+    port.println("  status");
+    port.println("  stop");
+    port.println("  help");
+    port.println("Positive angle turns left (counter-clockwise).");
+    port.println("Use 'test 0 0' to ramp test speeds down; 'stop' stops immediately.");
 }
 
-void handleCommand(char *line) {
+void printStatus(Stream &port) {
+    const MotorControlStatus status = mcGetStatus();
+    const uint32_t now = millis();
+    if (!status.leftHasStatus || !status.rightHasStatus ||
+        now - status.leftLastStatusMs > TELEMETRY_TIMEOUT_MS ||
+        now - status.rightLastStatusMs > TELEMETRY_TIMEOUT_MS) {
+        port.println("ERR,telemetry_stale");
+        return;
+    }
+
+    port.print("STATUS,");
+    port.print(status.odometryDistanceM, 3);
+    port.print(',');
+    port.println(status.odometryAngleDeg, 2);
+}
+
+void handleCommand(Stream &port, char *line) {
     char *context = nullptr;
     char *command = strtok_r(line, " \t", &context);
     if (command == nullptr) {
@@ -43,7 +62,9 @@ void handleCommand(char *line) {
     }
 
     if (strcmp(command, "help") == 0) {
-        printHelp();
+        printHelp(port);
+    } else if (strcmp(command, "status") == 0) {
+        printStatus(port);
     } else if (strcmp(command, "stop") == 0) {
         mcStop("terminal command");
     } else if (strcmp(command, "test") == 0) {
@@ -56,12 +77,12 @@ void handleCommand(char *line) {
             extra != nullptr ||
             !parseFiniteFloat(leftSpeedText, leftSpeedMps) ||
             !parseFiniteFloat(rightSpeedText, rightSpeedMps)) {
-            Serial.println("Usage: test <left_speed_mps> <right_speed_mps>");
+            port.println("ERR,usage_test,left_speed_mps,right_speed_mps");
             return;
         }
         if (fabsf(leftSpeedMps) > MAX_WHEEL_SPEED_MPS ||
             fabsf(rightSpeedMps) > MAX_WHEEL_SPEED_MPS) {
-            Serial.println("Error: test speed exceeds the configured limit.");
+            port.println("ERR,test_speed_exceeds_limit");
             return;
         }
         if (hfdCanStartMove(mcGetStatus(), millis())) {
@@ -76,37 +97,37 @@ void handleCommand(char *line) {
         if (distanceText == nullptr || angleText == nullptr || extra != nullptr ||
             !parseFiniteFloat(distanceText, distanceM) ||
             !parseFiniteFloat(angleText, angleDeg)) {
-            Serial.println("Usage: move <distance_m> <angle_deg>");
+            port.println("ERR,usage_move,distance_m,angle_deg");
             return;
         }
         if (fabsf(distanceM) > MAX_DISTANCE_M ||
             fabsf(angleDeg) > MAX_ANGLE_DEG) {
-            Serial.println("Error: request exceeds configured motion limits.");
+            port.println("ERR,move_exceeds_limit");
             return;
         }
         if (hfdCanStartMove(mcGetStatus(), millis())) {
             mcBeginMove(distanceM, angleDeg);
         }
     } else {
-        Serial.println("Unknown command. Type 'help'.");
+        port.println("ERR,unknown_command");
     }
 }
 
-void readSerialInput() {
-    while (Serial.available() > 0) {
-        const char incoming = static_cast<char>(Serial.read());
+void readSerialInput(Stream &port, char *line, size_t &lineLength) {
+    while (port.available() > 0) {
+        const char incoming = static_cast<char>(port.read());
         if (incoming == '\r') {
             continue;
         }
         if (incoming == '\n') {
-            serialLine[serialLineLength] = '\0';
-            handleCommand(serialLine);
-            serialLineLength = 0;
-        } else if (serialLineLength < SERIAL_LINE_SIZE - 1) {
-            serialLine[serialLineLength++] = incoming;
+            line[lineLength] = '\0';
+            handleCommand(port, line);
+            lineLength = 0;
+        } else if (lineLength < SERIAL_LINE_SIZE - 1) {
+            line[lineLength++] = incoming;
         } else {
-            serialLineLength = 0;
-            Serial.println("Error: input line too long.");
+            lineLength = 0;
+            port.println("ERR,input_line_too_long");
         }
     }
 }
@@ -115,20 +136,20 @@ void readSerialInput() {
 
 void setup() {
     Serial.begin(115200);
+    Serial1.begin(115200);
     mcBegin();
 }
 
 void loop() {
     if (Serial && !serialConnectionReported) {
         Serial.println("USB serial monitor connected at 115200 baud.");
-        Serial.println("Teensy 4.1 differential-drive VESC CAN controller ready.");
-        Serial.println("Waiting for VESC RPM status. Enter a command:");
-        printHelp();
+        printHelp(Serial);
         serialConnectionReported = true;
     }
 
     mcProcessCanMessages();
-    readSerialInput();
+    readSerialInput(Serial, serialLine, serialLineLength);
+    readSerialInput(Serial1, uartLine, uartLineLength);
 
     const char *fault =
         hfdGetActiveFault(mcGetStatus(), millis());

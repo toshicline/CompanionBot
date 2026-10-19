@@ -14,5 +14,6 @@ The PlatformIO project files (`platformio.ini`, `.vscode`, and `.pio`) are in th
 
 - `move <distance_m> <angle_deg>`
 - `test <left_speed_mps> <right_speed_mps>`
+- `status`
 - `stop`
 - `help`

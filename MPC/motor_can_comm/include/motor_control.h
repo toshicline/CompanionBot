@@ -11,6 +11,8 @@ struct MotorControlStatus {
     bool rightHasStatus;
     bool motionActive;
     bool manualControlActive;
+    float odometryDistanceM;
+    float odometryAngleDeg;
 };
 
 void mcBegin();
