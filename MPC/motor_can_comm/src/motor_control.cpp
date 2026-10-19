@@ -26,6 +26,7 @@ struct WheelState {
     float measuredDistanceM = 0.0f;
     float measuredErpm = 0.0f;
     float commandedSpeedMps = 0.0f;
+    float odometryDistanceM = 0.0f;
     uint32_t lastStatusMs = 0;
     bool hasStatus = false;
     bool complete = false;
@@ -147,12 +148,18 @@ void processStatusFrame(const CAN_message_t &message) {
         static_cast<int32_t>(message.buf[3]);
     const uint32_t now = millis();
 
-    if (motionActive && wheel->hasStatus) {
+    if (wheel->hasStatus) {
         const uint32_t elapsedMs = now - wheel->lastStatusMs;
         if (elapsedMs <= TELEMETRY_TIMEOUT_MS) {
             const float wheelRpm =
                 wheel->measuredErpm / (MOTOR_POLE_PAIRS * GEAR_RATIO);
-            wheel->measuredDistanceM += wheelRpm * (WHEEL_CIRCUMFERENCE_M / 60.0f) * (static_cast<float>(elapsedMs) / 1000.0f);
+            const float traveledM =
+                wheelRpm * (WHEEL_CIRCUMFERENCE_M / 60.0f) *
+                (static_cast<float>(elapsedMs) / 1000.0f);
+            wheel->odometryDistanceM += traveledM;
+            if (motionActive) {
+                wheel->measuredDistanceM += traveledM;
+            }
         }
     }
 
@@ -331,6 +338,11 @@ void mcUpdate() {
 }
 
 MotorControlStatus mcGetStatus() {
+    const float distanceM =
+        (leftWheel.odometryDistanceM + rightWheel.odometryDistanceM) * 0.5f;
+    const float angleDeg =
+        (rightWheel.odometryDistanceM - leftWheel.odometryDistanceM) /
+        TRACK_WIDTH_M * 180.0f / PI;
     return {
         leftWheel.lastStatusMs,
         rightWheel.lastStatusMs,
@@ -340,5 +352,7 @@ MotorControlStatus mcGetStatus() {
         rightWheel.hasStatus,
         motionActive,
         manualControlActive,
+        distanceM,
+        angleDeg,
     };
 }
