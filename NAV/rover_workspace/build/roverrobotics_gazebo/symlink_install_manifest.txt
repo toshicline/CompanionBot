@@ -1,8 +1,9 @@
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/2wd_rover_gazebo.launch.py
-/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/2wd_rover_gazeboEdit.launch.py
+/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/2wd_rover_gazebo_harmonic.launch.py
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/depot.sdf
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/empty.sdf
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/maze.sdf
+/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/wall.sdf
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/warehouse.sdf
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/config/bridge_qos.yaml
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/ament_index/resource_index/package_run_dependencies/roverrobotics_gazebo
