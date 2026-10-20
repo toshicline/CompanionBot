@@ -40,9 +40,10 @@
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/miti_payload.urdf
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/rover_dev_payload.urdf
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/rplidar_s2.urdf
+/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/rplidar_s2_harmonic.urdf
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_2wd.urdf
-/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_2wdNew.urdf
-/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_4wd.urdf
+/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_2wd_harmonic.urdf
+/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_2wd_harmonic.xacro
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/ament_index/resource_index/package_run_dependencies/roverrobotics_description
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/ament_index/resource_index/parent_prefix_path/roverrobotics_description
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/environment/ament_prefix_path.sh

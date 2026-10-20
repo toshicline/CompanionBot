@@ -72,5 +72,7 @@
             <plugin name='__default__' filename='__default__' />
             <pose>0 0 0 0 -0 0</pose>
         </model>
+
+        
     </world>
 </sdf>
