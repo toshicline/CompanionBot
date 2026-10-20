@@ -20,6 +20,22 @@ def print_flush(text):
 
     print(f"\r\033[K{text}", end="", flush=True)
 
+def get_anker_input_device_id():
+    """Detect what index the anker microphone is at
+    
+    Returns:
+        int: index of anker powerconf (or None)
+    """
+
+    devices = sd.query_devices()
+    for idx, device in enumerate(devices):
+        # Look for PowerConf and ensure it has input channels (1 in, 0 out)
+        if "powerconf" in device['name'].lower() and device['max_input_channels'] > 0:
+            print(f"Found Anker microphone at index {idx}: {device['name']}\n")
+            return idx
+    print("Anker PowerConf input not found!")
+    return None
+
 def audio_callback(indata,frames,time,status):
 
     # Handle errors
@@ -78,4 +94,4 @@ def listen(device_id=None):
     except Exception as e:
         print(f"Error opening audio stream: {e}")
 
-listen()
+listen(device_id=get_anker_input_device_id())

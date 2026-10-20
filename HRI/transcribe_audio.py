@@ -22,8 +22,9 @@ SAMPLE_RATE = 16000 # faster-whisper requires 16kHz audio
 BUFFER_SIZE_SECONDS = 3 # number of seconds of audio to parse at a time
 TARGET_SAMPLES = SAMPLE_RATE * BUFFER_SIZE_SECONDS
 
-# Thread-safe queue for incoming mic chunks
-audio_queue = queue.Queue()
+
+
+
 
 def audio_callback(indata,frames,time_info,status):
     """Called by sounddevice for every audio block from the mic
@@ -37,14 +38,43 @@ def audio_callback(indata,frames,time_info,status):
 
     audio_queue.put(indata.copy().flatten())
 
+def get_anker_input_device_id():
+    """Detect what index the anker microphone is at
+    
+    Returns:
+        int: index of anker powerconf (or None)
+    """
+
+    devices = sd.query_devices()
+    for idx, device in enumerate(devices):
+        # Look for PowerConf and ensure it has input channels (1 in, 0 out)
+        if "powerconf" in device['name'].lower() and device['max_input_channels'] > 0:
+            print(f"Found Anker microphone at index {idx}: {device['name']}\n")
+            return idx
+    print("Anker PowerConf input not found!")
+    return None
+
+
+
+
+
 # Init model
 model = WhisperModel(MODEL_SIZE,device=DEVICE,compute_type=COMPUTE_TYPE)
+
+# Thread-safe queue for incoming mic chunks
+audio_queue = queue.Queue()
+
+# Set the audio device, or raise an error if it does not exist
+AUDIO_DEVICE_ID = get_anker_input_device_id()
+if AUDIO_DEVICE_ID == None:
+    raise Exception("Could not detect external mic. Ensure that it is connected via USB.")
 
 print("Listening... Press Ctrl+C to stop")
 
 # Configure microphone stream (1 channel, 16kHz)
 try:
     with sd.InputStream(
+        device=AUDIO_DEVICE_ID,
         samplerate=SAMPLE_RATE,
         channels=1,
         dtype=np.float32,
