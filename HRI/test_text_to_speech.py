@@ -32,4 +32,5 @@ def speak(text, model_path=PIPER_MODEL_PATH):
             
     proc.wait()
 
-speak("Howdy World!")
+if __name__ == "__main__":
+    speak("Howdy World!")

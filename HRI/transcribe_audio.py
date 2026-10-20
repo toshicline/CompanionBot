@@ -49,30 +49,32 @@ def get_anker_input_device_id():
     for idx, device in enumerate(devices):
         # Look for PowerConf and ensure it has input channels (1 in, 0 out)
         if "powerconf" in device['name'].lower() and device['max_input_channels'] > 0:
-            print(f"Found Anker microphone at index {idx}: {device['name']}\n")
             return idx
     print("Anker PowerConf input not found!")
     return None
 
+def listen(timeout_seconds=5):
+    """Listen and transcribe speech for a specified duration
 
+    Args:
+        timeout_seconds (int): number of seconds to listen for
 
+    Returns:
+        None
+    """
 
+    # Clear out any leftover stale audio in the queue from before
+    while not audio_queue.empty():
+        try:
+            audio_queue.get_nowait()
+        except queue.Empty:
+            break
 
-# Init model
-model = WhisperModel(MODEL_SIZE,device=DEVICE,compute_type=COMPUTE_TYPE)
+    transcripts = []
 
-# Thread-safe queue for incoming mic chunks
-audio_queue = queue.Queue()
+    print("Listening...")
 
-# Set the audio device, or raise an error if it does not exist
-AUDIO_DEVICE_ID = get_anker_input_device_id()
-if AUDIO_DEVICE_ID == None:
-    raise Exception("Could not detect external mic. Ensure that it is connected via USB.")
-
-print("Listening... Press Ctrl+C to stop")
-
-# Configure microphone stream (1 channel, 16kHz)
-try:
+    # Configure microphone stream (1 channel, 16kHz)
     with sd.InputStream(
         device=AUDIO_DEVICE_ID,
         samplerate=SAMPLE_RATE,
@@ -87,6 +89,12 @@ try:
         session_start_time = datetime.now()
 
         while True:
+
+            # Check timeout
+            elapsed_time = (datetime.now() - session_start_time).total_seconds()
+            if elapsed_time > timeout_seconds:
+                break
+
             try:
                 # Wait up to 0.1 seconds for the next audio chunk from the queue
                 chunk = audio_queue.get(timeout=0.1)
@@ -116,10 +124,27 @@ try:
                     # Map elapsed seconds to real-world time
                     segment_datetime = session_start_time + timedelta(seconds=time_abs_start)
 
-                    print(f"[{segment_datetime.strftime("%Y-%m-%d %H:%M:%S")}] {segment.text}")
+                    # add to total transcript
+                    transcripts.append(segment.text.strip())
 
                 # Advance time by the duration of the chunk that was just processed
                 total_offset_seconds += BUFFER_SIZE_SECONDS
 
-except KeyboardInterrupt:
-    print("\nStopped listening.")
+    return " ".join(transcripts).strip()
+
+
+# Init model
+model = WhisperModel(MODEL_SIZE,device=DEVICE,compute_type=COMPUTE_TYPE)
+
+# Thread-safe queue for incoming mic chunks
+audio_queue = queue.Queue()
+
+# Set the audio device, or raise an error if it does not exist
+AUDIO_DEVICE_ID = get_anker_input_device_id()
+if AUDIO_DEVICE_ID == None:
+    raise Exception("Could not detect external mic. Ensure that it is connected via USB.")
+
+
+if __name__ == "__main__":
+    phrase = listen()
+    print(f"phrase: {phrase}")
