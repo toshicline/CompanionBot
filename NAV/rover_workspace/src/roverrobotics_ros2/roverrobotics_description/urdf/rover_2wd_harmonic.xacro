@@ -246,7 +246,7 @@
             <topic>/cmd_vel</topic>
             <odom_topic>/odometry/wheels</odom_topic>
             <!-- Change this back to /tf_gazebo when implmenting NAV2-->
-            <tf_topic>/tf</tf_topic>
+            <tf_topic>/tf_gazebo</tf_topic>
         </plugin>
 
         <!-- Updated to use modern Gazebo Sim JointStatePublisher plugin naming -->

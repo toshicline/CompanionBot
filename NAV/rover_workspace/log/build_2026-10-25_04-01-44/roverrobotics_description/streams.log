@@ -1,0 +1,87 @@
+[0.034s] Invoking command in '/home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NAV/rover_workspace/src/roverrobotics_ros2/roverrobotics_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description
+[0.238s] -- The C compiler identification is GNU 11.4.0
+[0.665s] -- The CXX compiler identification is GNU 11.4.0
+[0.833s] -- Detecting C compiler ABI info
+[0.991s] -- Detecting C compiler ABI info - done
+[0.999s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.999s] -- Detecting C compile features
+[0.999s] -- Detecting C compile features - done
+[1.002s] -- Detecting CXX compiler ABI info
+[1.137s] -- Detecting CXX compiler ABI info - done
+[1.145s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.145s] -- Detecting CXX compile features
+[1.145s] -- Detecting CXX compile features - done
+[1.148s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.304s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.387s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.508s] -- Configuring done
+[1.516s] -- Generating done
+[1.518s] -- Build files have been written to: /home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description
+[1.528s] Invoked command in '/home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NAV/rover_workspace/src/roverrobotics_ros2/roverrobotics_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description
+[1.530s] Invoking command in '/home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description -- -j16 -l16
+[1.572s] Invoked command in '/home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description -- -j16 -l16
+[1.583s] Invoking command in '/home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description
+[1.591s] -- Install configuration: ""
+[1.591s] -- Execute custom install script
+[1.594s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/rviz/urdf.rviz
+[1.607s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/launch/display_2wd_rover.launch.py
+[1.618s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/launch/display_4wd_rover.launch.py
+[1.630s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/launch/display_flipper.launch.py
+[1.640s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/launch/display_max.launch.py
+[1.651s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/launch/display_mega.launch.py
+[1.661s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/launch/display_mini.launch.py
+[1.672s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/launch/display_mini_2wd.launch.py
+[1.682s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/launch/display_miti.launch.py
+[1.692s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/launch/display_miti_65.launch.py
+[1.704s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/65wheels.dae
+[1.713s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/castor.dae
+[1.723s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/castor_housing.dae
+[1.734s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/flipper.dae
+[1.744s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/flipper_chassis.dae
+[1.754s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/flipper_track.dae
+[1.763s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/hub_10in.dae
+[1.773s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/hub_6.5in.dae
+[1.783s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/max_chassis.dae
+[1.795s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/max_chassis_neo.dae
+[1.806s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/max_wheels_13in.dae
+[1.816s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/max_wheels_15in.dae
+[1.828s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/max_wheels_15in_neo.dae
+[1.838s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/mega_chassis.dae
+[1.848s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/mega_payload.dae
+[1.859s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/mega_wheels.dae
+[1.869s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/mini_2wd_chassis.dae
+[1.879s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/mini_chassis.dae
+[1.890s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/mini_chassis_new.dae
+[1.901s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_chassis.dae
+[1.912s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_chassis_neo.dae
+[1.924s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_chassis_new.dae
+[1.935s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_payload.dae
+[1.947s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/pro_tire.dae
+[1.959s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/rover_2wd_core.dae
+[1.970s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/rover_payload.dae
+[1.982s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/meshes/rplidar_s2.dae
+[1.998s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/imu.urdf
+[2.010s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/mega_payload.urdf
+[2.023s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/miti_payload.urdf
+[2.035s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/rover_dev_payload.urdf
+[2.046s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/rplidar_s2.urdf
+[2.058s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/rplidar_s2_harmonic.urdf
+[2.068s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_2wd.urdf
+[2.078s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_2wd_harmonic.urdf
+[2.089s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_2wd_harmonic.xacro
+[2.099s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/ament_index/resource_index/package_run_dependencies/roverrobotics_description
+[2.109s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/ament_index/resource_index/parent_prefix_path/roverrobotics_description
+[2.120s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/environment/ament_prefix_path.sh
+[2.130s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/environment/ament_prefix_path.dsv
+[2.141s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/environment/path.sh
+[2.150s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/environment/path.dsv
+[2.159s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/local_setup.bash
+[2.168s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/local_setup.sh
+[2.177s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/local_setup.zsh
+[2.187s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/local_setup.dsv
+[2.197s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/package.dsv
+[2.207s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/ament_index/resource_index/packages/roverrobotics_description
+[2.218s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/cmake/roverrobotics_descriptionConfig.cmake
+[2.228s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/cmake/roverrobotics_descriptionConfig-version.cmake
+[2.238s] -- Symlinking: /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description/share/roverrobotics_description/package.xml
+[2.251s] Invoked command in '/home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description

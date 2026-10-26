@@ -55,6 +55,10 @@
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze_map.pgm
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze_map.posegraph
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze_map.yaml
+/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver/share/roverrobotics_driver/maps/test_roomfr.data
+/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver/share/roverrobotics_driver/maps/test_roomfr.pgm
+/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver/share/roverrobotics_driver/maps/test_roomfr.posegraph
+/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver/share/roverrobotics_driver/maps/test_roomfr.yaml
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver/lib/roverrobotics_driver/roverrobotics_driver
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver/share/ament_index/resource_index/package_run_dependencies/roverrobotics_driver
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver/share/ament_index/resource_index/parent_prefix_path/roverrobotics_driver

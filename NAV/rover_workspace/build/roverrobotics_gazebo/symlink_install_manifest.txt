@@ -4,6 +4,7 @@
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/empty.sdf
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/maze.sdf
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/wall.sdf
+/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/wall2.sdf
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/warehouse.sdf
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/roverrobotics_gazebo/config/bridge_qos.yaml
 /home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo/share/ament_index/resource_index/package_run_dependencies/roverrobotics_gazebo

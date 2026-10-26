@@ -286,7 +286,8 @@ global_costmap:
       publish_frequency: 1.0
       global_frame: map
       robot_base_frame: base_link
-      use_sim_time: False
+      use_sim_time: true      # set to false initially
+      rolling_window: false   # this whole line added
       footprint: "[[0.27305, 0.1778],[0.27305, -0.1778],[-0.27305, -0.1778],[-0.27305, 0.1778]]"
       footprint_padding: 0.025
       resolution: 0.05
