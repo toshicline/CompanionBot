@@ -60,7 +60,7 @@
 bt_navigator:
   ros__parameters:
     use_sim_time: False
-    global_frame: map
+    global_frame: odom           # map when with map / odom when w/o map
     robot_base_frame: base_link
     odom_topic: /odometry/filtered
     bt_loop_duration: 10
@@ -284,15 +284,23 @@ global_costmap:
     ros__parameters:
       update_frequency: 1.0
       publish_frequency: 1.0
-      global_frame: map
+      global_frame: odom        # set to map when running with map / set to odom when running mapless
       robot_base_frame: base_link
-      use_sim_time: true      # set to false initially
-      rolling_window: false   # this whole line added
+      use_sim_time: true        # this should be changed from the CLI command but default to true for now
+      rolling_window: true     # set to false when running with map / set to true when running mapless
+
+      # Added only when running mapless, comment out when running with map
+      width: 10
+      height: 10
+      origin_x: -5.0
+      origin_y: -5.0
+
+
       footprint: "[[0.27305, 0.1778],[0.27305, -0.1778],[-0.27305, -0.1778],[-0.27305, 0.1778]]"
       footprint_padding: 0.025
       resolution: 0.05
-      track_unknown_space: true
-      plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+      track_unknown_space: false   # set to true w/ map false w/o map
+      plugins: ["obstacle_layer", "inflation_layer"] # include "static_layer" when running w/ map, remove when running mapless
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
@@ -307,9 +315,12 @@ global_costmap:
           raytrace_min_range: 0.0
           obstacle_max_range: 2.5
           obstacle_min_range: 0.0
-      static_layer:
-        plugin: "nav2_costmap_2d::StaticLayer"
-        map_subscribe_transient_local: True
+
+      # include when running w/ map, remove when running mapless
+      # static_layer:
+      #   plugin: "nav2_costmap_2d::StaticLayer"
+      #   map_subscribe_transient_local: True
+      
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0

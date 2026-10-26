@@ -218,7 +218,7 @@ def generate_launch_description():
     
     # Add the actions to launch all of the navigation nodes
     ld.add_action(robot_localizer_launch)
-    ld.add_action(start_async_slam_toolbox_node)
+    # ld.add_action(start_async_slam_toolbox_node) # include when running w/ map, comment out when running mapless
     ld.add_action(bringup_cmd_group)
 
     return ld
