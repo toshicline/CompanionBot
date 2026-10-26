@@ -1,0 +1,114 @@
+andrew@WIN-NEIN7944776:~/CompanionBot2/NAV/rover_workspace$ # 1. Inject the master time override key
+export ROS_PARAMETER_OVERRIDES='{"/**": {"ros__parameters": {"use_sim_time": true}}}'
+
+# 2. Re-compile and source workspace changes
+cd ~/CompanionBot2/NAV/rover_workspace
+colcon build --symlink-install
+source install/setup.bash
+
+# 3. Launch mapless
+ros2 launch roverrobotics_driver navigation_launch.py slam:=False
+Starting >>> roverrobotics_description
+Starting >>> roverrobotics_driver
+Starting >>> roverrobotics_input_manager
+Finished <<< roverrobotics_input_manager [0.11s]
+Finished <<< roverrobotics_description [0.14s]
+Starting >>> roverrobotics_gazebo
+Finished <<< roverrobotics_driver [0.19s]
+Finished <<< roverrobotics_gazebo [0.12s]
+
+Summary: 4 packages finished [0.52s]
+[INFO] [launch]: All log files can be found below /home/andrew/.ros/log/2026-10-26-15-03-04-245949-WIN-NEIN7944776-20143
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [ekf_node-1]: process started with pid [20144]
+[INFO] [controller_server-2]: process started with pid [20146]
+[INFO] [smoother_server-3]: process started with pid [20148]
+[INFO] [planner_server-4]: process started with pid [20150]
+[INFO] [behavior_server-5]: process started with pid [20152]
+[INFO] [bt_navigator-6]: process started with pid [20154]
+[INFO] [waypoint_follower-7]: process started with pid [20156]
+[INFO] [lifecycle_manager-8]: process started with pid [20158]
+[behavior_server-5] [INFO] [1793044984.599401059] [behavior_server]:
+[behavior_server-5]     behavior_server lifecycle node launched.
+[behavior_server-5]     Waiting on external lifecycle transitions to activate
+[behavior_server-5]     See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-8] [INFO] [1793044984.605020445] [lifecycle_manager_navigation]: Creating
+[waypoint_follower-7] [INFO] [1793044984.610112695] [waypoint_follower]:
+[waypoint_follower-7]   waypoint_follower lifecycle node launched.
+[waypoint_follower-7]   Waiting on external lifecycle transitions to activate
+[waypoint_follower-7]   See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-7] [INFO] [1793044984.611202947] [waypoint_follower]: Creating
+[lifecycle_manager-8] [INFO] [1793044984.612370614] [lifecycle_manager_navigation]: Creating and initializing lifecycle service clients
+[smoother_server-3] [INFO] [1793044984.614330620] [smoother_server]:
+[smoother_server-3]     smoother_server lifecycle node launched.
+[smoother_server-3]     Waiting on external lifecycle transitions to activate
+[smoother_server-3]     See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-3] [INFO] [1793044984.616727441] [smoother_server]: Creating smoother server
+[bt_navigator-6] [INFO] [1793044984.619708072] [bt_navigator]:
+[bt_navigator-6]        bt_navigator lifecycle node launched.
+[bt_navigator-6]        Waiting on external lifecycle transitions to activate
+[bt_navigator-6]        See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-6] [INFO] [1793044984.619948675] [bt_navigator]: Creating
+[controller_server-2] [INFO] [1793044984.620557109] [controller_server]:
+[controller_server-2]   controller_server lifecycle node launched.
+[controller_server-2]   Waiting on external lifecycle transitions to activate
+[controller_server-2]   See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-4] [INFO] [1793044984.623925935] [planner_server]:
+[planner_server-4]      planner_server lifecycle node launched.
+[planner_server-4]      Waiting on external lifecycle transitions to activate
+[planner_server-4]      See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-2] [INFO] [1793044984.625686938] [controller_server]: Creating controller server
+[planner_server-4] [INFO] [1793044984.625964263] [planner_server]: Creating
+[lifecycle_manager-8] [INFO] [1793044984.632943320] [lifecycle_manager_navigation]: Starting managed nodes bringup...
+[lifecycle_manager-8] [INFO] [1793044984.633081779] [lifecycle_manager_navigation]: Configuring controller_server
+[controller_server-2] [INFO] [1793044984.643774870] [local_costmap.local_costmap]:
+[controller_server-2]   local_costmap lifecycle node launched.
+[controller_server-2]   Waiting on external lifecycle transitions to activate
+[controller_server-2]   See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-2] [INFO] [1793044984.644497916] [local_costmap.local_costmap]: Creating Costmap
+[planner_server-4] [INFO] [1793044984.644966338] [global_costmap.global_costmap]:
+[planner_server-4]      global_costmap lifecycle node launched.
+[planner_server-4]      Waiting on external lifecycle transitions to activate
+[planner_server-4]      See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-4] [INFO] [1793044984.645573391] [global_costmap.global_costmap]: Creating Costmap
+[planner_server-4] terminate called after throwing an instance of 'rclcpp::exceptions::InvalidParameterTypeException'
+[planner_server-4]   what():  parameter 'height' has invalid type: Wrong parameter type, parameter {height} is of type {integer}, setting it to {double} is not allowed.
+[ERROR] [planner_server-4]: process has died [pid 20150, exit code -6, cmd '/opt/ros/humble/lib/nav2_planner/planner_server --ros-args --log-level info --ros-args -r __node:=planner_server --params-file /tmp/tmpyb2u129x -r /tf:=tf -r /tf_static:=tf_static'].
+[controller_server-2] [INFO] [1793044985.662762907] [controller_server]: Configuring controller interface
+[controller_server-2] [INFO] [1793044985.662986147] [controller_server]: getting goal checker plugins..
+[controller_server-2] [INFO] [1793044985.663156403] [controller_server]: Controller frequency set to 30.0000Hz
+[controller_server-2] [INFO] [1793044985.663197617] [local_costmap.local_costmap]: Configuring
+[controller_server-2] [INFO] [1793044985.669146980] [local_costmap.local_costmap]: Using plugin "voxel_layer"
+[controller_server-2] [INFO] [1793044985.673344262] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[controller_server-2] [INFO] [1793044985.682852686] [local_costmap.local_costmap]: Initialized plugin "voxel_layer"
+[controller_server-2] [INFO] [1793044985.682905489] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-2] [INFO] [1793044985.684021744] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-2] [INFO] [1793044985.693767864] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-2] [INFO] [1793044985.694661678] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-2] [INFO] [1793044985.695363473] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[controller_server-2] [INFO] [1793044985.696489229] [controller_server]: Created controller : FollowPath of type nav2_mppi_controller::MPPIController
+[controller_server-2] [WARN] [1793044985.699835885] [controller_server]: Controller period is less then model dt, consider setting it equal
+[controller_server-2] [INFO] [1793044985.701621381] [controller_server]: ConstraintCritic instantiated with 1 power and 4.000000 weight.
+[controller_server-2] [INFO] [1793044985.701717283] [controller_server]: Critic loaded : mppi::critics::ConstraintCritic
+[controller_server-2] [WARN] [1793044985.703718638] [controller_server]: Inconsistent configuration in collision checking. Please verify the robot's shape settings in both the costmap and the obstacle critic.
+[controller_server-2] [INFO] [1793044985.703768917] [controller_server]: ObstaclesCritic instantiated with 1 power and 20.000000 / 1.500000 weights. Critic will collision check based on circular cost.
+[controller_server-2] [INFO] [1793044985.703790711] [controller_server]: Critic loaded : mppi::critics::ObstaclesCritic
+[controller_server-2] [INFO] [1793044985.704479841] [controller_server]: GoalCritic instantiated with 1 power and 5.000000 weight.
+[controller_server-2] [INFO] [1793044985.704519787] [controller_server]: Critic loaded : mppi::critics::GoalCritic
+[controller_server-2] [INFO] [1793044985.705261538] [controller_server]: GoalAngleCritic instantiated with 1 power, 3.000000 weight, and 0.500000 angular threshold.
+[controller_server-2] [INFO] [1793044985.705311839] [controller_server]: Critic loaded : mppi::critics::GoalAngleCritic
+[controller_server-2] [INFO] [1793044985.706936261] [controller_server]: ReferenceTrajectoryCritic instantiated with 1 power and 14.000000 weight
+[controller_server-2] [INFO] [1793044985.707001890] [controller_server]: Critic loaded : mppi::critics::PathAlignCritic
+[controller_server-2] [INFO] [1793044985.707954994] [controller_server]: Critic loaded : mppi::critics::PathFollowCritic
+[controller_server-2] [INFO] [1793044985.709253062] [controller_server]: PathAngleCritic instantiated with 1 power and 2.000000 weight. Reversing allowed.
+[controller_server-2] [INFO] [1793044985.709304214] [controller_server]: Critic loaded : mppi::critics::PathAngleCritic
+[controller_server-2] [INFO] [1793044985.710127967] [controller_server]: PreferForwardCritic instantiated with 1 power and 5.000000 weight.
+[controller_server-2] [INFO] [1793044985.710169203] [controller_server]: Critic loaded : mppi::critics::PreferForwardCritic
+[controller_server-2] [INFO] [1793044985.717684784] [controller_server]: Optimizer reset
+[controller_server-2] [INFO] [1793044985.721441894] [MPPIController]: Configured MPPI Controller: FollowPath
+[controller_server-2] [INFO] [1793044985.721529669] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-8] [INFO] [1793044985.730026341] [lifecycle_manager_navigation]: Configuring smoother_server
+[smoother_server-3] [INFO] [1793044985.730314187] [smoother_server]: Configuring smoother server
+[smoother_server-3] [INFO] [1793044985.741138019] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[smoother_server-3] [INFO] [1793044985.742141116] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[lifecycle_manager-8] [INFO] [1793044985.750827181] [lifecycle_manager_navigation]: Configuring planner_server
