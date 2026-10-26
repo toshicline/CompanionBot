@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version='1.8'>
-    <world name='empty'>
+    <world name='wall'>
         <physics name='1ms' type='ignored'>
             <max_step_size>0.003</max_step_size>
             <real_time_factor>1</real_time_factor>
@@ -79,7 +79,9 @@
             <link name='wall1'>
                 <!-- Positioned 3 meters in front of the default spawn point (0, 0, 0) facing forward (+X) -->
                 <pose>3 0 0 0 0 0</pose>
+                <!-- this has been removed 
                 <static>true</static>
+                -->
                 <collision name='wall1_collision'>
                     <geometry>
                         <box>

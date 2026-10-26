@@ -48,7 +48,7 @@ def generate_launch_description():
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(gz_sim_share, "launch", "gz_sim.launch.py")),
         launch_arguments={
-            "gz_args": ["-s ", gz_world_arg]
+            "gz_args": ["-r -s ", gz_world_arg]
         }.items()
     )
 
@@ -74,7 +74,8 @@ def generate_launch_description():
             "/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist",
             "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
             "/odometry/wheels@nav_msgs/msg/Odometry@gz.msgs.Odometry",
-            "/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V",
+            # "/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V", # it used to be this and it works but the <tf_topic>/tf_gazebo</tf_topic> in my xacro has to be set to this
+            "/tf_gazebo@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V", # this is the new that sends messages to tf_gazebo instead of tf
             "/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model",
             "/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan",
             "/imu/data@sensor_msgs/msg/Imu@gz.msgs.IMU",
