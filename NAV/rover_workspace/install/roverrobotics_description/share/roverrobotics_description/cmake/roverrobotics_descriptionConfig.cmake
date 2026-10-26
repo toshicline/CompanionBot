@@ -1,1 +1,0 @@
-/home/andrew/CompanionBot2/NAV/rover_workspace/build/roverrobotics_description/ament_cmake_core/roverrobotics_descriptionConfig.cmake

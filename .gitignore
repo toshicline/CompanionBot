@@ -8,3 +8,8 @@ HRI/models
 # MPC
 MPC/.pio
 MPC/.vscode
+
+# NAV
+NAV/rover_workspace/build/
+NAV/rover_workspace/install/
+NAV/rover_workspace/log/
