@@ -27,7 +27,7 @@ def generate_launch_description():
     
     declare_world_cmd = DeclareLaunchArgument(
         'world',
-        default_value='wall.sdf',
+        default_value='slam_world.sdf',
         description='World file to use in Gazebo')
     
     gz_world_arg = PathJoinSubstitution([
@@ -79,7 +79,9 @@ def generate_launch_description():
             "/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model",
             "/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan",
             "/imu/data@sensor_msgs/msg/Imu@gz.msgs.IMU",
+            
         ],
+        
     )
 
     # Robot state publisher
@@ -92,8 +94,47 @@ def generate_launch_description():
             parameters=[params],
             arguments=[])
 
+    ####################333 --- New Code for Map/World Visualization ---##############################
+    
+    # # Locate and parse obstacles xacro
+    # obstacles_xacro = os.path.join(get_package_share_directory(
+    #     'roverrobotics_description'), 'urdf', 'obstacles.urdf.xacro')
+    
+    # obstacles_desc = ParameterValue(Command(['xacro ', obstacles_xacro]), value_type=str)
+    
+    # # Stand up a secondary state publisher explicitly for the environment
+    # params2 = {'use_sim_time': use_sim_time, 'robot_description': obstacles_desc}
+    # start_obstacles_state_publisher_cmd = Node(
+    #     package='robot_state_publisher',
+    #     executable='robot_state_publisher',
+    #     name='obstacles_state_publisher',
+    #     output='screen',
+    #     parameters=[params2],
+    #     remappings=[('/robot_description', '/obstacles_description')] # avoids conflict with rover
+    # )
+
+    # # Bridge the gap between your rover's coordinate frame and the world frame
+    # # Adjust 'odom' to match your robot's actual parent frame if using an EK/SLAM map node
+    # world_to_odom_tf = Node(
+    #     package='tf2_ros',
+    #     executable='static_transform_publisher',
+    #     name='world_to_odom_bridge',
+    #     arguments=['0', '0', '0', '0', '0', '0', 'world', 'odom']
+    # )
+
+    
+    ###################### END NEW CODE ########################################
+
     # Create the launch description and populate
     ld = LaunchDescription()
+
+
+
+
+    # Add new environment visualization components
+    # ld.add_action(start_obstacles_state_publisher_cmd)
+    # ld.add_action(world_to_odom_tf)
+
 
     # Declare the launch options
     ld.add_action(declare_use_sim_time_cmd)
