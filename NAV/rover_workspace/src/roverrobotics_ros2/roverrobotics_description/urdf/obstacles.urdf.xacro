@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org" name="world_obstacles">
+
+  <!-- Define a virtual world link as the origin -->
+  <link name="world"/>
+
+  <!-- Static Link for Wall 1 -->
+  <link name="wall1_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <!-- Matching size from wall.sdf (0.2 4 1) -->
+        <box size="0.2 4.0 1.0"/>
+      </geometry>
+      <material name="dark_blue">
+        <color rgba="0.0 0.1 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.2 4.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Joint calculating cumulative positions: -->
+  <!-- Obstacles model pose (0 0 0.5) + wall1 pose (3 0 0) = (3 0 0.5) -->
+  <joint name="world_to_wall1_joint" type="fixed">
+    <parent link="world"/>
+    <child link="wall1_link"/>
+    <origin xyz="3.0 0.0 0.5" rpy="0 0 0"/>
+  </joint>
+
+</robot>
