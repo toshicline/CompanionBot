@@ -1,0 +1,4 @@
+Added Component: Designator=U1(Teensy 4.1)
+Added Component: Designator=U2(ADAFRUIT CAN PAL)
+Added Member To Class: ClassName=Schematic Member=Component U1 teensy 4.1
+Added Member To Class: ClassName=Schematic Member=Component U2 Adafruit CAN PAL
