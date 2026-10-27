@@ -1,0 +1,55 @@
+[0.052s] Invoking command in '/home/rukig008/CompanionBot/MSI/src/build/rf2o_laser_odometry': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rukig008/CompanionBot/MSI/src/rf2o_laser_odometry -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/rukig008/CompanionBot/MSI/src/install/rf2o_laser_odometry
+[0.669s] -- The C compiler identification is GNU 11.4.0
+[2.346s] -- The CXX compiler identification is GNU 11.4.0
+[3.506s] -- Detecting C compiler ABI info
+[3.947s] -- Detecting C compiler ABI info - done
+[3.963s] -- Check for working C compiler: /usr/bin/cc - skipped
+[3.979s] -- Detecting C compile features
+[3.984s] -- Detecting C compile features - done
+[4.003s] -- Detecting CXX compiler ABI info
+[4.455s] -- Detecting CXX compiler ABI info - done
+[4.470s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[4.471s] -- Detecting CXX compile features
+[4.472s] -- Detecting CXX compile features - done
+[4.490s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[4.825s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[4.991s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[5.098s] -- Found rclcpp: 16.0.21 (/opt/ros/humble/share/rclcpp/cmake)
+[5.627s] -- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[5.646s] -- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[5.680s] -- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[5.727s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.784s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.934s] -- Found rmw_implementation_cmake: 6.1.4 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[5.946s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[10.198s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[14.800s] -- Found FastRTPS: /opt/ros/humble/include  
+[23.107s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[23.163s] -- Looking for pthread.h
+[23.623s] -- Looking for pthread.h - found
+[23.624s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[24.086s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[24.089s] -- Found Threads: TRUE  
+[24.265s] -- Found geometry_msgs: 4.9.2 (/opt/ros/humble/share/geometry_msgs/cmake)
+[24.308s] -- Found tf2_geometry_msgs: 0.25.23 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[24.508s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[24.518s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[24.518s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[24.851s] -- Found sensor_msgs: 4.9.2 (/opt/ros/humble/share/sensor_msgs/cmake)
+[24.898s] -- Found nav_msgs: 4.9.2 (/opt/ros/humble/share/nav_msgs/cmake)
+[24.972s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0")  
+[25.147s] -- Configuring done
+[25.201s] -- Generating done
+[25.214s] -- Build files have been written to: /home/rukig008/CompanionBot/MSI/src/build/rf2o_laser_odometry
+[25.234s] Invoked command in '/home/rukig008/CompanionBot/MSI/src/build/rf2o_laser_odometry' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rukig008/CompanionBot/MSI/src/rf2o_laser_odometry -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/rukig008/CompanionBot/MSI/src/install/rf2o_laser_odometry
+[25.239s] Invoking command in '/home/rukig008/CompanionBot/MSI/src/build/rf2o_laser_odometry': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rukig008/CompanionBot/MSI/src/build/rf2o_laser_odometry -- -j16 -l16
+[25.358s] [ 20%] [32mBuilding CXX object CMakeFiles/rf2o_laser_odometry_node.dir/src/CLaserOdometry2DNode.cpp.o[0m
+[25.359s] [ 40%] [32mBuilding CXX object CMakeFiles/rf2o_laser_odometry.dir/src/CLaserOdometry2D.cpp.o[0m
+[25.360s] [ 60%] [32mBuilding CXX object CMakeFiles/rf2o_laser_odometry_node.dir/src/CLaserOdometry2D.cpp.o[0m
+[37.192s] gmake[2]: *** [CMakeFiles/rf2o_laser_odometry_node.dir/build.make:76: CMakeFiles/rf2o_laser_odometry_node.dir/src/CLaserOdometry2DNode.cpp.o] Interrupt
+[37.193s] gmake[2]: *** [CMakeFiles/rf2o_laser_odometry.dir/build.make:76: CMakeFiles/rf2o_laser_odometry.dir/src/CLaserOdometry2D.cpp.o] Interrupt
+[37.193s] gmake[2]: *** [CMakeFiles/rf2o_laser_odometry_node.dir/build.make:90: CMakeFiles/rf2o_laser_odometry_node.dir/src/CLaserOdometry2D.cpp.o] Interrupt
+[37.194s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/rf2o_laser_odometry.dir/all] Interrupt
+[37.194s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/rf2o_laser_odometry_node.dir/all] Interrupt
+[37.194s] gmake: *** [Makefile:146: all] Interrupt
+[37.304s] Invoked command in '/home/rukig008/CompanionBot/MSI/src/build/rf2o_laser_odometry' returned '-2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rukig008/CompanionBot/MSI/src/build/rf2o_laser_odometry -- -j16 -l16

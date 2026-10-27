@@ -23,7 +23,8 @@ setup(
         ],
     },
     entry_points={
-        'console_scripts': [
+        'console_scripts':[
+            'lidar_monitor = satop_mapping.lidar_monitor:main',
         ],
     },
 )
