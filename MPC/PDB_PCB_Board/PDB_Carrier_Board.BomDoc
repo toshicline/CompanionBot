@@ -1,0 +1,24 @@
+|RECORD=BOM|VERSION=6|FILENAME=C:\Users\Toshi\Documents\Capstone_Companion_Robot\PDB_Carrier_Board\PDB_Carrier_Board.BomDoc|KIND=ALTIUM_DESIGNER_LIVEBOM|DATE=27.10.2026|TIME=05:30:01|CURRENCY=USD|PRODUCTIONQUANTITY=1|PERUNITTARGETPRICE=0|PERUNITACTUALPRICE=0
+|RECORD=GeneralOptions|OPENEXPORTED=False|ADDTOPROJECT=False|FORCEFIT=False|NOTFITTED=False|TEMPLATEFILENAME=|BATCHMODE=0|SUPPLIERPRODQTY=0|SUPPLIERAUTOQTY=False|SUPPLIERUSECACHEDPRICING=False|SUPPLIERCURRENCY=|SOLUTIONSPERITEM=1|SUPPLIERSPERSOLUTION=1|DISPLAYTOTALROW=False|DISPLAYSUBTOTALSFORGROUPS=False|INCLUDEPCBPARAMETERS=False|INCLUDEDBPARAMETERS=False|INCLUDEVAULTPARAMETERS=False|INCLUDECLOUDPARAMETERS=False|INCLUDEDOCUMENTPARAMETERS=False|FILTEROUTRISKYSOLUTIONS=True|DESIGNATORGROUPING=No
+|RECORD=SortOrderOptions|SORTORDER=
+|RECORD=GroupOrderOptions|GROUPORDER=
+|RECORD=VisibleOrderOptions|VISIBLEORDER=Line #=54!Comment=112!Description=82!Designator=80!Quantity=67!Manufacturer 1=102!Manufacturer Part Number 1=169!Manufacturer Lifecycle 1=147!Supplier 1=75!Supplier Part Number 1=142!Supplier Unit Price 1=127!Supplier Subtotal 1=122
+|RECORD=VisibleOrderOptions2|BASEVIEW=Line #=54!Comment=112!Description=82!Designator=80!Quantity=67!Manufacturer 1=102!Manufacturer Part Number 1=169!Manufacturer Lifecycle 1=147!Supplier 1=75!Supplier Part Number 1=142!Supplier Unit Price 1=127!Supplier Subtotal 1=122|FLATVIEW=Line #=-1!Comment=-1!Description=-1!Designator=-1!Manufacturer 1=102!Manufacturer Part Number 1=169!Manufacturer Lifecycle 1=147!Supplier 1=75!Supplier Part Number 1=142!Supplier Unit Price 1=127!Supplier Subtotal 1=122|CONSOLIDATEDVIEW=Line #=-1!Comment=-1!Description=-1!Designator=-1!Quantity=-1!Manufacturer 1=102!Manufacturer Part Number 1=169!Manufacturer Lifecycle 1=147!Supplier 1=75!Supplier Part Number 1=142!Supplier Unit Price 1=127!Supplier Subtotal 1=122
+|RECORD=CustomColumns|CUSTOMCOLUMNS=
+|RECORD=ColumnsAliases|COLUMNSALIASES=Comment=Name
+|RECORD=FilterOptions|FILTER=
+|RECORD=CheckGroupCompParamsOptions|CHECKGROUPCOMPPARAMS=Comment=0,Description=0,Value=0,Footprint=1
+|RECORD=ManufacturerLinkOptions|MANUFACTURERLINKPARAMETERS=
+|RECORD=FavoriteSuppliers|PARTSOURCES=|SUPPLIERS=|USESUPPLIERORDER=False
+|RECORD=CheckOptions|CHECKLEVELS=
+|RECORD=ExternalCheckOptions|CHECKLEVELS=
+|RECORD=LineNumberingOptions|STARTVALUE=|INCREMENT=
+|RECORD=Catalog|DBLINKFILEPATH=
+|RECORD=CatalogItem|ITEMTYPE=Automatic-NonVault|UNIQUEID=capstone.SchLib\teensy 4.1|DESIGNITEMID=teensy 4.1|ITEMSOURCE=capstone.SchLib|STATUS=Unknown|DESCRIPTION=|USERCOMMENTS=teensy 4.1|NOTE=|LINENUMBER=|SELECTEDPARAMETERSHASH=,"teensy 4.1"|COMPONENTPARAMETERS="Comment=teensy 4.1","Component Kind=Standard",Description=,"Footprint=Teensy 4.1","Ibis Model=","Library Name=capstone.SchLib","Library Reference=teensy 4.1",PCB3D=,"Pin Info=","Signal Integrity=",Simulation=|CUSTOMPARAMETERS=
+|RECORD=PartChoiceGroups|GROUPBYFIELDCOUNT=0
+|RECORD=CatalogItem|ITEMTYPE=Automatic-NonVault|UNIQUEID=capstone.SchLib\Adafruit CAN PAL|DESIGNITEMID=Adafruit CAN PAL|ITEMSOURCE=capstone.SchLib|STATUS=Unknown|DESCRIPTION=|USERCOMMENTS=Adafruit CAN PAL|NOTE=|LINENUMBER=|SELECTEDPARAMETERSHASH=,"Adafruit CAN PAL"|COMPONENTPARAMETERS="Comment=Adafruit CAN PAL","Component Kind=Standard",Description=,"Footprint=ADAFRUIT CAN PAL","Ibis Model=","Library Name=capstone.SchLib","Library Reference=Adafruit CAN PAL",PCB3D=,"Pin Info=","Signal Integrity=",Simulation=|CUSTOMPARAMETERS=
+|RECORD=PartChoiceGroups|GROUPBYFIELDCOUNT=0
+|RECORD=CatalogItem|ITEMTYPE=Automatic-Vault|UNIQUEID=16CCB370-4A66-4F92-9381-26B182FA8BE9\12910140-FD56-4E6A-BFC0-E05E5F00D5FA|DESIGNITEMID=CMP-2006-03071-2|ITEMSOURCE=Altium Content Vault|STATUS=Unknown|DESCRIPTION=CAP CER 0.1UF 16V Y5V 0603|USERCOMMENTS=C0603C104Z4VACTU|NOTE=|LINENUMBER=|SELECTEDPARAMETERSHASH=|COMPONENTPARAMETERS=|CUSTOMPARAMETERS=
+|RECORD=PartChoiceGroups|GROUPBYFIELDCOUNT=0
+|RECORD=CatalogItem|ITEMTYPE=Automatic-NonVault|UNIQUEID=capstone.SchLib\TPS56A37RPAR|DESIGNITEMID=TPS56A37RPAR|ITEMSOURCE=capstone.SchLib|STATUS=Unknown|DESCRIPTION=|USERCOMMENTS=TPS56A37RPAR|NOTE=|LINENUMBER=|SELECTEDPARAMETERSHASH=,TPS56A37RPAR|COMPONENTPARAMETERS=Comment=TPS56A37RPAR,"Component Kind=Standard",Description=,Footprint=TPS56A37RPAR,"Ibis Model=","Library Name=capstone.SchLib","Library Reference=TPS56A37RPAR",PCB3D=,"Pin Info=","Signal Integrity=",Simulation=|CUSTOMPARAMETERS=
+|RECORD=PartChoiceGroups|GROUPBYFIELDCOUNT=0
