@@ -1,0 +1,25 @@
+{
+    "name":"Morning",
+    "steps":[
+        {
+            "name":"Make your bed",
+            "reminder_time_s":30,
+            "skippable":false
+        },
+        {
+            "name":"Brush your teeth",
+            "reminder_time_s":120,
+            "skippable":false
+        },
+        {
+            "name":"Put your clothes on for the day",
+            "reminder_time_s":60,
+            "skippable":false
+        },
+        {
+            "name":"Pack your lunch",
+            "reminder_time_s":120,
+            "skippable":true
+        }
+    ]
+}

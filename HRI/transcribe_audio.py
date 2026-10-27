@@ -1,5 +1,7 @@
 import sys
 import queue
+import wave
+import time
 import numpy as np
 import sounddevice as sd
 from faster_whisper import WhisperModel
@@ -24,7 +26,23 @@ TARGET_SAMPLES = SAMPLE_RATE * BUFFER_SIZE_SECONDS
 
 
 
-
+def ding(path="tmp/tone.wav"):
+    """Play a tone that indicates the mic is hot
+    
+    Returns:
+        None
+    """
+    time.sleep(.5)
+    with wave.open(path, 'rb') as wf:
+        samplerate =wf.getframerate()
+        frames = wf.readframes(wf.getnframes())
+        
+        # Directly parse as 16-bit signed integer and normalize
+        audio_data = np.frombuffer(frames, dtype=np.int16).astype(np.float32) / 32768.0
+            
+        # Play the audio through the default output device
+        sd.play(audio_data, samplerate)
+        sd.wait()
 
 def audio_callback(indata,frames,time_info,status):
     """Called by sounddevice for every audio block from the mic
@@ -53,17 +71,17 @@ def get_anker_input_device_id():
     print("Anker PowerConf input not found!")
     return None
 
-def listen(timeout_seconds=5):
-    """Listen and transcribe speech for a specified duration
+def listen(max_wait_seconds=10, silence_pause_seconds=3):
+    """Listen until speech is detected, then continue until the user stops speaking.
 
     Args:
-        timeout_seconds (int): number of seconds to listen for
+        max_wait_seconds (int): Max time to wait for speech to begin.
+        silence_pause_seconds (float): Seconds of silence to wait before concluding speech is done.
 
     Returns:
-        None
+        str: Combined transcript of what the user said.
     """
-
-    # Clear out any leftover stale audio in the queue from before
+    # Clear out any leftover stale audio in the queue
     while not audio_queue.empty():
         try:
             audio_queue.get_nowait()
@@ -71,10 +89,8 @@ def listen(timeout_seconds=5):
             break
 
     transcripts = []
+    ding()
 
-    print("Listening...")
-
-    # Configure microphone stream (1 channel, 16kHz)
     with sd.InputStream(
         device=AUDIO_DEVICE_ID,
         samplerate=SAMPLE_RATE,
@@ -82,31 +98,38 @@ def listen(timeout_seconds=5):
         dtype=np.float32,
         callback=audio_callback
     ):
-        buffer = np.array([],dtype=np.float32)
-
-        # Initiate time tracking variables
+        buffer = np.array([], dtype=np.float32)
         total_offset_seconds = 0.0
         session_start_time = datetime.now()
+        
+        speech_detected = False
+        last_speech_time = datetime.now()
 
         while True:
-
-            # Check timeout
-            elapsed_time = (datetime.now() - session_start_time).total_seconds()
-            if elapsed_time > timeout_seconds:
-                break
+            current_time = datetime.now()
+            
+            # Phase 1: If speech hasn't started yet, check max wait timeout
+            if not speech_detected:
+                elapsed_wait = (current_time - session_start_time).total_seconds()
+                if elapsed_wait > max_wait_seconds:
+                    print("No speech detected (timeout).")
+                    break
+            else:
+                # Phase 2: Speech has started. Check if user has stopped talking for long enough
+                silence_duration = (current_time - last_speech_time).total_seconds()
+                if silence_duration > silence_pause_seconds:
+                    break
 
             try:
-                # Wait up to 0.1 seconds for the next audio chunk from the queue
+                # Wait up to 0.1 seconds for the next audio chunk
                 chunk = audio_queue.get(timeout=0.1)
                 buffer = np.append(buffer, chunk)
             except queue.Empty:
-                # Timeout occurred, loop back to check again
-                pass
+                continue
 
             # Process once we hit our target buffer size
             if len(buffer) >= TARGET_SAMPLES:
                 audio_chunk = buffer[:TARGET_SAMPLES]
-                # Keep any leftover samples for the next buffer to prevent audio clipping
                 buffer = buffer[TARGET_SAMPLES:]
 
                 segments, info = model.transcribe(
@@ -116,21 +139,21 @@ def listen(timeout_seconds=5):
                     vad_filter=True,
                 )
 
+                chunk_has_speech = False
                 for segment in segments:
+                    cleaned_text = segment.text.strip()
+                    if cleaned_text:
+                        chunk_has_speech = True
+                        transcripts.append(cleaned_text)
 
-                    # Absolute elapsed seconds since start of program
-                    time_abs_start = segment.start + total_offset_seconds
+                if chunk_has_speech:
+                    speech_detected = True
+                    last_speech_time = datetime.now()  # Reset silence timer when speech is found
 
-                    # Map elapsed seconds to real-world time
-                    segment_datetime = session_start_time + timedelta(seconds=time_abs_start)
-
-                    # add to total transcript
-                    transcripts.append(segment.text.strip())
-
-                # Advance time by the duration of the chunk that was just processed
                 total_offset_seconds += BUFFER_SIZE_SECONDS
 
     return " ".join(transcripts).strip()
+
 
 
 # Init model
