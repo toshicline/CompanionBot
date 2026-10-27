@@ -1,1 +1,1 @@
-/home/rukig008/satop_ws/src/sllidar_ros2/launch/view_sllidar_a2m7_launch.py
+/home/rukig008/CompanionBot/MSI/src/sllidar_ros2/launch/view_sllidar_a2m7_launch.py

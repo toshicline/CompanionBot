@@ -1,0 +1,102 @@
+[0.753s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--base-paths', 'rover_models/roverrobotics_ros2/roverrobotics_description', '--packages-select', 'roverrobotics_description', '--symlink-install']
+[0.753s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['rover_models/roverrobotics_ros2/roverrobotics_description'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['roverrobotics_description'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7125eaf46140>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7125eb0bfac0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7125eb0bfac0>>, mixin_verb=('build',))
+[1.471s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.472s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.472s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.472s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.472s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.472s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/rukig008/CompanionBot/MSI/rover_models/roverrobotics_ros2/roverrobotics_description'
+[1.472s] Level 1:colcon.colcon_core.package_identification:_identify(rover_models/roverrobotics_ros2/roverrobotics_description) by extensions ['ignore', 'ignore_ament_install']
+[1.473s] Level 1:colcon.colcon_core.package_identification:_identify(rover_models/roverrobotics_ros2/roverrobotics_description) by extension 'ignore'
+[1.473s] Level 1:colcon.colcon_core.package_identification:_identify(rover_models/roverrobotics_ros2/roverrobotics_description) by extension 'ignore_ament_install'
+[1.473s] Level 1:colcon.colcon_core.package_identification:_identify(rover_models/roverrobotics_ros2/roverrobotics_description) by extensions ['colcon_pkg']
+[1.473s] Level 1:colcon.colcon_core.package_identification:_identify(rover_models/roverrobotics_ros2/roverrobotics_description) by extension 'colcon_pkg'
+[1.473s] Level 1:colcon.colcon_core.package_identification:_identify(rover_models/roverrobotics_ros2/roverrobotics_description) by extensions ['colcon_meta']
+[1.473s] Level 1:colcon.colcon_core.package_identification:_identify(rover_models/roverrobotics_ros2/roverrobotics_description) by extension 'colcon_meta'
+[1.473s] Level 1:colcon.colcon_core.package_identification:_identify(rover_models/roverrobotics_ros2/roverrobotics_description) by extensions ['ros']
+[1.473s] Level 1:colcon.colcon_core.package_identification:_identify(rover_models/roverrobotics_ros2/roverrobotics_description) by extension 'ros'
+[1.503s] DEBUG:colcon.colcon_core.package_identification:Package 'rover_models/roverrobotics_ros2/roverrobotics_description' with type 'ros.ament_cmake' and name 'roverrobotics_description'
+[1.503s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.585s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.585s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.594s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/rukig008/CompanionBot/MSI/install
+[1.599s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/rukig008/CompanionBot/MSI/src/install
+[1.603s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 336 installed packages in /opt/ros/humble
+[1.606s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.724s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_args' from command line to 'None'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_target' from command line to 'None'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_clean_cache' from command line to 'False'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_clean_first' from command line to 'False'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_force_configure' from command line to 'False'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'ament_cmake_args' from command line to 'None'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'catkin_cmake_args' from command line to 'None'
+[1.725s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.725s] DEBUG:colcon.colcon_core.verb:Building package 'roverrobotics_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description', 'merge_install': False, 'path': '/home/rukig008/CompanionBot/MSI/rover_models/roverrobotics_ros2/roverrobotics_description', 'symlink_install': True, 'test_result_base': None}
+[1.726s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.729s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.730s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rukig008/CompanionBot/MSI/rover_models/roverrobotics_ros2/roverrobotics_description' with build type 'ament_cmake'
+[1.731s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rukig008/CompanionBot/MSI/rover_models/roverrobotics_ros2/roverrobotics_description'
+[1.746s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.747s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.747s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.788s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake /home/rukig008/CompanionBot/MSI/rover_models/roverrobotics_ros2/roverrobotics_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/rukig008/CompanionBot/MSI/install/roverrobotics_description
+[2.501s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake /home/rukig008/CompanionBot/MSI/rover_models/roverrobotics_ros2/roverrobotics_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/rukig008/CompanionBot/MSI/install/roverrobotics_description
+[2.508s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake --build /home/rukig008/CompanionBot/MSI/build/roverrobotics_description -- -j16 -l16
+[2.605s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake --build /home/rukig008/CompanionBot/MSI/build/roverrobotics_description -- -j16 -l16
+[2.630s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake --install /home/rukig008/CompanionBot/MSI/build/roverrobotics_description
+[4.309s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roverrobotics_description)
+[4.310s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake --install /home/rukig008/CompanionBot/MSI/build/roverrobotics_description
+[4.325s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description' for CMake module files
+[4.327s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description' for CMake config files
+[4.329s] Level 1:colcon.colcon_core.shell:create_environment_hook('roverrobotics_description', 'cmake_prefix_path')
+[4.330s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.ps1'
+[4.333s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.dsv'
+[4.335s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.sh'
+[4.338s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/bin'
+[4.339s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/lib/pkgconfig/roverrobotics_description.pc'
+[4.339s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/lib/python3.10/site-packages'
+[4.340s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/bin'
+[4.341s] INFO:colcon.colcon_core.shell:Creating package script '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.ps1'
+[4.345s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.dsv'
+[4.347s] INFO:colcon.colcon_core.shell:Creating package script '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.sh'
+[4.349s] INFO:colcon.colcon_core.shell:Creating package script '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.bash'
+[4.353s] INFO:colcon.colcon_core.shell:Creating package script '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.zsh'
+[4.355s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/colcon-core/packages/roverrobotics_description)
+[4.357s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roverrobotics_description)
+[4.358s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description' for CMake module files
+[4.359s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description' for CMake config files
+[4.360s] Level 1:colcon.colcon_core.shell:create_environment_hook('roverrobotics_description', 'cmake_prefix_path')
+[4.361s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.ps1'
+[4.362s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.dsv'
+[4.363s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.sh'
+[4.364s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/bin'
+[4.364s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/lib/pkgconfig/roverrobotics_description.pc'
+[4.365s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/lib/python3.10/site-packages'
+[4.366s] Level 1:colcon.colcon_core.environment:checking '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/bin'
+[4.366s] INFO:colcon.colcon_core.shell:Creating package script '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.ps1'
+[4.368s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.dsv'
+[4.369s] INFO:colcon.colcon_core.shell:Creating package script '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.sh'
+[4.371s] INFO:colcon.colcon_core.shell:Creating package script '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.bash'
+[4.373s] INFO:colcon.colcon_core.shell:Creating package script '/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.zsh'
+[4.375s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/colcon-core/packages/roverrobotics_description)
+[4.376s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[4.378s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[4.379s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[4.379s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[4.538s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[4.538s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[4.539s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[4.539s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.539s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.FileNotFound: Failed to connect to socket /run/user/1000/bus: No such file or directory
+[4.539s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.540s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rukig008/CompanionBot/MSI/install/local_setup.ps1'
+[4.558s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rukig008/CompanionBot/MSI/install/_local_setup_util_ps1.py'
+[4.563s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rukig008/CompanionBot/MSI/install/setup.ps1'
+[4.567s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rukig008/CompanionBot/MSI/install/local_setup.sh'
+[4.571s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rukig008/CompanionBot/MSI/install/_local_setup_util_sh.py'
+[4.573s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rukig008/CompanionBot/MSI/install/setup.sh'
+[4.579s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rukig008/CompanionBot/MSI/install/local_setup.bash'
+[4.581s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rukig008/CompanionBot/MSI/install/setup.bash'
+[4.584s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rukig008/CompanionBot/MSI/install/local_setup.zsh'
+[4.586s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rukig008/CompanionBot/MSI/install/setup.zsh'

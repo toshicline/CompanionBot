@@ -1,0 +1,100 @@
+[0.089s] Invoking command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake /home/rukig008/CompanionBot/MSI/rover_models/roverrobotics_ros2/roverrobotics_description -DCMAKE_INSTALL_PREFIX=/home/rukig008/CompanionBot/MSI/install/roverrobotics_description
+[0.765s] -- The C compiler identification is GNU 11.4.0
+[2.614s] -- The CXX compiler identification is GNU 11.4.0
+[3.864s] -- Detecting C compiler ABI info
+[4.331s] -- Detecting C compiler ABI info - done
+[4.349s] -- Check for working C compiler: /usr/bin/cc - skipped
+[4.350s] -- Detecting C compile features
+[4.352s] -- Detecting C compile features - done
+[4.362s] -- Detecting CXX compiler ABI info
+[4.856s] -- Detecting CXX compiler ABI info - done
+[4.872s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[4.873s] -- Detecting CXX compile features
+[4.874s] -- Detecting CXX compile features - done
+[4.900s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[5.323s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[5.858s] -- Configuring done
+[5.876s] -- Generating done
+[5.882s] -- Build files have been written to: /home/rukig008/CompanionBot/MSI/build/roverrobotics_description
+[5.894s] Invoked command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake /home/rukig008/CompanionBot/MSI/rover_models/roverrobotics_ros2/roverrobotics_description -DCMAKE_INSTALL_PREFIX=/home/rukig008/CompanionBot/MSI/install/roverrobotics_description
+[5.899s] Invoking command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake --build /home/rukig008/CompanionBot/MSI/build/roverrobotics_description -- -j16 -l16
+[6.005s] Invoked command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake --build /home/rukig008/CompanionBot/MSI/build/roverrobotics_description -- -j16 -l16
+[6.032s] Invoking command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake --install /home/rukig008/CompanionBot/MSI/build/roverrobotics_description
+[6.052s] -- Install configuration: ""
+[6.052s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/rviz
+[6.057s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/rviz/urdf.rviz
+[6.058s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/launch
+[6.060s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/launch/display_4wd_rover.launch.py
+[6.060s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/launch/display_flipper.launch.py
+[6.061s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/launch/display_mini.launch.py
+[6.062s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/launch/display_mega.launch.py
+[6.062s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/launch/display_mini_2wd.launch.py
+[6.063s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/launch/display_2wd_rover.launch.py
+[6.064s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/launch/display_miti.launch.py
+[6.065s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/launch/display_miti_65.launch.py
+[6.065s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/launch/display_max.launch.py
+[6.066s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes
+[6.068s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/rplidar_s2.dae
+[6.074s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/mega_chassis.dae
+[6.174s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_chassis.dae
+[6.347s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/mega_payload.dae
+[6.447s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/max_wheels_15in_neo.dae
+[6.479s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/max_chassis.dae
+[6.566s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_chassis_new.dae
+[6.658s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/mini_2wd_chassis.dae
+[6.748s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_chassis_neo.dae
+[6.879s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/hub_10in.dae
+[6.883s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/max_chassis_neo.dae
+[7.050s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/flipper_chassis.dae
+[7.184s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_payload.dae
+[7.238s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/mini_chassis_new.dae
+[7.320s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/pro_tire.dae
+[7.322s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/max_wheels_15in.dae
+[7.328s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/hub_6.5in.dae
+[7.330s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/max_wheels_13in.dae
+[7.338s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/65wheels.dae
+[7.340s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/rover_payload.dae
+[7.463s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/mega_wheels.dae
+[7.488s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/mini_chassis.dae
+[7.661s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/castor_housing.dae
+[7.663s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/castor.dae
+[7.664s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/flipper_track.dae
+[7.676s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/rover_2wd_core.dae
+[7.762s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/meshes/flipper.dae
+[7.884s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf
+[7.886s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/flipper.urdf
+[7.886s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_4wd.urdf
+[7.889s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/mega.urdf
+[7.889s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/miti_neo.urdf
+[7.889s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/miti_65.urdf
+[7.890s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_2wd.urdf
+[7.890s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/miti.urdf
+[7.891s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/mini.urdf
+[7.892s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/max.urdf
+[7.893s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/max_150_neo.urdf
+[7.893s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/mini_2wd.urdf
+[7.894s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories
+[7.896s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/mega_payload.urdf
+[7.897s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/rplidar_s2.urdf
+[7.898s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/rover_dev_payload.urdf
+[7.898s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/miti_payload.urdf
+[7.898s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/imu.urdf
+[7.899s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/max_150.urdf
+[7.900s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/max_130_neo.urdf
+[7.900s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/urdf/max_130.urdf
+[7.904s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/ament_index/resource_index/package_run_dependencies/roverrobotics_description
+[7.906s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/ament_index/resource_index/parent_prefix_path/roverrobotics_description
+[7.908s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/environment/ament_prefix_path.sh
+[7.908s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/environment/ament_prefix_path.dsv
+[7.909s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/environment/path.sh
+[7.909s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/environment/path.dsv
+[7.910s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/local_setup.bash
+[7.911s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/local_setup.sh
+[7.911s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/local_setup.zsh
+[7.912s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/local_setup.dsv
+[7.912s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.dsv
+[7.915s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/ament_index/resource_index/packages/roverrobotics_description
+[7.917s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/cmake/roverrobotics_descriptionConfig.cmake
+[7.917s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/cmake/roverrobotics_descriptionConfig-version.cmake
+[7.918s] -- Installing: /home/rukig008/CompanionBot/MSI/install/roverrobotics_description/share/roverrobotics_description/package.xml
+[7.926s] Invoked command in '/home/rukig008/CompanionBot/MSI/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rukig008/CompanionBot/MSI/install/satop_mapping:/opt/ros/humble /usr/bin/cmake --install /home/rukig008/CompanionBot/MSI/build/roverrobotics_description
