@@ -1,0 +1,137 @@
+Change Component Designator: OldDesignator=CIN1_5V NewDesignator=C_IN1_5V
+Change Component Designator: OldDesignator=CIN2_5V NewDesignator=C_IN2_5V
+Added Pin To Net: NetName=NetC_BOOT_5V_1 Pin=C_BOOT_5V-1
+Added Pin To Net: NetName=NetC_BOOT_5V_2 Pin=C_BOOT_5V-2
+Added Pin To Net: NetName=NetC_BOOT_12V_1 Pin=C_BOOT_12V-1
+Added Pin To Net: NetName=NetC_BOOT_12V_2 Pin=C_BOOT_12V-2
+Added Pin To Net: NetName=NetC_FF_5V_1 Pin=C_FF_5V-1
+Added Pin To Net: NetName=NetC_FF_5V_2 Pin=C_FF_5V-2
+Added Pin To Net: NetName=NetC_FF_12V_1 Pin=C_FF_12V-1
+Added Pin To Net: NetName=NetC_FF_12V_2 Pin=C_FF_12V-2
+Added Pin To Net: NetName=NetC_IN1_5V_1 Pin=C_IN1_5V-1
+Added Pin To Net: NetName=VCC Pin=C_IN1_5V-2
+Added Pin To Net: NetName=NetC_IN1_12V_1 Pin=C_IN1_12V-1
+Added Pin To Net: NetName=NetC_IN1_12V_2 Pin=C_IN1_12V-2
+Added Pin To Net: NetName=GND Pin=C_IN2_5V-1
+Added Pin To Net: NetName=NetC_IN1_5V_1 Pin=C_IN2_5V-2
+Added Pin To Net: NetName=GND Pin=C_IN2_12V-1
+Added Pin To Net: NetName=NetC_IN1_12V_1 Pin=C_IN2_12V-2
+Added Pin To Net: NetName=VCC Pin=C_INX_5V-1
+Added Pin To Net: NetName=GND Pin=C_INX_5V-2
+Added Pin To Net: NetName=NetC_IN1_12V_2 Pin=C_INX_12V-1
+Added Pin To Net: NetName=GND Pin=C_INX_12V-2
+Added Pin To Net: NetName=NetC_OUT1_5V_1 Pin=C_OUT1_5V-1
+Added Pin To Net: NetName=+5V Pin=C_OUT1_5V-2
+Added Pin To Net: NetName=+12V Pin=C_OUT1_12V-1
+Added Pin To Net: NetName=NetC_OUT1_12V_2 Pin=C_OUT1_12V-2
+Added Pin To Net: NetName=GND Pin=C_OUT2_5V-1
+Added Pin To Net: NetName=NetC_OUT1_5V_1 Pin=C_OUT2_5V-2
+Added Pin To Net: NetName=NetC_OUT1_12V_2 Pin=C_OUT2_12V-1
+Added Pin To Net: NetName=NetC_OUT2_12V_2 Pin=C_OUT2_12V-2
+Added Pin To Net: NetName=NetC_OUT2_12V_2 Pin=C_OUT3_12V-1
+Added Pin To Net: NetName=GND Pin=C_OUT3_12V-2
+Added Pin To Net: NetName=NetC_SS_5V_1 Pin=C_SS_5V-1
+Added Pin To Net: NetName=GND Pin=C_SS_5V-2
+Added Pin To Net: NetName=NetC_SS_12V_1 Pin=C_SS_12V-1
+Added Pin To Net: NetName=GND Pin=C_SS_12V-2
+Added Pin To Net: NetName=NetCB_INPFLT1_1 Pin=CB_INPFLT1-1
+Added Pin To Net: NetName=NetCB_INPFLT1_2 Pin=CB_INPFLT1-2
+Added Pin To Net: NetName=NetCB_INPFLT1_2 Pin=CB_INPFLT2-1
+Added Pin To Net: NetName=NetCB_INPFLT2_2 Pin=CB_INPFLT2-2
+Added Pin To Net: NetName=NetCB_INPFLT2_2 Pin=CB_INPFLT3-1
+Added Pin To Net: NetName=GND Pin=CB_INPFLT3-2
+Added Pin To Net: NetName=NetCF_INPFLT1_1 Pin=CF_INPFLT1-1
+Added Pin To Net: NetName=VCC Pin=CF_INPFLT1-2
+Added Pin To Net: NetName=GND Pin=CF_INPFLT2-1
+Added Pin To Net: NetName=NetCF_INPFLT1_1 Pin=CF_INPFLT2-2
+Added Pin To Net: NetName=VCC Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=+12V Pin=J2-1
+Added Pin To Net: NetName=GND Pin=J2-3
+Added Pin To Net: NetName=NetC_BOOT_5V_2 Pin=L1_5V-1
+Added Pin To Net: NetName=+5V Pin=L1_5V-2
+Added Pin To Net: NetName=NetC_BOOT_12V_2 Pin=L1_12V-1
+Added Pin To Net: NetName=+12V Pin=L1_12V-2
+Added Pin To Net: NetName=VCC Pin=LF_INPFLT-1
+Added Pin To Net: NetName=NetC_IN1_12V_2 Pin=LF_INPFLT-2
+Added Pin To Net: NetName=GND Pin=R_FBB_5V-1
+Added Pin To Net: NetName=NetC_FF_5V_1 Pin=R_FBB_5V-2
+Added Pin To Net: NetName=GND Pin=R_FBB_12V-1
+Added Pin To Net: NetName=NetC_FF_12V_1 Pin=R_FBB_12V-2
+Added Pin To Net: NetName=NetC_FF_5V_1 Pin=R_FBT_5V-1
+Added Pin To Net: NetName=NetC_FF_5V_2 Pin=R_FBT_5V-2
+Added Pin To Net: NetName=NetC_FF_12V_1 Pin=R_FBT_12V-1
+Added Pin To Net: NetName=NetC_FF_12V_2 Pin=R_FBT_12V-2
+Added Pin To Net: NetName=GND Pin=R_MODE_5V-1
+Added Pin To Net: NetName=NetR_MODE_5V_2 Pin=R_MODE_5V-2
+Added Pin To Net: NetName=GND Pin=R_MODE_12V-1
+Added Pin To Net: NetName=NetR_MODE_12V_2 Pin=R_MODE_12V-2
+Added Pin To Net: NetName=NetR_PG_5V_1 Pin=R_PG_5V-1
+Added Pin To Net: NetName=NetR_PG_12V_1 Pin=R_PG_12V-1
+Added Pin To Net: NetName=NetCB_INPFLT1_1 Pin=RD_INPFLT-1
+Added Pin To Net: NetName=NetC_IN1_12V_2 Pin=RD_INPFLT-2
+Add Pin To Net: Unknown Pin: Pin U1-3V
+Added Pin To Net: NetName=NetC_FF_5V_1 Pin=U3-2
+Added Pin To Net: NetName=GND Pin=U3-3
+Added Pin To Net: NetName=NetR_PG_5V_1 Pin=U3-4
+Added Pin To Net: NetName=NetC_SS_5V_1 Pin=U3-5
+Add Pin To Net: Unknown Pin: Pin U3-6
+Added Pin To Net: NetName=NetC_BOOT_5V_1 Pin=U3-7
+Added Pin To Net: NetName=VCC Pin=U3-8
+Added Pin To Net: NetName=VCC Pin=U3-8
+Added Pin To Net: NetName=VCC Pin=U3-8
+Added Pin To Net: NetName=VCC Pin=U3-8
+Added Pin To Net: NetName=GND Pin=U3-9
+Added Pin To Net: NetName=GND Pin=U3-9
+Added Pin To Net: NetName=NetR_MODE_5V_2 Pin=U3-10
+Added Pin To Net: NetName=NetC_FF_12V_1 Pin=U4-2
+Added Pin To Net: NetName=GND Pin=U4-3
+Added Pin To Net: NetName=NetR_PG_12V_1 Pin=U4-4
+Added Pin To Net: NetName=NetC_SS_12V_1 Pin=U4-5
+Add Pin To Net: Unknown Pin: Pin U4-6
+Added Pin To Net: NetName=NetC_BOOT_12V_1 Pin=U4-7
+Added Pin To Net: NetName=NetC_IN1_12V_2 Pin=U4-8
+Added Pin To Net: NetName=NetC_IN1_12V_2 Pin=U4-8
+Added Pin To Net: NetName=NetC_IN1_12V_2 Pin=U4-8
+Added Pin To Net: NetName=NetC_IN1_12V_2 Pin=U4-8
+Added Pin To Net: NetName=GND Pin=U4-9
+Added Pin To Net: NetName=GND Pin=U4-9
+Added Pin To Net: NetName=NetR_MODE_12V_2 Pin=U4-10
+Added Member To Class: ClassName=Schematic Member=Component C_BOOT_5V C0603C104Z4VACTU
+Added Member To Class: ClassName=Schematic Member=Component C_BOOT_12V C0603C104Z4VACTU
+Added Member To Class: ClassName=Schematic Member=Component C_FF_5V C0603C151K3GACTU
+Added Member To Class: ClassName=Schematic Member=Component C_FF_12V CL10C330JB8NNNC
+Added Member To Class: ClassName=Schematic Member=Component C_IN1_5V MSASU32MSB5106KPNA01
+Added Member To Class: ClassName=Schematic Member=Component C_IN1_12V MSASU32MSB5106KPNA01
+Added Member To Class: ClassName=Schematic Member=Component C_IN2_5V MSASU32MSB5106KPNA01
+Added Member To Class: ClassName=Schematic Member=Component C_IN2_12V MSASU32MSB5106KPNA01
+Added Member To Class: ClassName=Schematic Member=Component C_INX_5V CC0805KRX7R9BB104
+Added Member To Class: ClassName=Schematic Member=Component C_INX_12V CC0805KRX7R9BB104
+Added Member To Class: ClassName=Schematic Member=Component C_OUT1_5V MSAST32MSB7226KPNB25
+Added Member To Class: ClassName=Schematic Member=Component C_OUT1_12V GRM21BR61E106MA73L
+Added Member To Class: ClassName=Schematic Member=Component C_OUT2_5V MSAST32MSB7226KPNB25
+Added Member To Class: ClassName=Schematic Member=Component C_OUT2_12V GRM21BR61E106MA73L
+Added Member To Class: ClassName=Schematic Member=Component C_OUT3_12V GRM21BR61E106MA73L
+Added Member To Class: ClassName=Schematic Member=Component C_SS_5V GRM155R71C223KA01D
+Added Member To Class: ClassName=Schematic Member=Component C_SS_12V GRM155R71C223KA01D
+Added Member To Class: ClassName=Schematic Member=Component CB_INPFLT1 UUD1V100MCL1GS
+Added Member To Class: ClassName=Schematic Member=Component CB_INPFLT2 UUD1V100MCL1GS
+Added Member To Class: ClassName=Schematic Member=Component CB_INPFLT3 UUD1V100MCL1GS
+Added Member To Class: ClassName=Schematic Member=Component CF_INPFLT1 35SVPF39M
+Added Member To Class: ClassName=Schematic Member=Component CF_INPFLT2 35SVPF39M
+Added Member To Class: ClassName=Schematic Member=Component J1 TAH05-02-1-L-G
+Added Member To Class: ClassName=Schematic Member=Component J2 694108402002
+Added Member To Class: ClassName=Schematic Member=Component L1_5V 74439324033
+Added Member To Class: ClassName=Schematic Member=Component L1_12V IHLP3232DZER5R6M01
+Added Member To Class: ClassName=Schematic Member=Component LF_INPFLT PA4332.222NLT
+Added Member To Class: ClassName=Schematic Member=Component R_FBB_5V RC0201FR-0710KL
+Added Member To Class: ClassName=Schematic Member=Component R_FBB_12V CRCW040220K0FKED
+Added Member To Class: ClassName=Schematic Member=Component R_FBT_5V ERJ-6ENF7322V
+Added Member To Class: ClassName=Schematic Member=Component R_FBT_12V ERJ-6ENF3833V
+Added Member To Class: ClassName=Schematic Member=Component R_MODE_5V CRCW040252K3FKED
+Added Member To Class: ClassName=Schematic Member=Component R_MODE_12V CRCW040252K3FKED
+Added Member To Class: ClassName=Schematic Member=Component R_PG_5V CRCW0402100KFKED
+Added Member To Class: ClassName=Schematic Member=Component R_PG_12V CRCW0402100KFKED
+Added Member To Class: ClassName=Schematic Member=Component RD_INPFLT ERJ-3RSFR10V
+Added Member To Class: ClassName=Schematic Member=Component U3 TPS56A37RPAR
+Added Member To Class: ClassName=Schematic Member=Component U4 TPS56A37RPAR
