@@ -1,0 +1,8 @@
+Added Component: Designator=J7(JST SM 2-PIN)
+Added Pin To Net: NetName=NetJ7_1 Pin=J7-1
+Added Pin To Net: NetName=NetJ7_1 Pin=U1-0
+Added Net: Name=NetJ7_1
+Added Pin To Net: NetName=NetJ7_2 Pin=J7-2
+Added Pin To Net: NetName=NetJ7_2 Pin=U1-1
+Added Net: Name=NetJ7_2
+Added Member To Class: ClassName=Schematic Member=Component J7 JST SM 2-PIN
