@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=GND Pin=U3-6
+Add Pin To Net: Unknown Pin: Pin U1-3V
+Added Pin To Net: NetName=NetC_BOOT_5V_2 Pin=U3-6
+Add Pin To Net: Unknown Pin: Pin U4-6

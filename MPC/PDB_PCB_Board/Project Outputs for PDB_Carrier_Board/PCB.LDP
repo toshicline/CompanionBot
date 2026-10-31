@@ -1,0 +1,7 @@
+Layer Pairs Export File for PCB: C:\Users\Toshi\Documents\Capstone_Companion_Robot\MPC\PDB_PCB_Board\PCB.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=pcb-roundholes.txt|DrillLayers=gtl,g1,g2,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=pcb-slotholes.txt|DrillLayers=gtl,g1,g2,gbl
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=pcb-roundholes.tx7|DrillLayers=gtl,g1,g2,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=pcb-slotholes.tx7|DrillLayers=gtl,g1,g2,gbl
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=pcb-roundholes.tx8|DrillLayers=gtl,g1,g2,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=pcb-slotholes.tx8|DrillLayers=gtl,g1,g2,gbl

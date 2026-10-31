@@ -1,0 +1,40 @@
+Change Physical Footprint: Designator=C_BOOT_5V Old Footprint=FP-C0603C104Z4VACTU-MFG New Footprint=FP-C0603C104Z4VACTU-MFG
+Change Physical Footprint: Designator=C_BOOT_12V Old Footprint=FP-C0603C104Z4VACTU-MFG New Footprint=FP-C0603C104Z4VACTU-MFG
+Change Physical Footprint: Designator=C_FF_5V Old Footprint=CAPC1608X87X35NL15T15 New Footprint=CAPC1608X87X35NL15T15
+Change Physical Footprint: Designator=C_FF_12V Old Footprint=CL10C330JB8NNNC New Footprint=CL10C330JB8NNNC
+Change Physical Footprint: Designator=C_IN1_5V Old Footprint=CAPC3225X270N New Footprint=CAPC3225X270N
+Change Physical Footprint: Designator=C_IN1_12V Old Footprint=CAPC3225X270N New Footprint=CAPC3225X270N
+Change Physical Footprint: Designator=C_IN2_5V Old Footprint=CAPC3225X270N New Footprint=CAPC3225X270N
+Change Physical Footprint: Designator=C_IN2_12V Old Footprint=CAPC3225X270N New Footprint=CAPC3225X270N
+Change Physical Footprint: Designator=C_INX_5V Old Footprint=FP-CC0805-0_85-MFG New Footprint=FP-CC0805-0_85-MFG
+Change Physical Footprint: Designator=C_INX_12V Old Footprint=FP-CC0805-0_85-MFG New Footprint=FP-CC0805-0_85-MFG
+Change Physical Footprint: Designator=C_OUT1_5V Old Footprint=CAPC3225X270N New Footprint=CAPC3225X270N
+Change Physical Footprint: Designator=C_OUT1_12V Old Footprint=FP-GRM21B-0_15-IPC_A New Footprint=FP-GRM21B-0_15-IPC_A
+Change Physical Footprint: Designator=C_OUT2_5V Old Footprint=CAPC3225X270N New Footprint=CAPC3225X270N
+Change Physical Footprint: Designator=C_OUT2_12V Old Footprint=FP-GRM21B-0_15-IPC_A New Footprint=FP-GRM21B-0_15-IPC_A
+Change Physical Footprint: Designator=C_OUT3_12V Old Footprint=FP-GRM21B-0_15-IPC_A New Footprint=FP-GRM21B-0_15-IPC_A
+Change Physical Footprint: Designator=C_SS_5V Old Footprint=FP-GRM155-0_05-MFG New Footprint=FP-GRM155-0_05-MFG
+Change Physical Footprint: Designator=C_SS_12V Old Footprint=FP-GRM155-0_05-MFG New Footprint=FP-GRM155-0_05-MFG
+Change Physical Footprint: Designator=CB_INPFLT1 Old Footprint=NIC-CAPA2-5X5.8_V New Footprint=NIC-CAPA2-5X5.8_V
+Change Physical Footprint: Designator=CB_INPFLT2 Old Footprint=NIC-CAPA2-5X5.8_V New Footprint=NIC-CAPA2-5X5.8_V
+Change Physical Footprint: Designator=CB_INPFLT3 Old Footprint=NIC-CAPA2-5X5.8_V New Footprint=NIC-CAPA2-5X5.8_V
+Change Physical Footprint: Designator=CF_INPFLT1 Old Footprint=FP-OS-CON-SMT-E7-MFG New Footprint=FP-OS-CON-SMT-E7-MFG
+Change Physical Footprint: Designator=CF_INPFLT2 Old Footprint=FP-OS-CON-SMT-E7-MFG New Footprint=FP-OS-CON-SMT-E7-MFG
+Change Physical Footprint: Designator=J1 Old Footprint=TAH05-02-1-L-G New Footprint=TAH05-02-1-L-G
+Change Physical Footprint: Designator=J2 Old Footprint=694108402002 New Footprint=694108402002
+Change Physical Footprint: Designator=L1_5V Old Footprint=WE-XHMI_4030 New Footprint=WE-XHMI_4030
+Change Physical Footprint: Designator=L1_12V Old Footprint=FP-IHLP-3232DZ-FP_2_413x5-MFG New Footprint=FP-IHLP-3232DZ-FP_2_413x5-MFG
+Change Physical Footprint: Designator=LF_INPFLT Old Footprint=PA4332.222NLT New Footprint=PA4332.222NLT
+Change Physical Footprint: Designator=R_FBB_5V Old Footprint=RESC0603X26N New Footprint=RESC0603X26N
+Change Physical Footprint: Designator=R_FBB_12V Old Footprint=FP-CRCW0402-e3-IPC_B New Footprint=FP-CRCW0402-e3-IPC_B
+Change Physical Footprint: Designator=R_FBT_5V Old Footprint=RESC2013X70X40LL20T20 New Footprint=RESC2013X70X40LL20T20
+Change Physical Footprint: Designator=R_FBT_12V Old Footprint=RESC2012X70N New Footprint=RESC2012X70N
+Change Physical Footprint: Designator=R_MODE_5V Old Footprint=RESC1005X40X25LL05T05 New Footprint=RESC1005X40X25LL05T05
+Change Physical Footprint: Designator=R_MODE_12V Old Footprint=RESC1005X40X25LL05T05 New Footprint=RESC1005X40X25LL05T05
+Change Physical Footprint: Designator=R_PG_5V Old Footprint=FP-CRCW0402-e3-IPC_C New Footprint=FP-CRCW0402-e3-IPC_C
+Change Physical Footprint: Designator=R_PG_12V Old Footprint=FP-CRCW0402-e3-IPC_C New Footprint=FP-CRCW0402-e3-IPC_C
+Change Physical Footprint: Designator=RD_INPFLT Old Footprint=ERJ-3RSFR10V New Footprint=ERJ-3RSFR10V
+Change Physical Footprint: Designator=U1 Old Footprint=Teensy 4.1 New Footprint=Teensy 4.1
+Change Physical Footprint: Designator=U2 Old Footprint=ADAFRUIT CAN PAL New Footprint=ADAFRUIT CAN PAL
+Change Physical Footprint: Cannot match pads with new footprint in component :U3 Footprint:TPS56A37RPAR
+Change Physical Footprint: Cannot match pads with new footprint in component :U4 Footprint:TPS56A37RPAR

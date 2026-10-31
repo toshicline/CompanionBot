@@ -1,0 +1,53 @@
+Removed Pin From Net: NetName=+12V Pin=J2-231
+Added Component: Designator=J3(TAH05-04-1-L-G)
+Added Component: Designator=J4(TAH05-04-1-L-G)
+Add Pin To Net: Unknown Pin: Pin J2-1
+Added Pin To Net: NetName=GND Pin=J3-1
+Added Pin To Net: NetName=GND Pin=J3-1
+Added Pin To Net: NetName=GND Pin=J3-1
+Added Pin To Net: NetName=GND Pin=J3-1
+Add Pin To Net: Unknown Pin: Pin J3-2
+Add Pin To Net: Unknown Pin: Pin J3-3
+Add Pin To Net: Unknown Pin: Pin J3-4
+Added Pin To Net: NetName=GND Pin=J4-1
+Added Pin To Net: NetName=GND Pin=J4-1
+Added Pin To Net: NetName=GND Pin=J4-1
+Added Pin To Net: NetName=GND Pin=J4-1
+Add Pin To Net: Unknown Pin: Pin J4-2
+Add Pin To Net: Unknown Pin: Pin J4-3
+Add Pin To Net: Unknown Pin: Pin J4-4
+Change Net Name : Old Net Name=NetC_BOOT_5V_1 New Net Name=NetC104_1
+Change Net Name : Old Net Name=NetC_BOOT_5V_2 New Net Name=NetC104_2
+Change Net Name : Old Net Name=NetC_BOOT_12V_1 New Net Name=NetC206_1
+Change Net Name : Old Net Name=NetC_BOOT_12V_2 New Net Name=NetC206_2
+Change Net Name : Old Net Name=NetC_FF_5V_1 New Net Name=NetC105_1
+Change Net Name : Old Net Name=NetC_FF_5V_2 New Net Name=NetC105_2
+Change Net Name : Old Net Name=NetC_FF_12V_1 New Net Name=NetC210_1
+Change Net Name : Old Net Name=NetC_FF_12V_2 New Net Name=NetC210_2
+Change Net Name : Old Net Name=NetC_IN1_5V_1 New Net Name=NetC101_1
+Change Net Name : Old Net Name=NetC_IN1_12V_1 New Net Name=NetC203_1
+Change Net Name : Old Net Name=NetC_IN1_12V_2 New Net Name=NetC203_2
+Change Net Name : Old Net Name=NetC_OUT1_5V_1 New Net Name=NetC18_2
+Change Net Name : Old Net Name=NetC_OUT1_12V_2 New Net Name=NetC212_2
+Change Net Name : Old Net Name=NetC_OUT2_12V_2 New Net Name=NetC213_2
+Change Net Name : Old Net Name=NetC_SS_5V_1 New Net Name=NetC106_1
+Change Net Name : Old Net Name=NetC_SS_12V_1 New Net Name=NetC211_1
+Change Net Name : Old Net Name=NetCB_INPFLT1_1 New Net Name=NetC207_1
+Change Net Name : Old Net Name=NetCB_INPFLT1_2 New Net Name=NetC207_2
+Change Net Name : Old Net Name=NetCB_INPFLT2_2 New Net Name=NetC208_2
+Change Net Name : Old Net Name=NetCF_INPFLT1_1 New Net Name=NetC201_1
+Change Net Name : Old Net Name=NetJ3_1 New Net Name=NetJ5_1
+Change Net Name : Old Net Name=NetJ3_2 New Net Name=NetJ5_2
+Change Net Name : Old Net Name=NetR_MODE_5V_2 New Net Name=NetR101_2
+Change Net Name : Old Net Name=NetR_MODE_12V_2 New Net Name=NetR202_2
+Change Net Name : Old Net Name=NetR_PG_5V_1 New Net Name=NetR104_1
+Change Net Name : Old Net Name=NetR_PG_12V_1 New Net Name=NetR205_1
+Added Member To Class: ClassName=Schematic Member=Component C106 GRM155R71C223KA01D
+Added Member To Class: ClassName=Schematic Member=Component C107 MSAST32MSB7226KPNB25
+Added Member To Class: ClassName=Schematic Member=Component J3 TAH05-04-1-L-G
+Added Member To Class: ClassName=Schematic Member=Component J4 TAH05-04-1-L-G
+Added Member To Class: ClassName=Schematic Member=Component R101 CRCW040252K3FKED
+Added Member To Class: ClassName=Schematic Member=Component R201 ERJ-3RSFR10V
+Added Member To Class: ClassName=Schematic Member=Component R202 CRCW040252K3FKED
+Added Member To Class: ClassName=Schematic Member=Component R203 CRCW040220K0FKED
+Added Member To Class: ClassName=Schematic Member=Component R204 ERJ-6ENF3833V

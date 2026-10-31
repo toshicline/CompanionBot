@@ -1,0 +1,14 @@
+Added Pin To Net: NetName=NetC_FF_5V_1 Pin=U3-2
+Added Pin To Net: NetName=GND Pin=U3-3
+Added Pin To Net: NetName=NetR_PG_5V_1 Pin=U3-4
+Added Pin To Net: NetName=NetC_SS_5V_1 Pin=U3-5
+Add Pin To Net: Unknown Pin: Pin U3-6
+Added Pin To Net: NetName=NetC_BOOT_5V_1 Pin=U3-7
+Added Pin To Net: NetName=VCC Pin=U3-8
+Added Pin To Net: NetName=VCC Pin=U3-8
+Added Pin To Net: NetName=VCC Pin=U3-8
+Added Pin To Net: NetName=VCC Pin=U3-8
+Added Pin To Net: NetName=GND Pin=U3-9
+Added Pin To Net: NetName=GND Pin=U3-9
+Added Pin To Net: NetName=NetR_MODE_5V_2 Pin=U3-10
+Added Member To Class: ClassName=Schematic Member=Component U3 Comment
