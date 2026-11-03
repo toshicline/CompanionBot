@@ -1,38 +1,36 @@
-import Jetson.GPIO as GPIO
-import time
+import gpiod
 
-# Define the physical board pin connected to the KY-038 DO pin
-DO_PIN = 18  
-
-def setup_sensor():
-    # Set up the GPIO board mode
-    GPIO.setmode(GPIO.BOARD)
-    # Configure the pin as an input
-    GPIO.setup(DO_PIN, GPIO.IN)
-
-def sound_triggered_callback(channel):
-    print("\n Loud sound detected!")
-
-    # TODO: React to this somehow
+CHIP_NAME = "gpiochip0"
+LINE_OFFSET = 7  # PA.07
 
 def main():
-    setup_sensor()
+    print(f"Initializing gpiod on {CHIP_NAME}, line {LINE_OFFSET}...")
     
-    GPIO.add_event_detect(
-        DO_PIN, 
-        GPIO.FALLING, 
-        callback=sound_triggered_callback, 
-        bouncetime=300 # Prevents multiple triggers from a single sound echo
-    )
+    chip = gpiod.Chip(CHIP_NAME)
+    line = chip.get_line(LINE_OFFSET)
+    line.request(consumer="ky038_detector", type=gpiod.LINE_REQ_DIR_IN)
     
-    print("Monitoring for loud sounds... Press Ctrl+C to exit.")
+    print("Monitoring for loud sounds (KY-038)... Press Ctrl+C to exit.")
     
     try:
+        last_state = line.get_value()
         while True:
-            time.sleep(1)
+            current_state = line.get_value()
+            
+            # Print state changes to debug what the pin is actually seeing
+            if current_state != last_state:
+                print(f"Pin state changed: {last_state} -> {current_state}")
+            
+            # Catch either falling edge (1 -> 0) or rising edge (0 -> 1) depending on module pull
+            if last_state == 1 and current_state == 0:
+                print("\n🚨 Loud sound detected (Clap/Tap)! [gpiod trigger]")
+                
+            last_state = current_state
+            
     except KeyboardInterrupt:
-        print("\nCleaning up GPIO...")
-        GPIO.cleanup()
+        print("\nExiting and releasing GPIO line...")
+        line.release()
+        chip.close()
 
 if __name__ == "__main__":
     main()
