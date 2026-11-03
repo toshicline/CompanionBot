@@ -7,6 +7,8 @@ import sounddevice as sd
 from faster_whisper import WhisperModel
 from datetime import datetime,timedelta
 
+REQUIRE_EXTERNAL_MIC = False
+
 MODEL_SIZE = "base.en"
 
 # MacOS: cpu
@@ -71,12 +73,13 @@ def get_anker_input_device_id():
     print("Anker PowerConf input not found!")
     return None
 
-def listen(max_wait_seconds=10, silence_pause_seconds=3):
+def listen(max_wait_seconds=10, silence_pause_seconds=3,silent=False):
     """Listen until speech is detected, then continue until the user stops speaking.
 
     Args:
         max_wait_seconds (int): Max time to wait for speech to begin.
         silence_pause_seconds (float): Seconds of silence to wait before concluding speech is done.
+        silent (bool): Whether or not to silence the 'ding'
 
     Returns:
         str: Combined transcript of what the user said.
@@ -89,7 +92,8 @@ def listen(max_wait_seconds=10, silence_pause_seconds=3):
             break
 
     transcripts = []
-    ding()
+    if not silent:
+        ding()
 
     with sd.InputStream(
         device=AUDIO_DEVICE_ID,
@@ -112,7 +116,7 @@ def listen(max_wait_seconds=10, silence_pause_seconds=3):
             if not speech_detected:
                 elapsed_wait = (current_time - session_start_time).total_seconds()
                 if elapsed_wait > max_wait_seconds:
-                    print("No speech detected (timeout).")
+                    print("(silence)")
                     break
             else:
                 # Phase 2: Speech has started. Check if user has stopped talking for long enough
@@ -152,6 +156,7 @@ def listen(max_wait_seconds=10, silence_pause_seconds=3):
 
                 total_offset_seconds += BUFFER_SIZE_SECONDS
 
+    sd.stop()
     return " ".join(transcripts).strip()
 
 
@@ -163,9 +168,12 @@ model = WhisperModel(MODEL_SIZE,device=DEVICE,compute_type=COMPUTE_TYPE)
 audio_queue = queue.Queue()
 
 # Set the audio device, or raise an error if it does not exist
-AUDIO_DEVICE_ID = get_anker_input_device_id()
-if AUDIO_DEVICE_ID == None:
-    raise Exception("Could not detect external mic. Ensure that it is connected via USB.")
+if REQUIRE_EXTERNAL_MIC:
+    AUDIO_DEVICE_ID = get_anker_input_device_id()
+    if AUDIO_DEVICE_ID == None:
+        raise Exception("Could not detect external mic. Ensure that it is connected via USB.")
+else:
+    AUDIO_DEVICE_ID = None
 
 
 if __name__ == "__main__":
