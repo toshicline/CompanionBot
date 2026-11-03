@@ -3,22 +3,22 @@
     "steps":[
         {
             "name":"Make your bed",
-            "reminder_time_s":30,
+            "reminder_interval_s":10,
             "location":"bedroom"
         },
         {
             "name":"Brush your teeth",
-            "reminder_time_s":120,
+            "reminder_interval_s":10,
             "location":"bathroom"
         },
         {
             "name":"Put your clothes on for the day",
-            "reminder_time_s":60,
+            "reminder_interval_s":10,
             "location":"bedroom"
         },
         {
             "name":"Pack your lunch",
-            "reminder_time_s":120,
+            "reminder_interval_s":10,
             "location":"kitchen"
         }
     ]

@@ -3,7 +3,7 @@ import time
 import random
 
 import transcribe_audio as mic
-import test_text_to_speech as tts
+import text_to_speech as tts
 
 def load_routine(path):
     with open(path, "r") as file:
@@ -88,8 +88,6 @@ def prompt(prompt_text):
 
     print(f"User> {response}")
 
-    time.sleep(2)
-
     return {
         "response":response,
         "intent":intent
@@ -97,10 +95,12 @@ def prompt(prompt_text):
 
 def routine_prompt(path_to_routine):
 
+    # Load the routine JSON
     routine = load_routine(path_to_routine)
 
+    # Prompt the user to start
+    # Tell the orchestrator to show the routine title screen here
     tts.speak(f"It's time to do your {routine["name"]} routine.")
-
     begin_routine = prompt("Are you ready to get started?")
 
     if begin_routine["intent"] == "affirmative":
@@ -109,29 +109,51 @@ def routine_prompt(path_to_routine):
         tts.speak(f"Ok. Let me know when you are ready to do your {routine["name"]} routine.")
         return None
 
+    # Routine steps loop
     step_number = 1
+    while True:
 
-    for step in routine["steps"]:
+        # Exit steps loop
+        if step_number > len(routine["steps"]):
+            break
 
-        while True:
+        step = routine["steps"][step_number-1]
 
-            tts.speak(f"The {to_ordinal(step_number)} step is to {step["name"]} ")
+        # State the routine step
+        tts.speak(f"The {to_ordinal(step_number)} step is to {step["name"]} ")
 
-            finished_with_step = prompt(f"Are you done with the task: {step["name"]}?")
+        # Navigate to room if necessary
+        # Tell the orchestrator script to tell it to navigate, then return here
 
-            if (finished_with_step["intent"] == "affirmative"):
-                tts.speak(encouragement())
-                step_number += 1
-                break
-            elif (finished_with_step["intent"] == "unknown"):
-                tts.speak("I didn't quite understand that.")
-            else:
-                tts.speak("Ok. I'll check back in a minute.")
-                time.sleep(10)
+        # Confirm task start
+        tts.speak(f"Go ahead and get started with the task: {step["name"].lower()}")
+
+        # Reminder / Listening Loop
+        reminder_interval = step["reminder_interval_s"]
+        last_reminder_time = time.time()
+        step_completed = False
+
+        while not step_completed:
+            current_time = time.time()
+
+            # Check to see if a reminder should be given
+            if (current_time - last_reminder_time) >= reminder_interval:
+                tts.speak(f"Reminder that you should be working on the task: {step["name"].lower()}.")
+                last_reminder_time = time.time()
+
+            # Listen for user to announce completion of task
+            phrase = mic.listen(max_wait_seconds=5,silent=True)
+
+            if phrase != "":
+                print(f"Heard user: {phrase}")
+                if classify_intent(phrase) == "affirmative" or any(word in phrase.lower() for word in ["done", "finished", "did it", "yes", "okay"]):
+                    tts.speak(encouragement())
+                    step_completed = True
+                    break
+
+        step_number += 1
 
     tts.speak(f"That's everything! {encouragement()}")
             
-
-
 
 routine_prompt("./example_routine.json")
