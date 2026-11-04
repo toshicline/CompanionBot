@@ -1,4 +1,4 @@
-import gpiod
+import gpiod # type:ignore
 
 CHIP_NAME = "gpiochip0"
 LINE_OFFSET = 7  # PA.07
