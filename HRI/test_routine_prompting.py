@@ -146,7 +146,7 @@ def routine_prompt(path_to_routine):
 
             if phrase != "":
                 print(f"Heard user: {phrase}")
-                if classify_intent(phrase) == "affirmative" or any(word in phrase.lower() for word in ["done", "finished", "did it", "yes", "okay"]):
+                if classify_intent(phrase) == "affirmative":
                     tts.speak(encouragement())
                     step_completed = True
                     break
