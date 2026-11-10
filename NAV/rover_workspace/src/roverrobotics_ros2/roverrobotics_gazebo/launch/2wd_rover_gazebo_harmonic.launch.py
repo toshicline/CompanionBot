@@ -27,7 +27,7 @@ def generate_launch_description():
     
     declare_world_cmd = DeclareLaunchArgument(
         'world',
-        default_value='slam_world.sdf',
+        default_value='maze.sdf',
         description='World file to use in Gazebo')
     
     gz_world_arg = PathJoinSubstitution([
