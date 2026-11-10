@@ -1,0 +1,25 @@
+{
+    "name":"Example",
+    "steps":[
+        {
+            "name":"Make your bed",
+            "reminder_interval_s":10,
+            "location":"bedroom"
+        },
+        {
+            "name":"Brush your teeth",
+            "reminder_interval_s":10,
+            "location":"bathroom"
+        },
+        {
+            "name":"Put your clothes on for the day",
+            "reminder_interval_s":10,
+            "location":"bedroom"
+        },
+        {
+            "name":"Pack your lunch",
+            "reminder_interval_s":10,
+            "location":"kitchen"
+        }
+    ]
+}
