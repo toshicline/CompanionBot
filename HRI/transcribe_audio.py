@@ -6,8 +6,10 @@ import numpy as np
 import sounddevice as sd
 from faster_whisper import WhisperModel
 from datetime import datetime,timedelta
+import tkinter.simpledialog as simpledialog
 
 REQUIRE_EXTERNAL_MIC = False
+DEBUG_MODE = True
 
 MODEL_SIZE = "base.en"
 
@@ -54,7 +56,7 @@ def audio_callback(indata,frames,time_info,status):
     """
 
     if (status):
-        print(status,file=sys.stderr)
+        print("[Audio] "+status,file=sys.stderr)
 
     audio_queue.put(indata.copy().flatten())
 
@@ -70,10 +72,10 @@ def get_anker_input_device_id():
         # Look for PowerConf and ensure it has input channels (1 in, 0 out)
         if "powerconf" in device['name'].lower() and device['max_input_channels'] > 0:
             return idx
-    print("Anker PowerConf input not found!")
+    print("[Audio] Anker PowerConf input not found!")
     return None
 
-def listen(max_wait_seconds=10, silence_pause_seconds=3,silent=False):
+def listen(max_wait_seconds=10, silence_pause_seconds=3,silent=False,suppress_silence_statements=False,display_inst=None):
     """Listen until speech is detected, then continue until the user stops speaking.
 
     Args:
@@ -84,6 +86,12 @@ def listen(max_wait_seconds=10, silence_pause_seconds=3,silent=False):
     Returns:
         str: Combined transcript of what the user said.
     """
+
+    if DEBUG_MODE:
+        user_text = display_inst.get_debug_input("Type simulated response:")
+        print(f"[Audio] [Debug] User> {user_text.lower().strip()}")
+        return user_text.lower().strip()
+
     # Clear out any leftover stale audio in the queue
     while not audio_queue.empty():
         try:
@@ -116,7 +124,8 @@ def listen(max_wait_seconds=10, silence_pause_seconds=3,silent=False):
             if not speech_detected:
                 elapsed_wait = (current_time - session_start_time).total_seconds()
                 if elapsed_wait > max_wait_seconds:
-                    print("(silence)")
+                    if not suppress_silence_statements:
+                        print("User> (silence)")
                     break
             else:
                 # Phase 2: Speech has started. Check if user has stopped talking for long enough
@@ -157,7 +166,17 @@ def listen(max_wait_seconds=10, silence_pause_seconds=3,silent=False):
                 total_offset_seconds += BUFFER_SIZE_SECONDS
 
     sd.stop()
-    return " ".join(transcripts).strip()
+    return " ".join(transcripts).strip().lower().replace(".","")
+
+def listen_intermittently(interval_seconds=5,display_inst=None):
+
+    # Listen for user to announce completion of task
+    while True:
+        phrase = listen(max_wait_seconds=interval_seconds,silent=True,suppress_silence_statements=True,display_inst=display_inst)
+
+        if phrase != "":
+            print(f"User> {phrase}")
+            return phrase
 
 
 
@@ -178,4 +197,4 @@ else:
 
 if __name__ == "__main__":
     phrase = listen()
-    print(f"phrase: {phrase}")
+    print(f"User> {phrase}")
