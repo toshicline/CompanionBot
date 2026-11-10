@@ -116,7 +116,7 @@ def listen(max_wait_seconds=10, silence_pause_seconds=3,silent=False):
             if not speech_detected:
                 elapsed_wait = (current_time - session_start_time).total_seconds()
                 if elapsed_wait > max_wait_seconds:
-                    print("(silence)")
+                    print("User> (silence)")
                     break
             else:
                 # Phase 2: Speech has started. Check if user has stopped talking for long enough
@@ -178,4 +178,4 @@ else:
 
 if __name__ == "__main__":
     phrase = listen()
-    print(f"phrase: {phrase}")
+    print(f"User> {phrase}")
