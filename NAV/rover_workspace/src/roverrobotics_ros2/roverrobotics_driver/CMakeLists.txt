@@ -64,6 +64,11 @@ ament_target_dependencies(roverrobotics_driver
   #diagnostic_updater
   )
 
+install(PROGRAMS
+  script/robot_command.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 install(DIRECTORY
   launch
   config

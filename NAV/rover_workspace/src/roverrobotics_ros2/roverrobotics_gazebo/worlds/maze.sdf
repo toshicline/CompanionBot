@@ -178,6 +178,31 @@
         <model name='obstacles'>
             <pose>0 0 0.5 0 0 0</pose>
             <static>true</static>
+
+            <link name='obstacle_1'>
+                <pose>-3 5 0 0 0 0</pose>
+                <static>true</static>
+                <collision name='obstacle1_collision'>
+                    <geometry>
+                        <box>
+                            <size>2 2 1</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name='obstacle1_visual'>
+                    <geometry>
+                        <box>
+                            <size>1 2 1</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <ambient>0.1 0.1 0.1 1</ambient>
+                        <diffuse>0 0.1 0.2 1</diffuse>
+                        <specular>0 0.01 0.05 1</specular>
+                    </material>
+                </visual>
+            </link>
+
             <link name='wall1'>
                 <pose>-6.5 -9 0 0 0 0</pose>
                 <static>true</static>
