@@ -1,1 +1,0 @@
-/home/andrew/CompanionBot2/NAV/src/roverrobotics_driver/launch/outdoor_navigation_launch.py

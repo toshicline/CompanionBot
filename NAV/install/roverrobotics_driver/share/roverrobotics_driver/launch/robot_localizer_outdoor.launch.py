@@ -1,1 +1,0 @@
-/home/andrew/CompanionBot2/NAV/src/roverrobotics_driver/launch/robot_localizer_outdoor.launch.py
