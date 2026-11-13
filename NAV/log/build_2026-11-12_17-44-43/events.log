@@ -1,0 +1,724 @@
+[0.000000] (-) TimerEvent: {}
+[0.001333] (roverrobotics_description) JobQueued: {'identifier': 'roverrobotics_description', 'dependencies': OrderedDict()}
+[0.001539] (roverrobotics_driver) JobQueued: {'identifier': 'roverrobotics_driver', 'dependencies': OrderedDict()}
+[0.001592] (roverrobotics_gazebo) JobQueued: {'identifier': 'roverrobotics_gazebo', 'dependencies': OrderedDict([('roverrobotics_description', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description')])}
+[0.001634] (roverrobotics_description) JobStarted: {'identifier': 'roverrobotics_description'}
+[0.017480] (roverrobotics_driver) JobStarted: {'identifier': 'roverrobotics_driver'}
+[0.025429] (roverrobotics_description) JobProgress: {'identifier': 'roverrobotics_description', 'progress': 'cmake'}
+[0.028726] (roverrobotics_description) Command: {'cmd': ['/usr/bin/cmake', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_description', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NAV/install/roverrobotics_description'], 'cwd': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('MESA_D3D12_DEFAULT_ADAPTER_NAME', 'NVIDIA'), ('USER', 'andrew'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{4caf4410-8743-5dab-a8a8-8aa21e90e528}'), ('HOME', '/home/andrew'), ('OLDPWD', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install:/home/andrew/CompanionBot2/NAV/rover_workspace/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'andrew'), ('NAME', 'WIN-NEIN7944776'), ('WSL_INTEROP', '/run/WSL/30363_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/andrew/.local/bin:/home/andrew/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/MATLAB/R2026a/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/WSL/:/mnt/c/ghcup/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin'), ('WT_SESSION', 'a1d562ac-9be2-41b9-8974-20ed257c5bb9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '47'), ('AMENT_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GALLIUM_DRIVER', 'd3d12'), ('PWD', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('WSLENV', 'WT_SESSION:WT_PROFILE_ID:')]), 'shell': False}
+[0.036760] (roverrobotics_driver) JobProgress: {'identifier': 'roverrobotics_driver', 'progress': 'cmake'}
+[0.040360] (roverrobotics_driver) Command: {'cmd': ['/usr/bin/cmake', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_driver', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver'], 'cwd': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('MESA_D3D12_DEFAULT_ADAPTER_NAME', 'NVIDIA'), ('USER', 'andrew'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{4caf4410-8743-5dab-a8a8-8aa21e90e528}'), ('HOME', '/home/andrew'), ('OLDPWD', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install:/home/andrew/CompanionBot2/NAV/rover_workspace/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'andrew'), ('NAME', 'WIN-NEIN7944776'), ('WSL_INTEROP', '/run/WSL/30363_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/andrew/.local/bin:/home/andrew/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/MATLAB/R2026a/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/WSL/:/mnt/c/ghcup/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin'), ('WT_SESSION', 'a1d562ac-9be2-41b9-8974-20ed257c5bb9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '47'), ('AMENT_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GALLIUM_DRIVER', 'd3d12'), ('PWD', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('WSLENV', 'WT_SESSION:WT_PROFILE_ID:')]), 'shell': False}
+[0.099965] (-) TimerEvent: {}
+[0.203146] (-) TimerEvent: {}
+[0.268501] (roverrobotics_driver) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.269276] (roverrobotics_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.305870] (-) TimerEvent: {}
+[0.414657] (-) TimerEvent: {}
+[0.519806] (-) TimerEvent: {}
+[0.620332] (-) TimerEvent: {}
+[0.721882] (-) TimerEvent: {}
+[0.723981] (roverrobotics_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.725533] (roverrobotics_driver) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.822191] (-) TimerEvent: {}
+[0.922949] (-) TimerEvent: {}
+[1.031824] (-) TimerEvent: {}
+[1.053566] (roverrobotics_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.058013] (roverrobotics_driver) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.132012] (-) TimerEvent: {}
+[1.184288] (roverrobotics_driver) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.190020] (roverrobotics_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.190498] (roverrobotics_driver) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.191222] (roverrobotics_driver) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.192584] (roverrobotics_driver) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.196644] (roverrobotics_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.197038] (roverrobotics_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.197327] (roverrobotics_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.197986] (roverrobotics_driver) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.200292] (roverrobotics_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.232189] (-) TimerEvent: {}
+[1.332707] (-) TimerEvent: {}
+[1.336536] (roverrobotics_driver) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.337250] (roverrobotics_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.343989] (roverrobotics_driver) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.344521] (roverrobotics_driver) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.344860] (roverrobotics_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.345213] (roverrobotics_driver) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.345417] (roverrobotics_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.345632] (roverrobotics_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.365336] (roverrobotics_description) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.365707] (roverrobotics_driver) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.432901] (-) TimerEvent: {}
+[1.522889] (roverrobotics_description) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.523366] (roverrobotics_driver) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.533063] (-) TimerEvent: {}
+[1.603530] (roverrobotics_description) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.603937] (roverrobotics_driver) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.633240] (-) TimerEvent: {}
+[1.669439] (roverrobotics_driver) StdoutLine: {'line': b'-- Found rclcpp: 16.0.21 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.726094] (roverrobotics_description) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.733380] (-) TimerEvent: {}
+[1.733774] (roverrobotics_description) StdoutLine: {'line': b'-- Generating done\n'}
+[1.737528] (roverrobotics_description) StdoutLine: {'line': b'-- Build files have been written to: /home/andrew/CompanionBot2/NAV/build/roverrobotics_description\n'}
+[1.742691] (roverrobotics_description) CommandEnded: {'returncode': 0}
+[1.744891] (roverrobotics_description) JobProgress: {'identifier': 'roverrobotics_description', 'progress': 'build'}
+[1.745175] (roverrobotics_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description', '--', '-j16', '-l16'], 'cwd': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('MESA_D3D12_DEFAULT_ADAPTER_NAME', 'NVIDIA'), ('USER', 'andrew'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{4caf4410-8743-5dab-a8a8-8aa21e90e528}'), ('HOME', '/home/andrew'), ('OLDPWD', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install:/home/andrew/CompanionBot2/NAV/rover_workspace/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'andrew'), ('NAME', 'WIN-NEIN7944776'), ('WSL_INTEROP', '/run/WSL/30363_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/andrew/.local/bin:/home/andrew/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/MATLAB/R2026a/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/WSL/:/mnt/c/ghcup/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin'), ('WT_SESSION', 'a1d562ac-9be2-41b9-8974-20ed257c5bb9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '47'), ('AMENT_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GALLIUM_DRIVER', 'd3d12'), ('PWD', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('WSLENV', 'WT_SESSION:WT_PROFILE_ID:')]), 'shell': False}
+[1.787153] (roverrobotics_description) CommandEnded: {'returncode': 0}
+[1.788626] (roverrobotics_description) JobProgress: {'identifier': 'roverrobotics_description', 'progress': 'install'}
+[1.797331] (roverrobotics_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description'], 'cwd': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('MESA_D3D12_DEFAULT_ADAPTER_NAME', 'NVIDIA'), ('USER', 'andrew'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{4caf4410-8743-5dab-a8a8-8aa21e90e528}'), ('HOME', '/home/andrew'), ('OLDPWD', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install:/home/andrew/CompanionBot2/NAV/rover_workspace/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'andrew'), ('NAME', 'WIN-NEIN7944776'), ('WSL_INTEROP', '/run/WSL/30363_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/andrew/.local/bin:/home/andrew/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/MATLAB/R2026a/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/WSL/:/mnt/c/ghcup/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin'), ('WT_SESSION', 'a1d562ac-9be2-41b9-8974-20ed257c5bb9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '47'), ('AMENT_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GALLIUM_DRIVER', 'd3d12'), ('PWD', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('WSLENV', 'WT_SESSION:WT_PROFILE_ID:')]), 'shell': False}
+[1.806120] (roverrobotics_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.806649] (roverrobotics_description) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[1.809675] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/rviz/urdf.rviz\n'}
+[1.820849] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/launch/display_2wd_rover.launch.py\n'}
+[1.831437] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/launch/display_4wd_rover.launch.py\n'}
+[1.833510] (-) TimerEvent: {}
+[1.841608] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/launch/display_flipper.launch.py\n'}
+[1.852681] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/launch/display_max.launch.py\n'}
+[1.862240] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/launch/display_mega.launch.py\n'}
+[1.870950] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/launch/display_mini.launch.py\n'}
+[1.881137] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/launch/display_mini_2wd.launch.py\n'}
+[1.891388] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/launch/display_miti.launch.py\n'}
+[1.901226] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/launch/display_miti_65.launch.py\n'}
+[1.912309] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/65wheels.dae\n'}
+[1.912684] (roverrobotics_driver) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.921270] (roverrobotics_driver) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.922580] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/castor.dae\n'}
+[1.932082] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/castor_housing.dae\n'}
+[1.933624] (-) TimerEvent: {}
+[1.937367] (roverrobotics_driver) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.942418] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/flipper.dae\n'}
+[1.953249] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/flipper_chassis.dae\n'}
+[1.962873] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/flipper_track.dae\n'}
+[1.965133] (roverrobotics_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.972309] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/hub_10in.dae\n'}
+[1.982188] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/hub_6.5in.dae\n'}
+[1.991727] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/max_chassis.dae\n'}
+[1.993928] (roverrobotics_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.001758] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/max_chassis_neo.dae\n'}
+[2.011906] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/max_wheels_13in.dae\n'}
+[2.021961] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/max_wheels_15in.dae\n'}
+[2.031885] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/max_wheels_15in_neo.dae\n'}
+[2.033738] (-) TimerEvent: {}
+[2.042755] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/mega_chassis.dae\n'}
+[2.053340] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/mega_payload.dae\n'}
+[2.063407] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/mega_wheels.dae\n'}
+[2.072749] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/mini_2wd_chassis.dae\n'}
+[2.075166] (roverrobotics_driver) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.4 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[2.080719] (roverrobotics_driver) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[2.082529] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/mini_chassis.dae\n'}
+[2.092415] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/mini_chassis_new.dae\n'}
+[2.101701] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_chassis.dae\n'}
+[2.111324] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_chassis_neo.dae\n'}
+[2.120488] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_chassis_new.dae\n'}
+[2.130235] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/miti_payload.dae\n'}
+[2.133881] (-) TimerEvent: {}
+[2.140820] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/pro_tire.dae\n'}
+[2.150763] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/rover_2wd_core.dae\n'}
+[2.161160] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/rover_payload.dae\n'}
+[2.171260] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/meshes/rplidar_s2.dae\n'}
+[2.185200] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/imu.urdf\n'}
+[2.195508] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/mega_payload.urdf\n'}
+[2.205465] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/miti_payload.urdf\n'}
+[2.215577] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/rover_dev_payload.urdf\n'}
+[2.224898] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/rplidar_s2.urdf\n'}
+[2.234050] (-) TimerEvent: {}
+[2.234386] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/urdf/accessories/rplidar_s2_harmonic.urdf\n'}
+[2.244995] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/urdf/obstacles.urdf.xacro\n'}
+[2.255602] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_2wd.urdf\n'}
+[2.266289] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_2wd_harmonic.urdf\n'}
+[2.275605] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/urdf/rover_2wd_harmonic.xacro\n'}
+[2.286703] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/ament_index/resource_index/package_run_dependencies/roverrobotics_description\n'}
+[2.298407] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/ament_index/resource_index/parent_prefix_path/roverrobotics_description\n'}
+[2.308416] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/environment/ament_prefix_path.sh\n'}
+[2.318308] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/environment/ament_prefix_path.dsv\n'}
+[2.328206] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/environment/path.sh\n'}
+[2.334175] (-) TimerEvent: {}
+[2.339114] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/environment/path.dsv\n'}
+[2.349806] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/local_setup.bash\n'}
+[2.358910] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/local_setup.sh\n'}
+[2.369076] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/local_setup.zsh\n'}
+[2.378448] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/local_setup.dsv\n'}
+[2.388505] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.dsv\n'}
+[2.398525] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/ament_index/resource_index/packages/roverrobotics_description\n'}
+[2.408322] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/cmake/roverrobotics_descriptionConfig.cmake\n'}
+[2.418813] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/cmake/roverrobotics_descriptionConfig-version.cmake\n'}
+[2.429070] (roverrobotics_description) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.xml\n'}
+[2.434328] (-) TimerEvent: {}
+[2.442130] (roverrobotics_description) CommandEnded: {'returncode': 0}
+[2.474589] (roverrobotics_description) JobEnded: {'identifier': 'roverrobotics_description', 'rc': 0}
+[2.476616] (roverrobotics_gazebo) JobStarted: {'identifier': 'roverrobotics_gazebo'}
+[2.528840] (roverrobotics_gazebo) JobProgress: {'identifier': 'roverrobotics_gazebo', 'progress': 'cmake'}
+[2.532602] (roverrobotics_gazebo) Command: {'cmd': ['/usr/bin/cmake', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo'], 'cwd': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('MESA_D3D12_DEFAULT_ADAPTER_NAME', 'NVIDIA'), ('USER', 'andrew'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{4caf4410-8743-5dab-a8a8-8aa21e90e528}'), ('HOME', '/home/andrew'), ('OLDPWD', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install:/home/andrew/CompanionBot2/NAV/rover_workspace/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'andrew'), ('NAME', 'WIN-NEIN7944776'), ('WSL_INTEROP', '/run/WSL/30363_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/andrew/.local/bin:/home/andrew/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/MATLAB/R2026a/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/WSL/:/mnt/c/ghcup/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin'), ('WT_SESSION', 'a1d562ac-9be2-41b9-8974-20ed257c5bb9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '47'), ('AMENT_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GALLIUM_DRIVER', 'd3d12'), ('PWD', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('WSLENV', 'WT_SESSION:WT_PROFILE_ID:')]), 'shell': False}
+[2.534432] (-) TimerEvent: {}
+[2.634786] (-) TimerEvent: {}
+[2.674937] (roverrobotics_gazebo) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[2.734983] (-) TimerEvent: {}
+[2.835510] (-) TimerEvent: {}
+[2.935995] (-) TimerEvent: {}
+[3.036611] (-) TimerEvent: {}
+[3.137223] (-) TimerEvent: {}
+[3.158636] (roverrobotics_gazebo) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[3.237533] (-) TimerEvent: {}
+[3.338329] (-) TimerEvent: {}
+[3.438982] (-) TimerEvent: {}
+[3.529859] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[3.539368] (-) TimerEvent: {}
+[3.643862] (-) TimerEvent: {}
+[3.656218] (roverrobotics_driver) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[3.706835] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[3.715046] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[3.715391] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[3.715770] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[3.719464] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[3.744336] (-) TimerEvent: {}
+[3.844927] (-) TimerEvent: {}
+[3.892197] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[3.901278] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[3.901693] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[3.902140] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[3.905825] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[3.945147] (-) TimerEvent: {}
+[4.045707] (-) TimerEvent: {}
+[4.060524] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[4.127557] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[4.146019] (-) TimerEvent: {}
+[4.157970] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[4.246316] (-) TimerEvent: {}
+[4.258229] (roverrobotics_gazebo) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[4.264931] (roverrobotics_gazebo) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[4.266702] (roverrobotics_gazebo) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[4.268444] (roverrobotics_gazebo) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[4.271458] (roverrobotics_gazebo) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[4.275193] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Configuring done\n'}
+[4.282953] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Generating done\n'}
+[4.285960] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Build files have been written to: /home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo\n'}
+[4.291766] (roverrobotics_gazebo) CommandEnded: {'returncode': 0}
+[4.292698] (roverrobotics_gazebo) JobProgress: {'identifier': 'roverrobotics_gazebo', 'progress': 'build'}
+[4.293215] (roverrobotics_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo', '--', '-j16', '-l16'], 'cwd': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('MESA_D3D12_DEFAULT_ADAPTER_NAME', 'NVIDIA'), ('USER', 'andrew'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{4caf4410-8743-5dab-a8a8-8aa21e90e528}'), ('HOME', '/home/andrew'), ('OLDPWD', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install:/home/andrew/CompanionBot2/NAV/rover_workspace/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'andrew'), ('NAME', 'WIN-NEIN7944776'), ('WSL_INTEROP', '/run/WSL/30363_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/andrew/.local/bin:/home/andrew/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/MATLAB/R2026a/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/WSL/:/mnt/c/ghcup/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin'), ('WT_SESSION', 'a1d562ac-9be2-41b9-8974-20ed257c5bb9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '47'), ('AMENT_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GALLIUM_DRIVER', 'd3d12'), ('PWD', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('WSLENV', 'WT_SESSION:WT_PROFILE_ID:')]), 'shell': False}
+[4.338885] (roverrobotics_gazebo) CommandEnded: {'returncode': 0}
+[4.339845] (roverrobotics_gazebo) JobProgress: {'identifier': 'roverrobotics_gazebo', 'progress': 'install'}
+[4.340866] (roverrobotics_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo'], 'cwd': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('MESA_D3D12_DEFAULT_ADAPTER_NAME', 'NVIDIA'), ('USER', 'andrew'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{4caf4410-8743-5dab-a8a8-8aa21e90e528}'), ('HOME', '/home/andrew'), ('OLDPWD', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install:/home/andrew/CompanionBot2/NAV/rover_workspace/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'andrew'), ('NAME', 'WIN-NEIN7944776'), ('WSL_INTEROP', '/run/WSL/30363_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/andrew/.local/bin:/home/andrew/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/MATLAB/R2026a/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/WSL/:/mnt/c/ghcup/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin'), ('WT_SESSION', 'a1d562ac-9be2-41b9-8974-20ed257c5bb9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '47'), ('AMENT_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GALLIUM_DRIVER', 'd3d12'), ('PWD', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('WSLENV', 'WT_SESSION:WT_PROFILE_ID:')]), 'shell': False}
+[4.346586] (-) TimerEvent: {}
+[4.348733] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[4.349253] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[4.352248] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/2wd_rover_gazebo_harmonic.launch.py\n'}
+[4.363557] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/depot.sdf\n'}
+[4.373418] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/empty.sdf\n'}
+[4.383207] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/maze.sdf\n'}
+[4.392389] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/slam_world.sdf\n'}
+[4.401606] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/wall.sdf\n'}
+[4.410962] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/wall2.sdf\n'}
+[4.421100] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/warehouse.sdf\n'}
+[4.432348] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/ament_index/resource_index/package_run_dependencies/roverrobotics_gazebo\n'}
+[4.443960] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/ament_index/resource_index/parent_prefix_path/roverrobotics_gazebo\n'}
+[4.446911] (-) TimerEvent: {}
+[4.455306] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/ament_prefix_path.sh\n'}
+[4.465321] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/ament_prefix_path.dsv\n'}
+[4.477267] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/path.sh\n'}
+[4.488665] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/path.dsv\n'}
+[4.499542] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.bash\n'}
+[4.510647] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.sh\n'}
+[4.521476] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.zsh\n'}
+[4.531871] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.dsv\n'}
+[4.543761] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.dsv\n'}
+[4.547223] (-) TimerEvent: {}
+[4.555479] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/ament_index/resource_index/packages/roverrobotics_gazebo\n'}
+[4.567210] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/cmake/roverrobotics_gazeboConfig.cmake\n'}
+[4.578521] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/cmake/roverrobotics_gazeboConfig-version.cmake\n'}
+[4.589342] (roverrobotics_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.xml\n'}
+[4.602746] (roverrobotics_gazebo) CommandEnded: {'returncode': 0}
+[4.618619] (roverrobotics_gazebo) JobEnded: {'identifier': 'roverrobotics_gazebo', 'rc': 0}
+[4.647645] (-) TimerEvent: {}
+[4.748464] (-) TimerEvent: {}
+[4.849442] (-) TimerEvent: {}
+[4.950167] (-) TimerEvent: {}
+[5.050820] (-) TimerEvent: {}
+[5.151634] (-) TimerEvent: {}
+[5.252874] (-) TimerEvent: {}
+[5.353583] (-) TimerEvent: {}
+[5.387203] (roverrobotics_driver) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[5.453832] (-) TimerEvent: {}
+[5.554394] (-) TimerEvent: {}
+[5.655104] (-) TimerEvent: {}
+[5.755823] (-) TimerEvent: {}
+[5.856569] (-) TimerEvent: {}
+[5.961221] (-) TimerEvent: {}
+[6.069976] (-) TimerEvent: {}
+[6.171081] (-) TimerEvent: {}
+[6.271922] (-) TimerEvent: {}
+[6.380614] (-) TimerEvent: {}
+[6.481752] (-) TimerEvent: {}
+[6.590373] (-) TimerEvent: {}
+[6.699048] (-) TimerEvent: {}
+[6.807877] (-) TimerEvent: {}
+[6.916330] (-) TimerEvent: {}
+[7.016875] (-) TimerEvent: {}
+[7.117573] (-) TimerEvent: {}
+[7.218156] (-) TimerEvent: {}
+[7.318846] (-) TimerEvent: {}
+[7.419975] (-) TimerEvent: {}
+[7.520741] (-) TimerEvent: {}
+[7.629495] (-) TimerEvent: {}
+[7.738167] (-) TimerEvent: {}
+[7.846724] (-) TimerEvent: {}
+[7.955647] (-) TimerEvent: {}
+[8.064463] (-) TimerEvent: {}
+[8.173056] (-) TimerEvent: {}
+[8.276663] (-) TimerEvent: {}
+[8.385220] (-) TimerEvent: {}
+[8.434744] (roverrobotics_driver) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[8.465027] (roverrobotics_driver) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[8.485478] (-) TimerEvent: {}
+[8.586177] (-) TimerEvent: {}
+[8.647753] (roverrobotics_driver) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[8.648249] (roverrobotics_driver) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[8.686540] (-) TimerEvent: {}
+[8.791665] (-) TimerEvent: {}
+[8.810805] (roverrobotics_driver) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[8.811913] (roverrobotics_driver) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[8.898275] (-) TimerEvent: {}
+[8.911515] (roverrobotics_driver) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.2 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[8.938340] (roverrobotics_driver) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.2 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[8.967590] (roverrobotics_driver) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.24 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[9.000961] (-) TimerEvent: {}
+[9.028629] (roverrobotics_driver) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[9.030787] (roverrobotics_driver) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[9.031046] (roverrobotics_driver) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[9.106914] (-) TimerEvent: {}
+[9.215798] (-) TimerEvent: {}
+[9.227516] (roverrobotics_driver) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.2 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[9.322673] (-) TimerEvent: {}
+[9.323937] (roverrobotics_driver) StdoutLine: {'line': b'-- Configuring done\n'}
+[9.353124] (roverrobotics_driver) StdoutLine: {'line': b'-- Generating done\n'}
+[9.358900] (roverrobotics_driver) StdoutLine: {'line': b'-- Build files have been written to: /home/andrew/CompanionBot2/NAV/build/roverrobotics_driver\n'}
+[9.371871] (roverrobotics_driver) CommandEnded: {'returncode': 0}
+[9.373136] (roverrobotics_driver) JobProgress: {'identifier': 'roverrobotics_driver', 'progress': 'build'}
+[9.373668] (roverrobotics_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver', '--', '-j16', '-l16'], 'cwd': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('MESA_D3D12_DEFAULT_ADAPTER_NAME', 'NVIDIA'), ('USER', 'andrew'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{4caf4410-8743-5dab-a8a8-8aa21e90e528}'), ('HOME', '/home/andrew'), ('OLDPWD', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install:/home/andrew/CompanionBot2/NAV/rover_workspace/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'andrew'), ('NAME', 'WIN-NEIN7944776'), ('WSL_INTEROP', '/run/WSL/30363_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/andrew/.local/bin:/home/andrew/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/MATLAB/R2026a/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/WSL/:/mnt/c/ghcup/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin'), ('WT_SESSION', 'a1d562ac-9be2-41b9-8974-20ed257c5bb9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '47'), ('AMENT_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GALLIUM_DRIVER', 'd3d12'), ('PWD', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('WSLENV', 'WT_SESSION:WT_PROFILE_ID:')]), 'shell': False}
+[9.426812] (-) TimerEvent: {}
+[9.440669] (roverrobotics_driver) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/comm_serial.cpp.o\x1b[0m\n'}
+[9.441101] (roverrobotics_driver) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/utilities.cpp.o\x1b[0m\n'}
+[9.441365] (roverrobotics_driver) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/utils.cpp.o\x1b[0m\n'}
+[9.441583] (roverrobotics_driver) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/protocol_pro.cpp.o\x1b[0m\n'}
+[9.441774] (roverrobotics_driver) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/src/roverrobotics_ros2_driver.cpp.o\x1b[0m\n'}
+[9.441962] (roverrobotics_driver) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/comm_can.cpp.o\x1b[0m\n'}
+[9.442199] (roverrobotics_driver) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/control.cpp.o\x1b[0m\n'}
+[9.442535] (roverrobotics_driver) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/vesc.cpp.o\x1b[0m\n'}
+[9.442968] (roverrobotics_driver) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/protocol_zero_2.cpp.o\x1b[0m\n'}
+[9.444156] (roverrobotics_driver) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/protocol_mini_2wd_serial.cpp.o\x1b[0m\n'}
+[9.444551] (roverrobotics_driver) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding CXX object CMakeFiles/roverrobotics_driver.dir/library/librover/src/differential_robot.cpp.o\x1b[0m\n'}
+[9.527192] (-) TimerEvent: {}
+[9.627867] (-) TimerEvent: {}
+[9.730721] (-) TimerEvent: {}
+[9.837062] (-) TimerEvent: {}
+[9.937818] (-) TimerEvent: {}
+[10.038817] (-) TimerEvent: {}
+[10.139835] (-) TimerEvent: {}
+[10.240635] (-) TimerEvent: {}
+[10.346162] (-) TimerEvent: {}
+[10.447470] (-) TimerEvent: {}
+[10.548558] (-) TimerEvent: {}
+[10.649401] (-) TimerEvent: {}
+[10.752975] (-) TimerEvent: {}
+[10.853757] (-) TimerEvent: {}
+[10.954914] (-) TimerEvent: {}
+[11.062760] (-) TimerEvent: {}
+[11.163404] (-) TimerEvent: {}
+[11.264195] (-) TimerEvent: {}
+[11.365073] (-) TimerEvent: {}
+[11.465943] (-) TimerEvent: {}
+[11.566811] (-) TimerEvent: {}
+[11.667530] (-) TimerEvent: {}
+[11.768355] (-) TimerEvent: {}
+[11.869255] (-) TimerEvent: {}
+[11.970044] (-) TimerEvent: {}
+[12.070835] (-) TimerEvent: {}
+[12.171618] (-) TimerEvent: {}
+[12.272318] (-) TimerEvent: {}
+[12.372968] (-) TimerEvent: {}
+[12.473475] (-) TimerEvent: {}
+[12.574239] (-) TimerEvent: {}
+[12.674884] (-) TimerEvent: {}
+[12.775442] (-) TimerEvent: {}
+[12.876068] (-) TimerEvent: {}
+[12.977002] (-) TimerEvent: {}
+[13.083768] (-) TimerEvent: {}
+[13.190205] (-) TimerEvent: {}
+[13.297345] (-) TimerEvent: {}
+[13.403868] (-) TimerEvent: {}
+[13.510658] (-) TimerEvent: {}
+[13.617382] (-) TimerEvent: {}
+[13.721257] (-) TimerEvent: {}
+[13.827308] (-) TimerEvent: {}
+[13.929299] (-) TimerEvent: {}
+[14.035468] (-) TimerEvent: {}
+[14.136376] (-) TimerEvent: {}
+[14.236892] (-) TimerEvent: {}
+[14.337489] (-) TimerEvent: {}
+[14.439449] (-) TimerEvent: {}
+[14.541527] (-) TimerEvent: {}
+[14.643811] (-) TimerEvent: {}
+[14.746450] (-) TimerEvent: {}
+[14.849184] (-) TimerEvent: {}
+[14.949978] (-) TimerEvent: {}
+[15.053085] (-) TimerEvent: {}
+[15.156561] (-) TimerEvent: {}
+[15.259924] (-) TimerEvent: {}
+[15.363950] (-) TimerEvent: {}
+[15.466320] (-) TimerEvent: {}
+[15.570905] (-) TimerEvent: {}
+[15.675876] (-) TimerEvent: {}
+[15.781329] (-) TimerEvent: {}
+[15.887039] (-) TimerEvent: {}
+[15.993376] (-) TimerEvent: {}
+[16.099830] (-) TimerEvent: {}
+[16.200601] (-) TimerEvent: {}
+[16.306909] (-) TimerEvent: {}
+[16.411035] (-) TimerEvent: {}
+[16.517638] (-) TimerEvent: {}
+[16.624509] (-) TimerEvent: {}
+[16.725219] (-) TimerEvent: {}
+[16.826017] (-) TimerEvent: {}
+[16.926840] (-) TimerEvent: {}
+[17.027829] (-) TimerEvent: {}
+[17.128926] (-) TimerEvent: {}
+[17.229916] (-) TimerEvent: {}
+[17.331018] (-) TimerEvent: {}
+[17.432350] (-) TimerEvent: {}
+[17.533908] (-) TimerEvent: {}
+[17.635555] (-) TimerEvent: {}
+[17.737303] (-) TimerEvent: {}
+[17.839217] (-) TimerEvent: {}
+[17.941179] (-) TimerEvent: {}
+[18.042267] (-) TimerEvent: {}
+[18.144619] (-) TimerEvent: {}
+[18.247346] (-) TimerEvent: {}
+[18.350186] (-) TimerEvent: {}
+[18.453319] (-) TimerEvent: {}
+[18.556656] (-) TimerEvent: {}
+[18.660381] (-) TimerEvent: {}
+[18.764389] (-) TimerEvent: {}
+[18.868742] (-) TimerEvent: {}
+[18.971430] (-) TimerEvent: {}
+[19.076326] (-) TimerEvent: {}
+[19.181567] (-) TimerEvent: {}
+[19.282188] (-) TimerEvent: {}
+[19.382895] (-) TimerEvent: {}
+[19.483748] (-) TimerEvent: {}
+[19.584763] (-) TimerEvent: {}
+[19.686510] (-) TimerEvent: {}
+[19.792696] (-) TimerEvent: {}
+[19.897455] (-) TimerEvent: {}
+[19.998115] (-) TimerEvent: {}
+[20.098711] (-) TimerEvent: {}
+[20.199279] (-) TimerEvent: {}
+[20.299939] (-) TimerEvent: {}
+[20.400574] (-) TimerEvent: {}
+[20.501115] (-) TimerEvent: {}
+[20.601753] (-) TimerEvent: {}
+[20.702334] (-) TimerEvent: {}
+[20.802928] (-) TimerEvent: {}
+[20.903531] (-) TimerEvent: {}
+[21.004199] (-) TimerEvent: {}
+[21.108071] (-) TimerEvent: {}
+[21.214484] (-) TimerEvent: {}
+[21.315701] (-) TimerEvent: {}
+[21.417006] (-) TimerEvent: {}
+[21.518344] (-) TimerEvent: {}
+[21.619105] (-) TimerEvent: {}
+[21.719811] (-) TimerEvent: {}
+[21.820609] (-) TimerEvent: {}
+[21.921373] (-) TimerEvent: {}
+[22.022095] (-) TimerEvent: {}
+[22.123005] (-) TimerEvent: {}
+[22.224019] (-) TimerEvent: {}
+[22.324725] (-) TimerEvent: {}
+[22.425333] (-) TimerEvent: {}
+[22.526035] (-) TimerEvent: {}
+[22.626756] (-) TimerEvent: {}
+[22.727560] (-) TimerEvent: {}
+[22.828538] (-) TimerEvent: {}
+[22.929366] (-) TimerEvent: {}
+[23.030469] (-) TimerEvent: {}
+[23.131837] (-) TimerEvent: {}
+[23.233213] (-) TimerEvent: {}
+[23.334629] (-) TimerEvent: {}
+[23.436250] (-) TimerEvent: {}
+[23.536927] (-) TimerEvent: {}
+[23.638765] (-) TimerEvent: {}
+[23.740681] (-) TimerEvent: {}
+[23.842932] (-) TimerEvent: {}
+[23.945086] (-) TimerEvent: {}
+[24.047652] (-) TimerEvent: {}
+[24.150519] (-) TimerEvent: {}
+[24.253828] (-) TimerEvent: {}
+[24.357433] (-) TimerEvent: {}
+[24.461309] (-) TimerEvent: {}
+[24.565600] (-) TimerEvent: {}
+[24.666532] (-) TimerEvent: {}
+[24.767261] (-) TimerEvent: {}
+[24.872059] (-) TimerEvent: {}
+[24.973298] (-) TimerEvent: {}
+[25.078520] (-) TimerEvent: {}
+[25.184368] (-) TimerEvent: {}
+[25.290549] (-) TimerEvent: {}
+[25.397348] (-) TimerEvent: {}
+[25.499176] (-) TimerEvent: {}
+[25.605218] (-) TimerEvent: {}
+[25.711403] (-) TimerEvent: {}
+[25.817787] (-) TimerEvent: {}
+[25.919675] (-) TimerEvent: {}
+[26.022855] (-) TimerEvent: {}
+[26.123623] (-) TimerEvent: {}
+[26.224400] (-) TimerEvent: {}
+[26.325362] (-) TimerEvent: {}
+[26.426168] (-) TimerEvent: {}
+[26.527304] (-) TimerEvent: {}
+[26.628428] (-) TimerEvent: {}
+[26.729107] (-) TimerEvent: {}
+[26.830488] (-) TimerEvent: {}
+[26.931881] (-) TimerEvent: {}
+[27.033481] (-) TimerEvent: {}
+[27.135191] (-) TimerEvent: {}
+[27.236040] (-) TimerEvent: {}
+[27.336794] (-) TimerEvent: {}
+[27.437337] (-) TimerEvent: {}
+[27.538123] (-) TimerEvent: {}
+[27.638833] (-) TimerEvent: {}
+[27.739584] (-) TimerEvent: {}
+[27.840290] (-) TimerEvent: {}
+[27.941121] (-) TimerEvent: {}
+[28.041807] (-) TimerEvent: {}
+[28.142502] (-) TimerEvent: {}
+[28.242990] (-) TimerEvent: {}
+[28.343592] (-) TimerEvent: {}
+[28.444306] (-) TimerEvent: {}
+[28.544911] (-) TimerEvent: {}
+[28.645656] (-) TimerEvent: {}
+[28.746271] (-) TimerEvent: {}
+[28.846851] (-) TimerEvent: {}
+[28.947459] (-) TimerEvent: {}
+[29.048082] (-) TimerEvent: {}
+[29.149115] (-) TimerEvent: {}
+[29.250012] (-) TimerEvent: {}
+[29.350802] (-) TimerEvent: {}
+[29.451754] (-) TimerEvent: {}
+[29.552749] (-) TimerEvent: {}
+[29.653428] (-) TimerEvent: {}
+[29.754143] (-) TimerEvent: {}
+[29.854956] (-) TimerEvent: {}
+[29.955796] (-) TimerEvent: {}
+[30.056779] (-) TimerEvent: {}
+[30.157559] (-) TimerEvent: {}
+[30.258720] (-) TimerEvent: {}
+[30.359758] (-) TimerEvent: {}
+[30.461000] (-) TimerEvent: {}
+[30.567674] (-) TimerEvent: {}
+[30.674632] (-) TimerEvent: {}
+[30.775345] (-) TimerEvent: {}
+[30.876000] (-) TimerEvent: {}
+[30.976992] (-) TimerEvent: {}
+[31.077732] (-) TimerEvent: {}
+[31.178654] (-) TimerEvent: {}
+[31.279655] (-) TimerEvent: {}
+[31.380398] (-) TimerEvent: {}
+[31.481297] (-) TimerEvent: {}
+[31.581978] (-) TimerEvent: {}
+[31.683010] (-) TimerEvent: {}
+[31.783862] (-) TimerEvent: {}
+[31.884761] (-) TimerEvent: {}
+[31.985503] (-) TimerEvent: {}
+[32.091013] (-) TimerEvent: {}
+[32.196649] (-) TimerEvent: {}
+[32.297754] (-) TimerEvent: {}
+[32.404284] (-) TimerEvent: {}
+[32.508708] (-) TimerEvent: {}
+[32.615041] (-) TimerEvent: {}
+[32.721567] (-) TimerEvent: {}
+[32.822542] (-) TimerEvent: {}
+[32.923186] (-) TimerEvent: {}
+[33.024027] (-) TimerEvent: {}
+[33.130870] (-) TimerEvent: {}
+[33.237724] (-) TimerEvent: {}
+[33.344836] (-) TimerEvent: {}
+[33.445528] (-) TimerEvent: {}
+[33.546636] (-) TimerEvent: {}
+[33.647484] (-) TimerEvent: {}
+[33.748430] (-) TimerEvent: {}
+[33.849198] (-) TimerEvent: {}
+[33.950209] (-) TimerEvent: {}
+[34.051086] (-) TimerEvent: {}
+[34.151880] (-) TimerEvent: {}
+[34.252814] (-) TimerEvent: {}
+[34.355640] (-) TimerEvent: {}
+[34.458670] (-) TimerEvent: {}
+[34.561952] (-) TimerEvent: {}
+[34.665421] (-) TimerEvent: {}
+[34.768978] (-) TimerEvent: {}
+[34.873082] (-) TimerEvent: {}
+[34.973650] (-) TimerEvent: {}
+[35.076971] (-) TimerEvent: {}
+[35.177939] (-) TimerEvent: {}
+[35.282906] (-) TimerEvent: {}
+[35.388288] (-) TimerEvent: {}
+[35.492869] (-) TimerEvent: {}
+[35.599006] (-) TimerEvent: {}
+[35.701967] (-) TimerEvent: {}
+[35.802776] (-) TimerEvent: {}
+[35.903565] (-) TimerEvent: {}
+[36.004227] (-) TimerEvent: {}
+[36.104866] (-) TimerEvent: {}
+[36.205523] (-) TimerEvent: {}
+[36.306261] (-) TimerEvent: {}
+[36.407092] (-) TimerEvent: {}
+[36.507804] (-) TimerEvent: {}
+[36.608414] (-) TimerEvent: {}
+[36.709008] (-) TimerEvent: {}
+[36.809526] (-) TimerEvent: {}
+[36.910075] (-) TimerEvent: {}
+[37.010695] (-) TimerEvent: {}
+[37.111295] (-) TimerEvent: {}
+[37.212365] (-) TimerEvent: {}
+[37.318569] (-) TimerEvent: {}
+[37.424106] (-) TimerEvent: {}
+[37.525018] (-) TimerEvent: {}
+[37.626161] (-) TimerEvent: {}
+[37.727232] (-) TimerEvent: {}
+[37.828318] (-) TimerEvent: {}
+[37.929688] (-) TimerEvent: {}
+[38.030997] (-) TimerEvent: {}
+[38.131904] (-) TimerEvent: {}
+[38.233023] (-) TimerEvent: {}
+[38.334086] (-) TimerEvent: {}
+[38.435253] (-) TimerEvent: {}
+[38.536583] (-) TimerEvent: {}
+[38.638012] (-) TimerEvent: {}
+[38.739647] (-) TimerEvent: {}
+[38.841378] (-) TimerEvent: {}
+[38.942108] (-) TimerEvent: {}
+[39.044044] (-) TimerEvent: {}
+[39.144825] (-) TimerEvent: {}
+[39.247036] (-) TimerEvent: {}
+[39.349276] (-) TimerEvent: {}
+[39.451953] (-) TimerEvent: {}
+[39.552578] (-) TimerEvent: {}
+[39.655325] (-) TimerEvent: {}
+[39.758026] (-) TimerEvent: {}
+[39.861383] (-) TimerEvent: {}
+[39.964694] (-) TimerEvent: {}
+[40.068323] (-) TimerEvent: {}
+[40.143694] (roverrobotics_driver) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable roverrobotics_driver\x1b[0m\n'}
+[40.168583] (-) TimerEvent: {}
+[40.270707] (-) TimerEvent: {}
+[40.375272] (-) TimerEvent: {}
+[40.478566] (-) TimerEvent: {}
+[40.583368] (-) TimerEvent: {}
+[40.688620] (-) TimerEvent: {}
+[40.790537] (-) TimerEvent: {}
+[40.896571] (-) TimerEvent: {}
+[41.003080] (-) TimerEvent: {}
+[41.109658] (-) TimerEvent: {}
+[41.210398] (-) TimerEvent: {}
+[41.316920] (-) TimerEvent: {}
+[41.423694] (-) TimerEvent: {}
+[41.524309] (-) TimerEvent: {}
+[41.624973] (-) TimerEvent: {}
+[41.725726] (-) TimerEvent: {}
+[41.827033] (-) TimerEvent: {}
+[41.927718] (-) TimerEvent: {}
+[41.971710] (roverrobotics_driver) StdoutLine: {'line': b'[100%] Built target roverrobotics_driver\n'}
+[41.986127] (roverrobotics_driver) CommandEnded: {'returncode': 0}
+[41.987399] (roverrobotics_driver) JobProgress: {'identifier': 'roverrobotics_driver', 'progress': 'install'}
+[41.987717] (roverrobotics_driver) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver'], 'cwd': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('MESA_D3D12_DEFAULT_ADAPTER_NAME', 'NVIDIA'), ('USER', 'andrew'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{4caf4410-8743-5dab-a8a8-8aa21e90e528}'), ('HOME', '/home/andrew'), ('OLDPWD', '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install:/home/andrew/CompanionBot2/NAV/rover_workspace/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'andrew'), ('NAME', 'WIN-NEIN7944776'), ('WSL_INTEROP', '/run/WSL/30363_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/andrew/.local/bin:/home/andrew/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/MATLAB/R2026a/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/WSL/:/mnt/c/ghcup/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Andrew/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin'), ('WT_SESSION', 'a1d562ac-9be2-41b9-8974-20ed257c5bb9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '47'), ('AMENT_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GALLIUM_DRIVER', 'd3d12'), ('PWD', '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble'), ('WSLENV', 'WT_SESSION:WT_PROFILE_ID:')]), 'shell': False}
+[41.997343] (roverrobotics_driver) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[41.997857] (roverrobotics_driver) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[41.999776] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/lib/roverrobotics_driver/robot_command.py\n'}
+[42.012700] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/accessories.launch.py\n'}
+[42.022668] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/imu.launch.py\n'}
+[42.028138] (-) TimerEvent: {}
+[42.034203] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/max.launch.py\n'}
+[42.044593] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/max_teleop.launch.py\n'}
+[42.055332] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/mega.launch.py\n'}
+[42.066627] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/mega_teleop.launch.py\n'}
+[42.077601] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/mini.launch.py\n'}
+[42.087947] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/mini_2wd.launch.py\n'}
+[42.097830] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/mini_2wd_teleop.launch.py\n'}
+[42.108258] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/mini_teleop.launch.py\n'}
+[42.118788] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/miti.launch.py\n'}
+[42.128992] (-) TimerEvent: {}
+[42.129569] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/miti_65.launch.py\n'}
+[42.140450] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/miti_65_teleop.launch.py\n'}
+[42.151758] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/miti_teleop.launch.py\n'}
+[42.162246] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/nav2_backend.py\n'}
+[42.173008] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/navigation_launch.py\n'}
+[42.183863] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/outdoor_navigation_launch.py\n'}
+[42.194843] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/pro.launch.py\n'}
+[42.206303] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/pro_teleop.launch.py\n'}
+[42.216616] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/ps4_controller.launch.py\n'}
+[42.227685] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/ps5_controller.launch.py\n'}
+[42.229169] (-) TimerEvent: {}
+[42.239034] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/robot_localizer.launch.py\n'}
+[42.249578] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/robot_localizer_outdoor.launch.py\n'}
+[42.260291] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/slam_launch.py\n'}
+[42.271449] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/zero.launch.py\n'}
+[42.282064] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/launch/zero_teleop.launch.py\n'}
+[42.296883] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/accessories.yaml\n'}
+[42.307267] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/localization_ekf.yaml\n'}
+[42.318133] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/localization_outdoor_ekf.yaml\n'}
+[42.329001] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/max_130_config.yaml\n'}
+[42.329394] (-) TimerEvent: {}
+[42.339479] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/max_150_config.yaml\n'}
+[42.349901] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/mega_config.yaml\n'}
+[42.362551] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/mini_2wd_config.yaml\n'}
+[42.374376] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/mini_config.yaml\n'}
+[42.384614] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/miti_65_config.yaml\n'}
+[42.395268] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/miti_config.yaml\n'}
+[42.407406] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/nav2_params.yaml\n'}
+[42.418579] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/pro_config.yaml\n'}
+[42.429700] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/ps4_controller_config.yaml\n'}
+[42.430012] (-) TimerEvent: {}
+[42.443165] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/ps4_controller_config_jp6.yaml\n'}
+[42.452701] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/ps5_controller_config.yaml\n'}
+[42.463257] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/ps5_controller_config_jp6.yaml\n'}
+[42.472989] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/realsense_config.yaml\n'}
+[42.483692] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/rviz_configs/nav2_default_view.rviz\n'}
+[42.493502] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/rviz_configs/realsense_rviz_layout.rviz\n'}
+[42.502932] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/rviz_configs/slam_rviz_layout.rviz\n'}
+[42.513468] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/slam_configs/mapper_params_lifelong.yaml\n'}
+[42.523845] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/slam_configs/mapper_params_localization.yaml\n'}
+[42.530390] (-) TimerEvent: {}
+[42.534138] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/slam_configs/mapper_params_offline.yaml\n'}
+[42.544563] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/slam_configs/mapper_params_online_async.yaml\n'}
+[42.555201] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/slam_configs/mapper_params_online_sync.yaml\n'}
+[42.565258] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/topics.yaml\n'}
+[42.575353] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/config/zero_config.yaml\n'}
+[42.587297] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze.pgm\n'}
+[42.597107] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze.yaml\n'}
+[42.607132] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze_map.data\n'}
+[42.617065] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze_map.pgm\n'}
+[42.626952] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze_map.posegraph\n'}
+[42.630694] (-) TimerEvent: {}
+[42.637736] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/maps/maze_map.yaml\n'}
+[42.648033] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/maps/presentation_map.data\n'}
+[42.657851] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/maps/presentation_map.pgm\n'}
+[42.667910] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/maps/presentation_map.posegraph\n'}
+[42.677291] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/maps/presentation_map.yaml\n'}
+[42.687270] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/lib/roverrobotics_driver/roverrobotics_driver\n'}
+[42.698105] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/ament_index/resource_index/package_run_dependencies/roverrobotics_driver\n'}
+[42.708517] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/ament_index/resource_index/parent_prefix_path/roverrobotics_driver\n'}
+[42.719155] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/environment/ament_prefix_path.sh\n'}
+[42.729227] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/environment/ament_prefix_path.dsv\n'}
+[42.730907] (-) TimerEvent: {}
+[42.739172] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/environment/path.sh\n'}
+[42.749890] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/environment/path.dsv\n'}
+[42.760338] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/local_setup.bash\n'}
+[42.769789] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/local_setup.sh\n'}
+[42.779337] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/local_setup.zsh\n'}
+[42.789179] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/local_setup.dsv\n'}
+[42.800184] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.dsv\n'}
+[42.810434] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/ament_index/resource_index/packages/roverrobotics_driver\n'}
+[42.821815] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/cmake/roverrobotics_driverConfig.cmake\n'}
+[42.831630] (-) TimerEvent: {}
+[42.832207] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/cmake/roverrobotics_driverConfig-version.cmake\n'}
+[42.843268] (roverrobotics_driver) StdoutLine: {'line': b'-- Symlinking: /home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.xml\n'}
+[42.856995] (roverrobotics_driver) CommandEnded: {'returncode': 0}
+[42.874804] (roverrobotics_driver) JobEnded: {'identifier': 'roverrobotics_driver', 'rc': 0}
+[42.876701] (-) EventReactorShutdown: {}
