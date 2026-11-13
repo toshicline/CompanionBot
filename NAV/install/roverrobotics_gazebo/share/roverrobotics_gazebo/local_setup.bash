@@ -1,1 +1,0 @@
-/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo/ament_cmake_environment_hooks/local_setup.bash
