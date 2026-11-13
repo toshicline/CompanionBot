@@ -1,0 +1,290 @@
+[0.499s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.499s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x78fd8dcfbd30>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x78fd8dcfb760>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x78fd8dcfb760>>)
+[0.816s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.816s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.816s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.816s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.816s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.816s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.816s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/andrew/CompanionBot2/NAV'
+[0.816s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.816s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.816s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.816s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.816s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.816s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.816s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.817s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.817s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.832s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.832s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.833s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.834s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_description) by extensions ['ignore', 'ignore_ament_install']
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_description) by extension 'ignore'
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_description) by extension 'ignore_ament_install'
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_description) by extensions ['colcon_pkg']
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_description) by extension 'colcon_pkg'
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_description) by extensions ['colcon_meta']
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_description) by extension 'colcon_meta'
+[0.835s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_description) by extensions ['ros']
+[0.836s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_description) by extension 'ros'
+[0.839s] DEBUG:colcon.colcon_core.package_identification:Package 'src/roverrobotics_description' with type 'ros.ament_cmake' and name 'roverrobotics_description'
+[0.840s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.840s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_driver) by extension 'ignore'
+[0.840s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_driver) by extension 'ignore_ament_install'
+[0.840s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_driver) by extensions ['colcon_pkg']
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_driver) by extension 'colcon_pkg'
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_driver) by extensions ['colcon_meta']
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_driver) by extension 'colcon_meta'
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_driver) by extensions ['ros']
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_driver) by extension 'ros'
+[0.842s] DEBUG:colcon.colcon_core.package_identification:Package 'src/roverrobotics_driver' with type 'ros.ament_cmake' and name 'roverrobotics_driver'
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_gazebo) by extension 'ignore'
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_gazebo) by extension 'ignore_ament_install'
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_gazebo) by extensions ['colcon_pkg']
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_gazebo) by extension 'colcon_pkg'
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_gazebo) by extensions ['colcon_meta']
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_gazebo) by extension 'colcon_meta'
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_gazebo) by extensions ['ros']
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(src/roverrobotics_gazebo) by extension 'ros'
+[0.844s] DEBUG:colcon.colcon_core.package_identification:Package 'src/roverrobotics_gazebo' with type 'ros.ament_cmake' and name 'roverrobotics_gazebo'
+[0.844s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.844s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.845s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.845s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.845s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.892s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.893s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.896s] WARNING:colcon.colcon_core.prefix_path.colcon:The path '/home/andrew/CompanionBot2/NAV/rover_workspace/install' in the environment variable COLCON_PREFIX_PATH doesn't exist
+[0.896s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.897s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.897s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.897s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.898s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.901s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/andrew/CompanionBot2/NAV/install
+[0.905s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 340 installed packages in /opt/ros/humble
+[0.907s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_args' from command line to 'None'
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_target' from command line to 'None'
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_clean_cache' from command line to 'False'
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_clean_first' from command line to 'False'
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'cmake_force_configure' from command line to 'False'
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'ament_cmake_args' from command line to 'None'
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'catkin_cmake_args' from command line to 'None'
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.033s] DEBUG:colcon.colcon_core.verb:Building package 'roverrobotics_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description', 'merge_install': False, 'path': '/home/andrew/CompanionBot2/NAV/src/roverrobotics_description', 'symlink_install': True, 'test_result_base': None}
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_driver' build argument 'cmake_args' from command line to 'None'
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_driver' build argument 'cmake_target' from command line to 'None'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_driver' build argument 'cmake_clean_first' from command line to 'False'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_driver' build argument 'cmake_force_configure' from command line to 'False'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_driver' build argument 'ament_cmake_args' from command line to 'None'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.034s] DEBUG:colcon.colcon_core.verb:Building package 'roverrobotics_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver', 'merge_install': False, 'path': '/home/andrew/CompanionBot2/NAV/src/roverrobotics_driver', 'symlink_install': True, 'test_result_base': None}
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_gazebo' build argument 'cmake_args' from command line to 'None'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_gazebo' build argument 'cmake_target' from command line to 'None'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'roverrobotics_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.034s] DEBUG:colcon.colcon_core.verb:Building package 'roverrobotics_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo', 'merge_install': False, 'path': '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo', 'symlink_install': True, 'test_result_base': None}
+[1.034s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.037s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.037s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/andrew/CompanionBot2/NAV/src/roverrobotics_description' with build type 'ament_cmake'
+[1.037s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/andrew/CompanionBot2/NAV/src/roverrobotics_description'
+[1.047s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.047s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.047s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.054s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/andrew/CompanionBot2/NAV/src/roverrobotics_driver' with build type 'ament_cmake'
+[1.054s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/andrew/CompanionBot2/NAV/src/roverrobotics_driver'
+[1.055s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.055s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.066s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NAV/src/roverrobotics_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NAV/install/roverrobotics_description
+[1.080s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NAV/src/roverrobotics_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver
+[2.779s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NAV/src/roverrobotics_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NAV/install/roverrobotics_description
+[2.783s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NAV/build/roverrobotics_description -- -j16 -l16
+[2.824s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NAV/build/roverrobotics_description -- -j16 -l16
+[2.835s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NAV/build/roverrobotics_description
+[3.478s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roverrobotics_description)
+[3.479s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NAV/build/roverrobotics_description
+[3.487s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description' for CMake module files
+[3.488s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description' for CMake config files
+[3.489s] Level 1:colcon.colcon_core.shell:create_environment_hook('roverrobotics_description', 'cmake_prefix_path')
+[3.489s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.ps1'
+[3.491s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.dsv'
+[3.492s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.sh'
+[3.493s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/bin'
+[3.493s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/lib/pkgconfig/roverrobotics_description.pc'
+[3.494s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/lib/python3.10/site-packages'
+[3.494s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/bin'
+[3.494s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.ps1'
+[3.496s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.dsv'
+[3.497s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.sh'
+[3.499s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.bash'
+[3.500s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.zsh'
+[3.502s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/colcon-core/packages/roverrobotics_description)
+[3.504s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roverrobotics_description)
+[3.504s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description' for CMake module files
+[3.504s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description' for CMake config files
+[3.505s] Level 1:colcon.colcon_core.shell:create_environment_hook('roverrobotics_description', 'cmake_prefix_path')
+[3.505s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.ps1'
+[3.506s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.dsv'
+[3.506s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/hook/cmake_prefix_path.sh'
+[3.507s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/bin'
+[3.507s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/lib/pkgconfig/roverrobotics_description.pc'
+[3.507s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/lib/python3.10/site-packages'
+[3.507s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/bin'
+[3.508s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.ps1'
+[3.508s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.dsv'
+[3.509s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.sh'
+[3.509s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.bash'
+[3.510s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/roverrobotics_description/package.zsh'
+[3.510s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/andrew/CompanionBot2/NAV/install/roverrobotics_description/share/colcon-core/packages/roverrobotics_description)
+[3.511s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo' with build type 'ament_cmake'
+[3.511s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo'
+[3.512s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.512s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.570s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo
+[5.328s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NAV/src/roverrobotics_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo
+[5.330s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo -- -j16 -l16
+[5.375s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo -- -j16 -l16
+[5.378s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo
+[5.639s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roverrobotics_gazebo)
+[5.640s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo' for CMake module files
+[5.640s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/andrew/CompanionBot2/NAV/install/roverrobotics_description:/home/andrew/CompanionBot2/NAV/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_input_manager:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_gazebo:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_driver:/home/andrew/CompanionBot2/NAV/rover_workspace/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NAV/build/roverrobotics_gazebo
+[5.641s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo' for CMake config files
+[5.641s] Level 1:colcon.colcon_core.shell:create_environment_hook('roverrobotics_gazebo', 'cmake_prefix_path')
+[5.642s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/hook/cmake_prefix_path.ps1'
+[5.643s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/hook/cmake_prefix_path.dsv'
+[5.643s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/hook/cmake_prefix_path.sh'
+[5.644s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/bin'
+[5.644s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/lib/pkgconfig/roverrobotics_gazebo.pc'
+[5.644s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/lib/python3.10/site-packages'
+[5.644s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/bin'
+[5.644s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.ps1'
+[5.645s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.dsv'
+[5.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.sh'
+[5.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.bash'
+[5.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.zsh'
+[5.647s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/colcon-core/packages/roverrobotics_gazebo)
+[5.648s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roverrobotics_gazebo)
+[5.648s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo' for CMake module files
+[5.649s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo' for CMake config files
+[5.649s] Level 1:colcon.colcon_core.shell:create_environment_hook('roverrobotics_gazebo', 'cmake_prefix_path')
+[5.650s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/hook/cmake_prefix_path.ps1'
+[5.650s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/hook/cmake_prefix_path.dsv'
+[5.650s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/hook/cmake_prefix_path.sh'
+[5.651s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/bin'
+[5.651s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/lib/pkgconfig/roverrobotics_gazebo.pc'
+[5.651s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/lib/python3.10/site-packages'
+[5.652s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/bin'
+[5.652s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.ps1'
+[5.652s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.dsv'
+[5.653s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.sh'
+[5.653s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.bash'
+[5.654s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.zsh'
+[5.654s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/andrew/CompanionBot2/NAV/install/roverrobotics_gazebo/share/colcon-core/packages/roverrobotics_gazebo)
+[8.575s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/andrew/CompanionBot2/NAV/src/roverrobotics_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver
+[8.578s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NAV/build/roverrobotics_driver -- -j16 -l16
+[39.209s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/andrew/CompanionBot2/NAV/build/roverrobotics_driver -- -j16 -l16
+[39.211s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NAV/build/roverrobotics_driver
+[40.078s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roverrobotics_driver)
+[40.079s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver' for CMake module files
+[40.079s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/andrew/CompanionBot2/NAV/build/roverrobotics_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/andrew/CompanionBot2/NAV/build/roverrobotics_driver
+[40.080s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver' for CMake config files
+[40.081s] Level 1:colcon.colcon_core.shell:create_environment_hook('roverrobotics_driver', 'cmake_prefix_path')
+[40.082s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/hook/cmake_prefix_path.ps1'
+[40.083s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/hook/cmake_prefix_path.dsv'
+[40.083s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/hook/cmake_prefix_path.sh'
+[40.084s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/lib'
+[40.084s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/bin'
+[40.084s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/lib/pkgconfig/roverrobotics_driver.pc'
+[40.085s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/lib/python3.10/site-packages'
+[40.085s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/bin'
+[40.085s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.ps1'
+[40.086s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.dsv'
+[40.086s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.sh'
+[40.087s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.bash'
+[40.087s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.zsh'
+[40.087s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/colcon-core/packages/roverrobotics_driver)
+[40.089s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roverrobotics_driver)
+[40.089s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver' for CMake module files
+[40.089s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver' for CMake config files
+[40.090s] Level 1:colcon.colcon_core.shell:create_environment_hook('roverrobotics_driver', 'cmake_prefix_path')
+[40.090s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/hook/cmake_prefix_path.ps1'
+[40.091s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/hook/cmake_prefix_path.dsv'
+[40.091s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/hook/cmake_prefix_path.sh'
+[40.092s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/lib'
+[40.092s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/bin'
+[40.092s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/lib/pkgconfig/roverrobotics_driver.pc'
+[40.092s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/lib/python3.10/site-packages'
+[40.093s] Level 1:colcon.colcon_core.environment:checking '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/bin'
+[40.093s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.ps1'
+[40.094s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.dsv'
+[40.094s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.sh'
+[40.095s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.bash'
+[40.096s] INFO:colcon.colcon_core.shell:Creating package script '/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/roverrobotics_driver/package.zsh'
+[40.096s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/andrew/CompanionBot2/NAV/install/roverrobotics_driver/share/colcon-core/packages/roverrobotics_driver)
+[40.097s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[40.098s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[40.098s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[40.098s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[40.152s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[40.152s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[40.152s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[40.152s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[40.152s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.FileNotFound: Failed to connect to socket /run/user/1000/bus: No such file or directory
+[40.153s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[40.153s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/andrew/CompanionBot2/NAV/install/local_setup.ps1'
+[40.154s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/andrew/CompanionBot2/NAV/install/_local_setup_util_ps1.py'
+[40.156s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/andrew/CompanionBot2/NAV/install/setup.ps1'
+[40.158s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/andrew/CompanionBot2/NAV/install/local_setup.sh'
+[40.160s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/andrew/CompanionBot2/NAV/install/_local_setup_util_sh.py'
+[40.160s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/andrew/CompanionBot2/NAV/install/setup.sh'
+[40.162s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/andrew/CompanionBot2/NAV/install/local_setup.bash'
+[40.163s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/andrew/CompanionBot2/NAV/install/setup.bash'
+[40.164s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/andrew/CompanionBot2/NAV/install/local_setup.zsh'
+[40.165s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/andrew/CompanionBot2/NAV/install/setup.zsh'
