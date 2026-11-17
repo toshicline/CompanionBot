@@ -253,6 +253,44 @@ def estimate_range_average(usable_distances):
         "points_used":len(range_estimates) * 2
     }
 
+def calculate_rotation_angle(target_x, image_width, range_estimate, hfov_deg=60.0):
+    """Calculates the 1D rotation angle from the rover to the target 
+    using a geometric triangle formed by the range estimate and horizontal pixel offset.
+    
+    Args:
+        target_x (float): Pixel x-coordinate of the target center.
+        image_width (float): Total width of the camera frame in pixels.
+        range_estimate (float): Estimated range (Z) to the target in meters.
+        hfov_deg (float): Horizontal Field of View of the camera in degrees.
+        
+    Returns:
+        float: Rotation angle in degrees (positive = target is to the right, negative = to the left).
+    """
+    if range_estimate <= 0 or image_width <= 0 or hfov_deg <= 0:
+        return 0.0
+
+    center_x = image_width / 2.0
+    pixel_offset = target_x - center_x
+    
+    # Derive horizontal focal length in pixels from HFOV and image width
+    hfov_rad = math.radians(hfov_deg)
+    tan_half_fov = math.tan(hfov_rad / 2.0)
+    
+    if tan_half_fov == 0:
+        return 0.0
+        
+    focal_length_x = center_x / tan_half_fov
+    
+    if focal_length_x == 0:
+        return 0.0
+    
+    # Convert pixel offset to a real-world lateral offset (X_offset) in meters
+    lateral_offset_m = (pixel_offset / focal_length_x) * range_estimate
+    
+    # Use right-triangle trigonometry (arctan) to find the angle
+    angle_rad = math.atan2(lateral_offset_m, range_estimate)
+    
+    return math.degrees(angle_rad)
 
 
 # Main Loop
@@ -384,10 +422,13 @@ while True:
             # Estimate the range using the distances from above (and get how many points the estimate is based off of)
             range_estimate,range_points_used = estimate_range_average(usable_distances).values()
 
+            # Calculate yaw
+            yaw = calculate_rotation_angle(ideal_target_position[0],2000,range_estimate)
+
             # Print out the location and range, and draw the bounding box / label
             if range_estimate > 0:
                 print_flush(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})   Approx Range: {range_estimate:.2f}m ({range_points_used} points)")
-                draw_bbox(frame,largest_bbox,["Ideal target",f"{range_points_used}-point Range:",f"{range_estimate:.2f}m"],color=(0,255,0))
+                draw_bbox(frame,largest_bbox,["Ideal target",f"{range_points_used}-point Range:",f"{range_estimate:.2f}m",f"Yaw Correction: {yaw:.0f}deg"],color=(0,255,0))
             else:
                 print_flush(f"Ideal target at ({ideal_target_position[0]},{ideal_target_position[1]})")
                 draw_bbox(frame,largest_bbox,"Ideal target",color=(0,255,0))
