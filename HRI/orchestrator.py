@@ -60,7 +60,8 @@ class RobotOrchestrator:
             if self.current_state != self.previous_state:
                 print(f"[Orchestrator] Change state from {self.previous_state} to {self.current_state}")
 
-
+            # Update previous state
+            self.previous_state = self.current_state
 
             ####################################################
             #                 FOLLOWING State                  #
@@ -105,8 +106,6 @@ class RobotOrchestrator:
                 self.current_state = "FOLLOWING"
 
 
-            # Update previous state
-            self.previous_state = self.current_state
             time.sleep(1)
             
 

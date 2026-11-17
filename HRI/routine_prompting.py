@@ -86,7 +86,7 @@ def prompt(prompt_text,display_inst=None):
 
     intent = classify_intent(response)
 
-    print(f"User> {response}")
+    print(f"\nUser> {response}")
 
     return {
         "response":response,
@@ -100,13 +100,13 @@ def routine_prompt(path_to_routine,display,navigation_callback):
 
     # Prompt the user to start
     display.show_routine_title(routine)
-    tts.speak(f"It's time to do your {routine["name"]} routine.")
+    tts.speak(f"It's time to do your {routine['name']} routine.")
     begin_routine = prompt("Are you ready to get started?",display_inst=display)
 
     if begin_routine["intent"] == "affirmative":
         tts.speak(f"Ok, let's get started.")
     else:
-        tts.speak(f"Ok. Let me know when you are ready to do your {routine["name"]} routine.")
+        tts.speak(f"Ok. Let me know when you are ready to do your {routine['name']} routine.")
         display.clear()
         return None
 
@@ -122,7 +122,7 @@ def routine_prompt(path_to_routine,display,navigation_callback):
 
         # State the routine step
         display.show_routine_step(routine,step_number)
-        tts.speak(f"The {to_ordinal(step_number)} step is to {step["name"]} ")
+        tts.speak(f"The {to_ordinal(step_number)} step is to {step['name']} ")
 
         # Navigate to room if necessary
         # Tell the orchestrator script to tell it to navigate, then return here
@@ -130,7 +130,7 @@ def routine_prompt(path_to_routine,display,navigation_callback):
 
         display.show_routine_step(routine,step_number)
         # Confirm task start
-        tts.speak(f"Go ahead and get started with the task: {step["name"].lower()}")
+        tts.speak(f"Go ahead and get started with the task: {step['name'].lower()}")
 
         # Reminder / Listening Loop
         reminder_interval = step["reminder_interval_s"]
@@ -142,14 +142,14 @@ def routine_prompt(path_to_routine,display,navigation_callback):
 
             # Check to see if a reminder should be given
             if (current_time - last_reminder_time) >= reminder_interval:
-                tts.speak(f"Reminder that you should be working on the task: {step["name"].lower()}.")
+                tts.speak(f"Reminder that you should be working on the task: {step['name'].lower()}.")
                 last_reminder_time = time.time()
 
             # Listen for user to announce completion of task
             phrase = mic.listen(max_wait_seconds=5,silent=True,display_inst=display)
 
             if phrase != "":
-                print(f"User> {phrase}")
+                print(f"\nUser> {phrase}")
                 if classify_intent(phrase) == "affirmative":
                     tts.speak(encouragement())
                     step_completed = True

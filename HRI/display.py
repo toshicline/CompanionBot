@@ -200,14 +200,14 @@ class RobotDisplay:
 
     def show_routine_title(self,routine_info):
         self.set_active_frame(self.routine_frame)
-        tk.Label(self.routine_frame,text=f"{routine_info["name"]} Routine",font="f 48 bold",bg=self.ROUTINE_SCREEN_BACKGROUND_COLOR).place(x=20,y=200,anchor="w")
-        tk.Label(self.routine_frame,text=f"{len(routine_info["steps"])} steps",font="f 24",bg=self.ROUTINE_SCREEN_BACKGROUND_COLOR).place(x=20,y=240,anchor="nw")
+        tk.Label(self.routine_frame,text=f"{routine_info['name']} Routine",font="f 48 bold",bg=self.ROUTINE_SCREEN_BACKGROUND_COLOR).place(x=20,y=200,anchor="w")
+        tk.Label(self.routine_frame,text=f"{len(routine_info['steps'])} steps",font="f 24",bg=self.ROUTINE_SCREEN_BACKGROUND_COLOR).place(x=20,y=240,anchor="nw")
 
     def show_routine_step(self,routine_info,step_number):
         self.set_active_frame(self.routine_frame)
-        self.ScrollingLabel(self.routine_frame,text=f"{routine_info["steps"][step_number-1]["name"]}",font="f 48 bold",bg=self.ROUTINE_SCREEN_BACKGROUND_COLOR).place(x=20,y=200,anchor="w")
-        tk.Label(self.routine_frame,text=f"{routine_info["name"]} Routine",font="f 16",bg=self.ROUTINE_SCREEN_BACKGROUND_COLOR).place(x=20,y=160,anchor="sw")
-        tk.Label(self.routine_frame,text=f"Step {step_number}/{len(routine_info["steps"])}",font="f 16",bg=self.ROUTINE_SCREEN_BACKGROUND_COLOR).place(x=20,y=240,anchor="nw")
+        self.ScrollingLabel(self.routine_frame,text=f"{routine_info['steps'][step_number-1]['name']}",font="f 48 bold",bg=self.ROUTINE_SCREEN_BACKGROUND_COLOR).place(x=20,y=200,anchor="w")
+        tk.Label(self.routine_frame,text=f"{routine_info['name']} Routine",font="f 16",bg=self.ROUTINE_SCREEN_BACKGROUND_COLOR).place(x=20,y=160,anchor="sw")
+        tk.Label(self.routine_frame,text=f"Step {step_number}/{len(routine_info['steps'])}",font="f 16",bg=self.ROUTINE_SCREEN_BACKGROUND_COLOR).place(x=20,y=240,anchor="nw")
 
     def show_navigating(self,location):
         self.set_active_frame(self.nav_frame)

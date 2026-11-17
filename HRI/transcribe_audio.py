@@ -9,7 +9,7 @@ from datetime import datetime,timedelta
 import tkinter.simpledialog as simpledialog
 
 REQUIRE_EXTERNAL_MIC = False
-DEBUG_MODE = True
+DEBUG_MODE = False
 
 MODEL_SIZE = "base.en"
 
@@ -89,7 +89,7 @@ def listen(max_wait_seconds=10, silence_pause_seconds=3,silent=False,suppress_si
 
     if DEBUG_MODE:
         user_text = display_inst.get_debug_input("Type simulated response:")
-        print(f"[Audio] [Debug] User> {user_text.lower().strip()}")
+        print(f"\n[Audio] [Debug] User> {user_text.lower().strip()}")
         return user_text.lower().strip()
 
     # Clear out any leftover stale audio in the queue
@@ -125,7 +125,7 @@ def listen(max_wait_seconds=10, silence_pause_seconds=3,silent=False,suppress_si
                 elapsed_wait = (current_time - session_start_time).total_seconds()
                 if elapsed_wait > max_wait_seconds:
                     if not suppress_silence_statements:
-                        print("User> (silence)")
+                        print("\nUser> (silence)")
                     break
             else:
                 # Phase 2: Speech has started. Check if user has stopped talking for long enough
@@ -175,7 +175,7 @@ def listen_intermittently(interval_seconds=5,display_inst=None):
         phrase = listen(max_wait_seconds=interval_seconds,silent=True,suppress_silence_statements=True,display_inst=display_inst)
 
         if phrase != "":
-            print(f"User> {phrase}")
+            print(f"\nUser> {phrase}")
             return phrase
 
 
@@ -197,4 +197,4 @@ else:
 
 if __name__ == "__main__":
     phrase = listen()
-    print(f"User> {phrase}")
+    print(f"\nUser> {phrase}")
