@@ -7,6 +7,8 @@ from display import RobotDisplay
 from routine_prompting import routine_prompt
 from transcribe_audio import listen_intermittently
 from text_to_speech import speak
+from background_vison import PersonDetectionThread
+from background_speech import SpeechListenerThread
 
 
 ####################################################
@@ -49,6 +51,13 @@ class RobotOrchestrator:
                 for path in os.listdir("routines/")
             ]
 
+        # Start person detection
+        self.vision_thread = PersonDetectionThread(camera_id=0)
+        self.vision_thread.start()
+
+        # Start background speech listening worker[span_6](start_span)[span_6](end_span)
+        self.speech_thread = SpeechListenerThread(display_inst=self.display)
+        self.speech_thread.start()
 
 
     def run_state_machine(self):
@@ -60,23 +69,37 @@ class RobotOrchestrator:
             if self.current_state != self.previous_state:
                 print(f"[Orchestrator] Change state from {self.previous_state} to {self.current_state}")
 
-
+            # Update previous state
+            self.previous_state = self.current_state
 
             ####################################################
             #                 FOLLOWING State                  #
             ####################################################
             if self.current_state == "FOLLOWING":
+                
+                # Speech Processing
+                user_speech = self.speech_thread.get_latest_speech()
+                if user_speech:
+                    print(f"\nUser command received: {user_speech}")
+                    if "routine" in user_speech:
+                        self.current_state = "PROMPTING"
+                        break
+                    elif "end state machine" in user_speech:
+                        self.display.close()
+                        return
 
-                # Intermittently listen for user to give commands
-                self.user_speech = listen_intermittently(display_inst=self.display)
+                # Person Tracking
+                tracking = self.vision_thread.get_tracking_data()
+                if tracking["visible"]:
+                    target_x, target_y = tracking["position"]
+                    range_m = tracking["range"]
+                    yaw = tracking["yaw"]
+                    print(f"Target position: ({target_x},{target_y}) | Range: {range_m:.2f}m | Yaw to target: {yaw}", end="\r", flush=True)
 
-                # Take action based on user commands
-                if "routine" in self.user_speech:
-                    self.current_state = "PROMPTING"
-                elif "end state machine" in self.user_speech:
-                    display.close()
+                else:
+                    print("Target not visible, holding position...", end="\r", flush=True)
 
-                time.sleep(1)
+                time.sleep(0.01) 
 
 
             ####################################################
@@ -105,11 +128,8 @@ class RobotOrchestrator:
                 self.current_state = "FOLLOWING"
 
 
-            # Update previous state
-            self.previous_state = self.current_state
             time.sleep(1)
             
-
 
     def find_routine(self,speech):
 

@@ -16,7 +16,7 @@ def speak(text, model_path=PIPER_MODEL_PATH):
     # Write text into the stream
     proc.stdin.write(text.encode("utf-8"))
     proc.stdin.close()
-    print(f"Robot> {text}\n")
+    print(f"\nRobot> {text}")
     
     # Read and speak simultaneously
     sample_rate = 22050
